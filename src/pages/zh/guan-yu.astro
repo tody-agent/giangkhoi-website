@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('zh');
+---
+
+<BaseLayout
+  title="关于江开起重 — 兴安省10年专业吊车服务"
+  description="了解兴安江开运输 — 10年吊车租赁经验，6台吊车，全天候24/7服务，兴安省最值得信赖的吊车团队。"
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">始于2016年</span>
+        <h1>关于江开起重</h1>
+        <p>10年深耕 — 数百工程信赖之选</p>
+      </div>
+
+      <article class="about-content">
+        <div class="about-intro">
+          <h2>我们的故事</h2>
+          <p><strong>江开运输</strong>成立于2016年，总部位于兴安省美豪市——北越最大的工业区集群中心。从最初的1台吊车起步，经过10年发展，江开已拥有<strong>6台不同载重的吊车（3.5吨至100吨）</strong>。</p>
+          <p>我们深知，当您需要吊车时，往往是<strong>紧急情况</strong>。卡车翻车堵路、集装箱急需卸载、新设备到厂必须立即安装——这就是为什么<strong>"30分钟到达"</strong>始终是江开的第一承诺。</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value">10+</span>
+            <span class="stat-label">年经验</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">6</span>
+            <span class="stat-label">台随时待命</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">项目完成</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">30'</span>
+            <span class="stat-label">分钟到达</span>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>三大保障</h2>
+          <div class="grid grid-3">
+            <div class="commitment-card">
+              <h3>⚡ 快速到达</h3>
+              <p>车队驻扎美豪——兴安中心。无论白天黑夜，30公里范围内30分钟到达。</p>
+            </div>
+            <div class="commitment-card">
+              <h3>💎 价格透明</h3>
+              <p>电话报价即为最终价格。按载重固定收费。无额外费用、无意外加价。</p>
+            </div>
+            <div class="commitment-card">
+              <h3>🤝 完工后付款</h3>
+              <p>工作完成后再付款。无需预付定金。10年信誉就是我们的保证。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>企业资质</h2>
+          <dl class="legal-info">
+            <dt>公司名称</dt>
+            <dd>兴安江开运输贸易服务有限公司</dd>
+            <dt>税号</dt>
+            <dd>0901150346</dd>
+            <dt>地址</dt>
+            <dd>兴安省美豪市白三坊</dd>
+            <dt>经营范围</dt>
+            <dd>公路货物运输、吊车租赁、工业设备安装</dd>
+            <dt>安全资质</dt>
+            <dd>全部6台吊车均持有有效安全检验证书，可进入所有工业区</dd>
+          </dl>
+        </div>
+      </article>
+
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>需要租吊车？</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">立即致电获取免费咨询和报价。</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content { max-width: 900px; margin: 0 auto; }
+  .about-intro { margin-bottom: var(--space-12); }
+  .about-intro h2 { margin-bottom: var(--space-4); }
+  .about-intro p { color: var(--color-text-secondary); font-size: var(--text-lg); line-height: 1.9; }
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-bottom: var(--space-12); }
+  @media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+  .stat-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; }
+  .stat-value { display: block; font-family: var(--font-heading); font-size: var(--text-4xl); font-weight: var(--weight-extrabold); color: var(--color-primary); line-height: 1; margin-bottom: var(--space-2); }
+  .stat-label { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: var(--weight-medium); }
+  .about-section { margin-bottom: var(--space-12); }
+  .about-section h2 { margin-bottom: var(--space-6); }
+  .commitment-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .commitment-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-3); color: var(--color-primary); }
+  .commitment-card p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.8; }
+  .legal-info { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .legal-info dt { font-weight: var(--weight-semibold); color: var(--color-text); font-size: var(--text-sm); margin-top: var(--space-4); }
+  .legal-info dt:first-child { margin-top: 0; }
+  .legal-info dd { color: var(--color-text-secondary); font-size: var(--text-sm); margin-left: 0; padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); }
+  .legal-info dd:last-child { border-bottom: none; padding-bottom: 0; }
+</style>

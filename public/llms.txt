@@ -1,0 +1,43 @@
+# Vận Tải Giang Khôi — LLM Discovery File
+# Format: https://llmstxt.org/
+# Last updated: 2026-06-06
+
+> Vận Tải Giang Khôi Hưng Yên — Dịch vụ cho thuê xe cẩu 3.5T–100T tại Hưng Yên, Việt Nam.
+> Có mặt trong 30 phút, báo giá rõ ràng, trả tiền sau khi xong việc.
+> Hotline: 0971 491 174
+
+## About
+Công Ty TNHH TM DV Vận Tải Giang Khôi Hưng Yên (MST: 0901150346)
+- Địa chỉ: Phường Bạch Sam, Mỹ Hào, Hưng Yên
+- Kinh nghiệm: 10 năm
+- Đội xe: 6 xe cẩu (3.5T, 5T, 8T, 15T, 25T, 100T)
+- Phạm vi: Bán kính 30km từ Mỹ Hào
+
+## Key Pages
+
+- [Homepage (Vietnamese)](https://vantaigiangkhoi.com/vi): Trang chủ với bảng giá, dịch vụ, khu vực phục vụ
+- [Homepage (Chinese)](https://vantaigiangkhoi.com/zh): 首页 — 价格表、服务项目、服务区域
+- [Pricing](https://vantaigiangkhoi.com/vi/bang-gia): Bảng giá chi tiết thuê xe cẩu theo tải trọng
+- [About](https://vantaigiangkhoi.com/vi/ve-chung-toi): Giới thiệu công ty
+- [Contact](https://vantaigiangkhoi.com/vi/lien-he): Liên hệ
+
+## Services
+- [Cứu hộ xe tải lật](https://vantaigiangkhoi.com/vi/dich-vu/cuu-ho-xe-tai-lat)
+- [Cẩu bồn nước](https://vantaigiangkhoi.com/vi/dich-vu/cau-bon-nuoc)
+- [Cẩu vật liệu xây nhà](https://vantaigiangkhoi.com/vi/dich-vu/cau-vat-lieu-xay-nha)
+- [Cẩu máy móc xưởng](https://vantaigiangkhoi.com/vi/dich-vu/cau-may-mong-xuong)
+- [Cẩu container](https://vantaigiangkhoi.com/vi/dich-vu/cau-container)
+- [Cẩu cây cảnh](https://vantaigiangkhoi.com/vi/dich-vu/cau-cay-canh)
+
+## Pricing (VND, per 8-hour shift, excludes VAT)
+| Tonnage | Price/Shift | Monthly |
+|---------|-------------|---------|
+| 3.5T–5T | 2,800,000–3,400,000 | 45M–52M |
+| 8T–10T | 4,000,000–4,500,000 | 60M–70M |
+| 15T–25T | 5,500,000–7,500,000 | 75M–90M |
+| 50T | 7,500,000–9,400,000 | 90M–100M |
+| 80T–100T | 13,500,000–16,900,000 | 180M–200M |
+
+## Service Areas
+Mỹ Hào (15 min), Văn Lâm (20 min), Yên Mỹ (20 min), Ân Thi (25 min),
+Văn Giang (25 min), Khoái Châu (30 min), Phố Nối (15 min), TP Hưng Yên (30 min)

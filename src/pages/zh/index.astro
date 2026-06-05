@@ -1,0 +1,431 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('zh');
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "兴安江开运输贸易服务有限公司",
+    "description": t('site.description'),
+    "url": "https://vantaigiangkhoi.com/zh",
+    "telephone": "+84971491174",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "白三坊",
+      "addressLocality": "美豪",
+      "addressRegion": "兴安省",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "20.9397",
+      "longitude": "106.0681"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$$"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "在兴安省租吊车多少钱？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "兴安省吊车租赁价格从3.5吨吊车每班（8小时）280万越南盾起，到100吨吊车每班1690万越南盾。价格不含增值税和运输费。请拨打0971 491 174获取准确报价。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "江开吊车多久能到达？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "车队驻扎在兴安省美豪市。在30公里范围内（包括美豪、文林、安美、安市、文江、快州、富内），吊车接到电话后30分钟内到达。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "江开有多少台吊车？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "江开拥有6台不同载重的吊车，从3.5吨到100吨，满足从民用吊装水箱到工业CNC设备搬迁、事故车辆救援等各种需求。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "租吊车需要预付定金吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不需要。江开承诺完工后付款政策——工作完成后再付款。无需预付定金。10年信誉保证。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "吊车有安全证书吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "有。江开所有6台吊车均具备：有效的安全技术检验证书、驾驶员专业执照和操作证书、设备保险和第三方责任保险。所有车辆均可进入各工业区。"
+        }
+      }
+    ]
+  }
+];
+
+const services = [
+  { icon: '🚨', title: '翻车救援', desc: '快速处理翻车、集装箱掉落事故。30分钟到达。', href: '/zh/fu-wu/jiu-yuan-fan-che', img: '/images/services/cuu-ho-xe-tai-lat.png' },
+  { icon: '💧', title: '吊装水箱', desc: '安全将不锈钢水箱吊装至楼顶。', href: '/zh/fu-wu/diao-shui-xiang', img: '/images/services/cau-bon-nuoc-inox.png' },
+  { icon: '🧱', title: '吊装建材', desc: '吊装钢材、砖块、混凝土等建筑材料。', href: '/zh/fu-wu/diao-jian-cai', img: '/images/services/cau-vat-lieu-xay-nha.png' },
+  { icon: '🏭', title: '吊装设备', desc: '搬迁CNC机床、冲压机等工业设备。', href: '/zh/fu-wu/diao-ji-qi', img: '/images/services/cau-may-moc-xuong.png' },
+  { icon: '📦', title: '吊装集装箱', desc: '集装箱装卸，港口仓库货物搬运。', href: '/zh/fu-wu/diao-ji-zhuang-xiang', img: '/images/services/cau-container.png' },
+  { icon: '🌳', title: '吊装景观树', desc: '大型景观树木、绿化工程安全吊装。', href: '/zh/fu-wu/diao-jing-guan-shu', img: '/images/services/cau-cay-canh.png' },
+];
+
+const pricing = [
+  { tonnage: '3.5吨 – 5吨', perShift: '280万 – 340万越南盾', perMonth: '4500万 – 5200万', note: '小型吊车，民用' },
+  { tonnage: '8吨 – 10吨', perShift: '400万 – 450万越南盾', perMonth: '6000万 – 7000万', note: '自行式吊车，建筑' },
+  { tonnage: '15吨 – 25吨', perShift: '550万 – 750万越南盾', perMonth: '7500万 – 9000万', note: '中型吊车，集装箱' },
+  { tonnage: '50吨', perShift: '750万 – 940万越南盾', perMonth: '9000万 – 1亿', note: 'Kato专用吊车' },
+  { tonnage: '80吨 – 100吨', perShift: '1350万 – 1690万越南盾', perMonth: '1.8亿 – 2亿', note: '重型吊车，大型工程' },
+];
+
+const areas = [
+  { name: '美豪', time: '15分钟', slug: 'mi-hao' },
+  { name: '文林', time: '20分钟', slug: 'wen-lin' },
+  { name: '安美', time: '20分钟', slug: 'an-mei' },
+  { name: '安市', time: '25分钟', slug: 'an-shi' },
+  { name: '文江', time: '25分钟', slug: 'wen-jiang' },
+  { name: '快州', time: '30分钟', slug: 'kuai-zhou' },
+  { name: '富内', time: '15分钟', slug: 'phu-noi' },
+  { name: '兴安市', time: '30分钟', slug: 'xing-an' },
+];
+
+const testimonials = [
+  { name: '阮先生', role: '建筑承包商，美豪', quote: '晚上11点打电话，集装箱翻在工业区门口。25分钟江开就到了，2小时搞定。非常专业！', initial: '阮' },
+  { name: '黄女士', role: '房主，文林', quote: '2000升水箱吊到4楼。报价200万，没有额外费用。非常满意！', initial: '黄' },
+  { name: '陈先生', role: '工厂经理，富内工业区', quote: '搬迁3台CNC机床，每台8吨。江开团队工作仔细，包装严密，没有损坏。会再次合作。', initial: '陈' },
+];
+
+const fleet = [
+  { name: '3.5吨吊车', desc: '小型民用，吊装水箱', type: 'UNIC' },
+  { name: '5吨吊车', desc: '建材吊装，屋顶钢架', type: 'UNIC' },
+  { name: '8吨吊车', desc: '空集装箱，小型设备', type: 'Kanglim' },
+  { name: '15吨吊车', desc: '工业设备，事故救援', type: 'Kanglim' },
+  { name: '25吨吊车', desc: '重型集装箱，钢梁', type: 'Kato' },
+  { name: '100吨吊车', desc: '重型吊装，大型工程', type: 'Kato' },
+];
+---
+
+<BaseLayout 
+  title={t('meta.homeTitle')} 
+  description={t('meta.homeDesc')} 
+  jsonLd={jsonLd}
+>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="/images/hero/xe-cau-giang-khoi-kcn-hung-yen.png" alt="江开吊车在兴安省工业区作业" width="1920" height="1080" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badges">
+        <span class="badge badge-success">
+          <span class="pulse-dot"></span>
+          {t('hero.trust3')}
+        </span>
+        <span class="badge badge-primary">{t('hero.trust1')}</span>
+      </div>
+      <h1>{t('hero.title')}<br/><span class="text-highlight">{t('hero.subtitle')}</span></h1>
+      <p class="hero-desc">{t('hero.description')}</p>
+      <div class="hero-ctas">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg" id="hero-call-cta-zh">
+          📞 {t('cta.callNow')} — {t('site.phoneDisplay')}
+        </a>
+        <a href="#jia-ge" class="btn btn-outline btn-lg">
+          💰 {t('cta.viewPricing')}
+        </a>
+      </div>
+      <div class="hero-trust-row">
+        <span>✅ {t('hero.trust1')}</span>
+        <span>✅ {t('hero.trust2')}</span>
+        <span>✅ {t('hero.trust3')}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP SECTION -->
+  <section class="section usp-section" id="you-shi">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('usp.title')}</h2>
+        <p>{t('usp.subtitle')}</p>
+      </div>
+      <div class="grid grid-3 usp-grid">
+        <div class="usp-card">
+          <div class="usp-icon">⚡</div>
+          <h3>{t('usp.item1_title')}</h3>
+          <p>{t('usp.item1_desc')}</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">💎</div>
+          <h3>{t('usp.item2_title')}</h3>
+          <p>{t('usp.item2_desc')}</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">🤝</div>
+          <h3>{t('usp.item3_title')}</h3>
+          <p>{t('usp.item3_desc')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section" id="fu-wu">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('services.title')}</h2>
+        <p>{t('services.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {services.map((svc) => (
+          <a href={svc.href} class="card service-card">
+            <div class="card-image">
+              <img src={svc.img} alt={`${svc.title} - 江开起重兴安省 [示意图]`} width="400" height="250" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <span class="service-icon">{svc.icon}</span>
+              <h3>{svc.title}</h3>
+              <p>{svc.desc}</p>
+              <span class="card-link">{t('cta.learnMore')} →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="section" id="jia-ge">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('pricing.title')}</h2>
+        <p>{t('pricing.subtitle')}</p>
+      </div>
+      <div class="price-table-wrapper">
+        <table class="price-table" id="pricing-table-zh">
+          <thead>
+            <tr>
+              <th>{t('pricing.tonnage')}</th>
+              <th>{t('pricing.pricePerShift')}</th>
+              <th>{t('pricing.pricePerMonth')}</th>
+              <th>{t('pricing.note')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricing.map((row) => (
+              <tr>
+                <td><strong>{row.tonnage}</strong></td>
+                <td class="price-value">{row.perShift}</td>
+                <td class="price-value">{row.perMonth}</td>
+                <td>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note">{t('pricing.vat_note')}</p>
+      <p class="price-urgent">{t('pricing.urgent_note')}</p>
+      <div class="text-center" style="margin-top: var(--space-6);">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg">
+          📞 {t('cta.getQuote')} — {t('site.phoneDisplay')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE AREA -->
+  <section class="section" id="qu-yu">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('areas.title')}</h2>
+        <p>{t('areas.subtitle')}</p>
+      </div>
+      <div class="grid grid-3 area-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        {areas.map((area) => (
+          <a href={`/zh/qu-yu/${area.slug}`} class="area-card">
+            <div class="area-name">📍 {area.name}</div>
+            <div class="area-time">{t('areas.responseTime')} <strong>{area.time}</strong></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET SECTION -->
+  <section class="section" id="che-dui">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('fleet.title')}</h2>
+        <p>{t('fleet.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {fleet.map((truck) => (
+          <div class="card fleet-card">
+            <div class="fleet-icon">🏗️</div>
+            <h3>{truck.name}</h3>
+            <p class="fleet-type">{truck.type}</p>
+            <p>{truck.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="ping-jia">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('testimonials.title')}</h2>
+        <p>{t('testimonials.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {testimonials.map((item) => (
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">{item.quote}</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{item.initial}</div>
+              <div>
+                <div class="testimonial-name">{item.name}</div>
+                <div class="testimonial-role">{item.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" id="chang-jian-wen-ti">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('faq.title')}</h2>
+        <p>{t('faq.subtitle')}</p>
+      </div>
+      <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+        {jsonLd[1].mainEntity.map((faq: any) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>{faq.name}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>{faq.acceptedAnswer.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section cta-section" id="lian-xi">
+    <div class="container text-center">
+      <h2>紧急需要吊车？<br/><span class="text-highlight">立即拨打 — 30分钟到达！</span></h2>
+      <p class="cta-desc">6台吊车全天候24/7待命。免费电话或Zalo报价。</p>
+      <div class="cta-buttons">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg">
+          📞 {t('site.phoneDisplay')}
+        </a>
+        <a href={t('site.zalo')} class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+          💬 {t('cta.zaloChat')}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Reuse the same styles from Vietnamese homepage */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.5) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-16) 0;
+    max-width: 700px;
+  }
+  .hero-badges {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+  }
+  .hero-badges .pulse-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--color-success); animation: pulse 2s ease-in-out infinite;
+  }
+  .hero h1 { margin-bottom: var(--space-6); line-height: 1.1; }
+  .text-highlight { color: var(--color-primary); }
+  .hero-desc { font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 600px; }
+  .hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-8); }
+  .hero-trust-row { display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: var(--text-sm); color: var(--color-text-secondary); }
+  .usp-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); text-align: center; transition: all var(--transition-base); }
+  .usp-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-glow); transform: translateY(-4px); }
+  .usp-icon { font-size: 3rem; margin-bottom: var(--space-4); }
+  .usp-card h3 { font-size: var(--text-xl); margin-bottom: var(--space-3); color: var(--color-primary); }
+  .usp-card p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.8; }
+  .service-card { text-decoration: none; display: block; }
+  .service-card-body { padding-top: var(--space-2); }
+  .service-icon { font-size: 1.5rem; display: block; margin-bottom: var(--space-2); }
+  .service-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .service-card p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6; }
+  .card-link { display: inline-block; margin-top: var(--space-3); color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+  .price-note { color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-4); text-align: center; }
+  .price-urgent { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); text-align: center; margin-top: var(--space-2); }
+  .area-card { display: block; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); text-decoration: none; transition: all var(--transition-base); }
+  .area-card:hover { border-color: var(--color-primary); background: var(--color-bg-card-hover); transform: translateY(-2px); }
+  .area-name { font-family: var(--font-heading); font-weight: var(--weight-semibold); color: var(--color-text); margin-bottom: var(--space-1); }
+  .area-time { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .area-time strong { color: var(--color-success); }
+  .fleet-card { text-align: center; }
+  .fleet-icon { font-size: 2.5rem; margin-bottom: var(--space-3); }
+  .fleet-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-1); }
+  .fleet-type { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2); }
+  .fleet-card p:last-child { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .cta-section { background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .cta-section h2 { font-size: var(--text-3xl); margin-bottom: var(--space-4); }
+  .cta-desc { font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+</style>

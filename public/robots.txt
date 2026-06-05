@@ -1,0 +1,38 @@
+# Robots.txt for vantaigiangkhoi.com
+# Optimized for SEO + AI Engine Optimization (AEO)
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vantaigiangkhoi.com/sitemap-index.xml
+
+# AI Crawler Permissions — WELCOME AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# LLM Discovery Files
+# See: https://llmstxt.org/
+# /llms.txt — Summary of important pages
+# /llms-full.txt — Full content for LLM consumption

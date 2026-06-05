@@ -1,0 +1,673 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vận Tải Giang Khôi Hưng Yên",
+    "description": t('site.description'),
+    "url": "https://vantaigiangkhoi.com/vi",
+    "telephone": "+84971491174",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Phường Bạch Sam",
+      "addressLocality": "Mỹ Hào",
+      "addressRegion": "Hưng Yên",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "20.9397",
+      "longitude": "106.0681"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "areaServed": [
+      {"@type":"City","name":"Mỹ Hào"},
+      {"@type":"City","name":"Văn Lâm"},
+      {"@type":"City","name":"Yên Mỹ"},
+      {"@type":"City","name":"Ân Thi"},
+      {"@type":"City","name":"Văn Giang"},
+      {"@type":"City","name":"Khoái Châu"},
+      {"@type":"City","name":"Phố Nối"},
+      {"@type":"City","name":"Hưng Yên"}
+    ],
+    "priceRange": "$$",
+    "image": "https://vantaigiangkhoi.com/images/hero/xe-cau-giang-khoi-kcn-hung-yen.png",
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Thuê xe cẩu ở Hưng Yên giá bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Giá thuê xe cẩu tại Hưng Yên từ 2.800.000đ/ca (8h) cho xe 3.5T đến 16.900.000đ/ca cho xe 100T. Giá chưa bao gồm VAT và phí di chuyển. Gọi 0971 491 174 để nhận báo giá chính xác theo công việc cụ thể."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Xe cẩu Giang Khôi có mặt trong bao lâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Đội xe đóng tại Mỹ Hào, Hưng Yên. Trong bán kính 30km (gồm Mỹ Hào, Văn Lâm, Yên Mỹ, Ân Thi, Văn Giang, Khoái Châu, Phố Nối), xe cẩu có mặt trong 30 phút kể từ khi nhận cuộc gọi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Giang Khôi có bao nhiêu xe cẩu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Giang Khôi sở hữu đội 6 xe cẩu đa dạng tải trọng từ 3.5 tấn đến 100 tấn, đáp ứng mọi nhu cầu từ cẩu bồn nước dân dụng đến cứu hộ xe tải lật, di dời máy CNC công nghiệp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Có cần đặt cọc trước khi thuê xe cẩu không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Không. Giang Khôi cam kết chính sách Trả tiền sau — xong việc mới thanh toán. Không yêu cầu đặt cọc trước. 10 năm uy tín bảo chứng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Xe cẩu Giang Khôi phục vụ những khu vực nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Giang Khôi phục vụ trong bán kính 30km từ Mỹ Hào, gồm: Mỹ Hào, Văn Lâm, Yên Mỹ, Ân Thi, Văn Giang, Khoái Châu, Phố Nối, TP Hưng Yên, và một phần Hải Dương, Bắc Ninh, Hà Nam."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cẩu bồn nước inox lên mái nhà phố giá bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Giá cẩu bồn nước inox 500L-2000L lên mái nhà phố tại Hưng Yên từ 1.500.000đ đến 2.500.000đ tùy vị trí và độ cao. Bao gồm xe cẩu 3.5T-5T và tài xế. Gọi 0971 491 174 để báo giá chính xác."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Xe cẩu 8 tấn có cẩu được container 40 feet không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Container 40 feet rỗng nặng khoảng 3.8 tấn, xe cẩu 8 tấn ĐỦ SỨC cẩu. Tuy nhiên, container đầy hàng có thể nặng 20-30 tấn, cần xe cẩu 25T-50T. Gọi Giang Khôi để tư vấn chính xác theo tải trọng thực tế."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Giang Khôi có phục vụ ngoài giờ hành chính không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Giang Khôi phục vụ 24/7, kể cả ngày lễ và Tết. Đặc biệt, dịch vụ cứu hộ xe tải lật, rút container gấp luôn sẵn sàng bất kể thời gian nào."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Thuê xe cẩu dài ngày có giảm giá không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Giang Khôi có chính sách giá ưu đãi cho thuê xe cẩu theo tuần hoặc theo tháng. Giá thuê tháng xe cẩu 3.5T từ 45 triệu, xe 10T từ 60 triệu. Gọi để đàm phán giá tốt nhất."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Xe cẩu Giang Khôi có đầy đủ giấy tờ an toàn không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Toàn bộ 6 xe cẩu của Giang Khôi đều có đầy đủ: Giấy kiểm định an toàn kỹ thuật còn hạn, bằng lái chuyên nghiệp và chứng chỉ vận hành của tài xế, bảo hiểm thiết bị và bảo hiểm bên thứ 3. Xe được phép vào tất cả KCN."
+        }
+      }
+    ]
+  }
+];
+
+const services = [
+  { icon: '🚨', title: 'Cứu hộ xe tải lật', desc: 'Xử lý nhanh xe tải lật, container rơi. Có mặt trong 30 phút.', href: '/vi/dich-vu/cuu-ho-xe-tai-lat', img: '/images/services/cuu-ho-xe-tai-lat.png' },
+  { icon: '💧', title: 'Cẩu bồn nước', desc: 'Cẩu bồn nước inox lên mái nhà phố, biệt thự an toàn.', href: '/vi/dich-vu/cau-bon-nuoc', img: '/images/services/cau-bon-nuoc-inox.png' },
+  { icon: '🧱', title: 'Cẩu vật liệu xây nhà', desc: 'Cẩu sắt thép, gạch, bê tông cho công trình xây dựng.', href: '/vi/dich-vu/cau-vat-lieu-xay-nha', img: '/images/services/cau-vat-lieu-xay-nha.png' },
+  { icon: '🏭', title: 'Cẩu máy móc xưởng', desc: 'Di dời máy CNC, máy dập, thiết bị công nghiệp.', href: '/vi/dich-vu/cau-may-mong-xuong', img: '/images/services/cau-may-moc-xuong.png' },
+  { icon: '📦', title: 'Cẩu container', desc: 'Rút container, nâng hạ hàng hóa tại cảng và kho bãi.', href: '/vi/dich-vu/cau-container', img: '/images/services/cau-container.png' },
+  { icon: '🌳', title: 'Cẩu cây cảnh', desc: 'Cẩu cây cảnh lớn, cây công trình nhẹ nhàng an toàn.', href: '/vi/dich-vu/cau-cay-canh', img: '/images/services/cau-cay-canh.png' },
+];
+
+const pricing = [
+  { tonnage: '3.5T – 5T', perShift: '2.800.000 – 3.400.000đ', perMonth: '45 – 52 triệu', note: 'Cẩu mini, dân dụng' },
+  { tonnage: '8T – 10T', perShift: '4.000.000 – 4.500.000đ', perMonth: '60 – 70 triệu', note: 'Cẩu tự hành, xây dựng' },
+  { tonnage: '15T – 25T', perShift: '5.500.000 – 7.500.000đ', perMonth: '75 – 90 triệu', note: 'Cẩu trung, container' },
+  { tonnage: '50T', perShift: '7.500.000 – 9.400.000đ', perMonth: '90 – 100 triệu', note: 'Cẩu Kato chuyên dụng' },
+  { tonnage: '80T – 100T', perShift: '13.500.000 – 16.900.000đ', perMonth: '180 – 200 triệu', note: 'Cẩu nặng, công trình lớn' },
+];
+
+const areas = [
+  { name: 'Mỹ Hào', time: '15 phút', slug: 'my-hao' },
+  { name: 'Văn Lâm', time: '20 phút', slug: 'van-lam' },
+  { name: 'Yên Mỹ', time: '20 phút', slug: 'yen-my' },
+  { name: 'Ân Thi', time: '25 phút', slug: 'an-thi' },
+  { name: 'Văn Giang', time: '25 phút', slug: 'van-giang' },
+  { name: 'Khoái Châu', time: '30 phút', slug: 'khoai-chau' },
+  { name: 'Phố Nối', time: '15 phút', slug: 'pho-noi' },
+  { name: 'TP Hưng Yên', time: '30 phút', slug: 'hung-yen' },
+];
+
+const testimonials = [
+  { name: 'Anh Tuấn', role: 'Chủ thầu xây dựng, Mỹ Hào', quote: 'Gọi lúc 11h đêm vì xe container lật trước cổng KCN. 25 phút là Giang Khôi có mặt, xử lý gọn trong 2 tiếng. Chuyên nghiệp!', initial: 'T' },
+  { name: 'Chị Hương', role: 'Chủ nhà, Văn Lâm', quote: 'Cẩu bồn nước 2000L lên tầng 4 nhà phố. Báo giá 2 triệu, không phát sinh thêm đồng nào. Rất hài lòng!', initial: 'H' },
+  { name: 'Anh Minh', role: 'Quản lý xưởng, KCN Phố Nối', quote: 'Di dời 3 máy CNC nặng 8 tấn/máy. Đội ngũ Giang Khôi làm việc cẩn thận, đóng gói kỹ, không hư hại gì. Sẽ thuê lại.', initial: 'M' },
+];
+
+const fleet = [
+  { name: 'Xe cẩu 3.5 tấn', desc: 'Cẩu mini, dân dụng, cẩu bồn nước', type: 'UNIC' },
+  { name: 'Xe cẩu 5 tấn', desc: 'Cẩu vật liệu xây nhà, mái tôn', type: 'UNIC' },
+  { name: 'Xe cẩu 8 tấn', desc: 'Cẩu container rỗng, máy nhỏ', type: 'Kanglim' },
+  { name: 'Xe cẩu 15 tấn', desc: 'Cẩu máy công nghiệp, cứu hộ', type: 'Kanglim' },
+  { name: 'Xe cẩu 25 tấn', desc: 'Cẩu container nặng, dầm thép', type: 'Kato' },
+  { name: 'Xe cẩu 100 tấn', desc: 'Cẩu nặng, công trình lớn', type: 'Kato' },
+];
+---
+
+<BaseLayout 
+  title={t('meta.homeTitle')} 
+  description={t('meta.homeDesc')} 
+  jsonLd={jsonLd}
+>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="/images/hero/xe-cau-giang-khoi-kcn-hung-yen.png" alt="Xe cẩu Giang Khôi đang làm việc tại khu công nghiệp Hưng Yên" width="1920" height="1080" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badges">
+        <span class="badge badge-success">
+          <span class="pulse-dot"></span>
+          {t('hero.trust3')}
+        </span>
+        <span class="badge badge-primary">{t('hero.trust1')}</span>
+      </div>
+      <h1>{t('hero.title')}<br/><span class="text-highlight">{t('hero.subtitle')}</span></h1>
+      <p class="hero-desc">{t('hero.description')}</p>
+      <div class="hero-ctas">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg" id="hero-call-cta">
+          📞 {t('cta.callNow')} — {t('site.phoneDisplay')}
+        </a>
+        <a href="#bang-gia" class="btn btn-outline btn-lg">
+          💰 {t('cta.viewPricing')}
+        </a>
+      </div>
+      <div class="hero-trust-row">
+        <span>✅ {t('hero.trust1')}</span>
+        <span>✅ {t('hero.trust2')}</span>
+        <span>✅ {t('hero.trust3')}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP SECTION -->
+  <section class="section usp-section" id="usp">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('usp.title')}</h2>
+        <p>{t('usp.subtitle')}</p>
+      </div>
+      <div class="grid grid-3 usp-grid">
+        <div class="usp-card">
+          <div class="usp-icon">⚡</div>
+          <h3>{t('usp.item1_title')}</h3>
+          <p>{t('usp.item1_desc')}</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">💎</div>
+          <h3>{t('usp.item2_title')}</h3>
+          <p>{t('usp.item2_desc')}</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">🤝</div>
+          <h3>{t('usp.item3_title')}</h3>
+          <p>{t('usp.item3_desc')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section" id="dich-vu">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('services.title')}</h2>
+        <p>{t('services.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {services.map((svc) => (
+          <a href={svc.href} class="card service-card" id={`service-${svc.href.split('/').pop()}`}>
+            <div class="card-image">
+              <img src={svc.img} alt={`${svc.title} - Xe cẩu Giang Khôi Hưng Yên [Ảnh minh họa]`} width="400" height="250" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <span class="service-icon">{svc.icon}</span>
+              <h3>{svc.title}</h3>
+              <p>{svc.desc}</p>
+              <span class="card-link">{t('cta.learnMore')} →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: var(--space-8);">
+        <a href="/vi/dich-vu" class="btn btn-outline">{t('cta.allServices')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="section" id="bang-gia">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('pricing.title')}</h2>
+        <p>{t('pricing.subtitle')}</p>
+      </div>
+      <div class="price-table-wrapper">
+        <table class="price-table" id="pricing-table">
+          <thead>
+            <tr>
+              <th>{t('pricing.tonnage')}</th>
+              <th>{t('pricing.pricePerShift')}</th>
+              <th>{t('pricing.pricePerMonth')}</th>
+              <th>{t('pricing.note')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricing.map((row) => (
+              <tr>
+                <td><strong>{row.tonnage}</strong></td>
+                <td class="price-value">{row.perShift}</td>
+                <td class="price-value">{row.perMonth}</td>
+                <td>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note">{t('pricing.vat_note')}</p>
+      <p class="price-urgent">{t('pricing.urgent_note')}</p>
+      <div class="text-center" style="margin-top: var(--space-6);">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg">
+          📞 {t('cta.getQuote')} — {t('site.phoneDisplay')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE AREA -->
+  <section class="section" id="khu-vuc">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('areas.title')}</h2>
+        <p>{t('areas.subtitle')}</p>
+      </div>
+      <div class="grid grid-3 area-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        {areas.map((area) => (
+          <a href={`/vi/khu-vuc/${area.slug}`} class="area-card" id={`area-${area.slug}`}>
+            <div class="area-name">📍 {area.name}</div>
+            <div class="area-time">{t('areas.responseTime')} <strong>{area.time}</strong></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET SECTION -->
+  <section class="section" id="doan-xe">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('fleet.title')}</h2>
+        <p>{t('fleet.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {fleet.map((truck) => (
+          <div class="card fleet-card">
+            <div class="fleet-icon">🏗️</div>
+            <h3>{truck.name}</h3>
+            <p class="fleet-type">{truck.type}</p>
+            <p>{truck.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="danh-gia">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('testimonials.title')}</h2>
+        <p>{t('testimonials.subtitle')}</p>
+      </div>
+      <div class="grid grid-3">
+        {testimonials.map((t) => (
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">{t.quote}</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{t.initial}</div>
+              <div>
+                <div class="testimonial-name">{t.name}</div>
+                <div class="testimonial-role">{t.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>{t('faq.title')}</h2>
+        <p>{t('faq.subtitle')}</p>
+      </div>
+      <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+        {jsonLd[1].mainEntity.map((faq: any) => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>{faq.name}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>{faq.acceptedAnswer.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section cta-section" id="lien-he">
+    <div class="container text-center">
+      <h2>Cần cẩu GẤP?<br/><span class="text-highlight">Gọi ngay — Có mặt trong 30 phút!</span></h2>
+      <p class="cta-desc">Đội 6 xe cẩu sẵn sàng 24/7. Báo giá miễn phí qua điện thoại hoặc Zalo.</p>
+      <div class="cta-buttons">
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary btn-lg">
+          📞 {t('site.phoneDisplay')}
+        </a>
+        <a href={t('site.zalo')} class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+          💬 {t('cta.zaloChat')}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.9) 0%,
+      rgba(10, 10, 10, 0.7) 40%,
+      rgba(10, 10, 10, 0.5) 100%
+    );
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-16) 0;
+    max-width: 700px;
+  }
+  
+  .hero-badges {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .hero-badges .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .hero h1 {
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+  }
+  
+  .text-highlight {
+    color: var(--color-primary);
+  }
+  
+  .hero-desc {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+  }
+  
+  .hero-ctas {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+  }
+  
+  .hero-trust-row {
+    display: flex;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+  
+  /* USP Cards */
+  .usp-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+  
+  .usp-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+  
+  .usp-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+  
+  .usp-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+  }
+  
+  .usp-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+  }
+  
+  /* Service Cards */
+  .service-card {
+    text-decoration: none;
+    display: block;
+  }
+  
+  .service-card-body {
+    padding-top: var(--space-2);
+  }
+  
+  .service-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+  
+  .service-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+  
+  .service-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+  
+  .card-link {
+    display: inline-block;
+    margin-top: var(--space-3);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    transition: gap var(--transition-fast);
+  }
+  
+  /* Pricing notes */
+  .price-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-top: var(--space-4);
+    text-align: center;
+  }
+  
+  .price-urgent {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-align: center;
+    margin-top: var(--space-2);
+  }
+  
+  /* Area Cards */
+  .area-card {
+    display: block;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+  
+  .area-card:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-card-hover);
+    transform: translateY(-2px);
+  }
+  
+  .area-name {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+  
+  .area-time {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  
+  .area-time strong {
+    color: var(--color-success);
+  }
+  
+  /* Fleet Cards */
+  .fleet-card {
+    text-align: center;
+  }
+  
+  .fleet-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-3);
+  }
+  
+  .fleet-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+  }
+  
+  .fleet-type {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+  
+  .fleet-card p:last-child {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg) 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .cta-section h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .cta-desc {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

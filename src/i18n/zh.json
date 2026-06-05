@@ -1,0 +1,100 @@
+{
+  "site": {
+    "name": "江开起重",
+    "tagline": "兴安省30分钟到达",
+    "description": "兴安省3.5吨至100吨吊车租赁服务。30分钟到达，价格透明，完工后付款。热线：0971 491 174",
+    "phone": "0971491174",
+    "phoneDisplay": "0971 491 174",
+    "zalo": "https://zalo.me/0971491174",
+    "address": "兴安省美豪市白三坊",
+    "company": "兴安江开运输贸易服务有限公司"
+  },
+  "nav": {
+    "home": "首页",
+    "services": "服务项目",
+    "areas": "服务区域",
+    "pricing": "价格表",
+    "about": "关于我们",
+    "blog": "资讯",
+    "contact": "联系我们"
+  },
+  "cta": {
+    "callNow": "立即拨打",
+    "getQuote": "立即报价",
+    "bookCrane": "预约吊车",
+    "zaloChat": "Zalo咨询",
+    "viewPricing": "查看价格",
+    "learnMore": "了解更多",
+    "allServices": "全部服务",
+    "callFree": "免费咨询电话"
+  },
+  "hero": {
+    "title": "江开起重",
+    "subtitle": "兴安省30分钟到达",
+    "description": "6台吊车，载重3.5吨至100吨，30公里范围内24/7服务。价格透明 — 完工后付款。",
+    "trust1": "10年经验",
+    "trust2": "6台随时待命",
+    "trust3": "全天候服务"
+  },
+  "usp": {
+    "title": "为什么选择江开？",
+    "subtitle": "三大保障让您安心",
+    "item1_title": "30分钟到达",
+    "item1_desc": "车队驻扎美豪，接到电话立即调配。服务半径30公里。",
+    "item2_title": "价格透明",
+    "item2_desc": "按载重和距离固定报价。无额外费用、无隐藏收费。一个电话即知价格。",
+    "item3_title": "完工后付款",
+    "item3_desc": "工作完成后再付款。无需预付定金。10年信誉保证。"
+  },
+  "services": {
+    "title": "热门服务",
+    "subtitle": "从紧急救援到工程安装"
+  },
+  "pricing": {
+    "title": "吊车租赁价格表",
+    "subtitle": "2026年6月更新 — 致电获取精确报价",
+    "tonnage": "载重",
+    "pricePerShift": "价格/班 (8小时)",
+    "pricePerMonth": "月租价格",
+    "note": "备注",
+    "vat_note": "* 价格不含增值税、过路费和燃料费。请致电获取根据具体工作的精确报价。",
+    "urgent_note": "💡 紧急吊装：30分钟到达，价格可能上浮15-20%。"
+  },
+  "areas": {
+    "title": "服务区域",
+    "subtitle": "以兴安省美豪为中心，半径30公里",
+    "responseTime": "到达时间："
+  },
+  "fleet": {
+    "title": "6台车队",
+    "subtitle": "多种载重，满足各类需求"
+  },
+  "testimonials": {
+    "title": "客户评价",
+    "subtitle": "数百个工程项目的信赖之选"
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "快速解答您的常见疑问"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "立即拨打或留下信息，我们将在5分钟内回电",
+    "name": "姓名",
+    "phone": "电话号码",
+    "message": "描述您的吊装需求",
+    "submit": "提交需求",
+    "success": "提交成功！我们将在5分钟内回电。"
+  },
+  "footer": {
+    "copyright": "© 2026 兴安江开运输。保留所有权利。",
+    "quickLinks": "快速链接",
+    "contactInfo": "联系信息",
+    "serviceHours": "服务时间",
+    "hours": "全天候24/7 — 含节假日"
+  },
+  "meta": {
+    "homeTitle": "江开起重 — 兴安省3.5吨至100吨吊车租赁 | 30分钟到达",
+    "homeDesc": "兴安省专业吊车租赁服务。6台吊车，载重3.5吨至100吨，30分钟到达。价格透明、完工后付款。热线：0971 491 174"
+  }
+}

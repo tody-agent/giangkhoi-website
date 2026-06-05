@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const locations = [
+    { slug: 'my-hao', name: 'Mỹ Hào', time: '15 phút', desc: 'Trung tâm đội xe Giang Khôi. Phục vụ nhanh nhất — chỉ 15 phút có mặt.', kcn: ['KCN Phố Nối A mở rộng', 'KCN Minh Đức', 'Cụm CN Dị Sử'], pop: 'Thị xã Mỹ Hào với dân số ~130.000 người là trung tâm công nghiệp lớn nhất Hưng Yên. Tập trung nhiều nhà máy FDI từ Hàn Quốc, Nhật Bản, Trung Quốc.' },
+    { slug: 'van-lam', name: 'Văn Lâm', time: '20 phút', desc: 'Giáp Hà Nội, nhiều công trình xây dựng khu đô thị mới.', kcn: ['KCN Như Quỳnh', 'Cụm CN Tân Quang'], pop: 'Huyện Văn Lâm nằm sát Hà Nội, là vùng phát triển đô thị nhanh nhất Hưng Yên với nhiều dự án khu đô thị và nhà ở mới.' },
+    { slug: 'yen-my', name: 'Yên Mỹ', time: '20 phút', desc: 'Khu vực phát triển công nghiệp mạnh, nhiều nhà máy mới.', kcn: ['KCN Yên Mỹ', 'KCN Yên Mỹ II', 'Cụm CN Ngọc Long'], pop: 'Huyện Yên Mỹ đang bùng nổ phát triển công nghiệp với 2 KCN lớn và nhiều cụm công nghiệp, thu hút nhiều vốn đầu tư FDI.' },
+    { slug: 'an-thi', name: 'Ân Thi', time: '25 phút', desc: 'Huyện nông nghiệp đang chuyển đổi sang công nghiệp.', kcn: ['KCN Ân Thi', 'Cụm CN Bãi Sậy'], pop: 'Huyện Ân Thi đang trong giai đoạn chuyển đổi từ nông nghiệp sang công nghiệp, nhiều công trình xây dựng hạ tầng và nhà xưởng mới.' },
+    { slug: 'van-giang', name: 'Văn Giang', time: '25 phút', desc: 'Khu vực Ecopark, nhiều biệt thự cần cẩu cây cảnh, bồn nước.', kcn: ['Khu đô thị Ecopark', 'Khu đô thị Dream City'], pop: 'Huyện Văn Giang nổi tiếng với khu đô thị Ecopark và nhiều khu biệt thự cao cấp. Nhu cầu cẩu cây cảnh, bồn nước, nội thất lớn cao.' },
+    { slug: 'khoai-chau', name: 'Khoái Châu', time: '30 phút', desc: 'Huyện đang phát triển hạ tầng giao thông, nhiều cầu đường mới.', kcn: ['Cụm CN Đại Tập', 'Cụm CN Tân Dân'], pop: 'Huyện Khoái Châu đang xây dựng nhiều công trình giao thông, cầu cống. Nhu cầu xe cẩu phục vụ xây dựng hạ tầng cao.' },
+    { slug: 'pho-noi', name: 'Phố Nối', time: '15 phút', desc: 'Thị trấn công nghiệp lớn, nhiều KCN tập trung.', kcn: ['KCN Phố Nối A', 'KCN Phố Nối B', 'KCN Thăng Long II'], pop: 'Phố Nối là trung tâm công nghiệp lớn nhất Hưng Yên với 3 KCN cấp quốc gia. Hàng trăm nhà máy FDI hoạt động, nhu cầu xe cẩu rất cao.' },
+    { slug: 'hung-yen', name: 'TP Hưng Yên', time: '30 phút', desc: 'Thành phố tỉnh lỵ, trung tâm hành chính Hưng Yên.', kcn: ['KCN Hưng Yên', 'Cụm CN TP Hưng Yên'], pop: 'TP Hưng Yên là trung tâm hành chính tỉnh lỵ, đang phát triển đô thị hóa nhanh với nhiều tòa nhà, chung cư và trung tâm thương mại mới.' },
+  ];
+  return locations.map(loc => ({ params: { slug: loc.slug }, props: loc }));
+}
+
+const { slug, name, time, desc, kcn, pop } = Astro.props;
+
+const services = [
+  { title: `Cứu hộ xe tải lật ${name}`, href: '/vi/dich-vu/cuu-ho-xe-tai-lat' },
+  { title: `Cẩu bồn nước ${name}`, href: '/vi/dich-vu/cau-bon-nuoc' },
+  { title: `Cẩu vật liệu xây nhà ${name}`, href: '/vi/dich-vu/cau-vat-lieu-xay-nha' },
+  { title: `Cẩu máy móc xưởng ${name}`, href: '/vi/dich-vu/cau-may-mong-xuong' },
+  { title: `Cẩu container ${name}`, href: '/vi/dich-vu/cau-container' },
+  { title: `Cẩu cây cảnh ${name}`, href: '/vi/dich-vu/cau-cay-canh' },
+  { title: `Cẩu mái tôn ${name}`, href: '/vi/dich-vu/cau-mai-ton-khung-keo' },
+];
+---
+
+<BaseLayout
+  title={`Cho Thuê Xe Cẩu ${name} — Có Mặt ${time} | Giang Khôi`}
+  description={`Dịch vụ cho thuê xe cẩu 3.5T-100T tại ${name}, Hưng Yên. Có mặt trong ${time}. Phục vụ 24/7. Gọi 0971 491 174.`}
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/vi">Trang chủ</a> › <a href="/vi/khu-vuc">Khu vực</a> › <span>{name}</span>
+      </nav>
+
+      <div class="location-hero">
+        <div class="location-badge">
+          <span class="pulse-dot"></span>
+          Có mặt trong {time}
+        </div>
+        <h1>Cho Thuê Xe Cẩu tại {name}</h1>
+        <p class="location-desc">{desc}</p>
+        <div class="hero-ctas">
+          <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi ngay — 0971 491 174</a>
+          <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Chat Zalo</a>
+        </div>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-main">
+          <h2>Về khu vực {name}</h2>
+          <p>{pop}</p>
+
+          <h2>Khu công nghiệp & cụm công nghiệp</h2>
+          <ul class="check-list">
+            {kcn.map((k: string) => <li>{k}</li>)}
+          </ul>
+
+          <h2>Dịch vụ xe cẩu tại {name}</h2>
+          <div class="service-links">
+            {services.map(svc => (
+              <a href={svc.href} class="service-link-card">
+                <span>{svc.title}</span>
+                <span class="arrow">→</span>
+              </a>
+            ))}
+          </div>
+
+          <h2>Bảng giá xe cẩu tại {name}</h2>
+          <div class="price-table-wrapper"><table class="price-table">
+            <thead><tr><th>Tải trọng</th><th>Giá/ca (8h)</th><th>Ghi chú</th></tr></thead>
+            <tbody>
+              <tr><td><strong>3.5T – 5T</strong></td><td class="price-value">2.800.000 – 3.400.000đ</td><td>Cẩu bồn nước, cây cảnh</td></tr>
+              <tr><td><strong>8T – 10T</strong></td><td class="price-value">4.000.000 – 4.500.000đ</td><td>Cẩu container, máy nhỏ</td></tr>
+              <tr><td><strong>15T – 25T</strong></td><td class="price-value">5.500.000 – 7.500.000đ</td><td>Cẩu máy CNC, kết cấu</td></tr>
+              <tr><td><strong>50T – 100T</strong></td><td class="price-value">9.400.000 – 16.900.000đ</td><td>Cẩu nặng, công trình lớn</td></tr>
+            </tbody>
+          </table></div>
+          <p class="price-note">* Giá tham khảo, chưa bao gồm VAT. Gọi 0971 491 174 để báo giá chính xác.</p>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cẩu tại {name}?</h3>
+            <p>Có mặt trong {time}!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width:100%;">📞 0971 491 174</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .location-hero { margin-bottom: var(--space-12); }
+  .location-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-full); color: var(--color-success); font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-4); }
+  .location-hero h1 { margin-bottom: var(--space-4); }
+  .location-desc { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); max-width: 700px; }
+  .hero-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .location-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .location-grid { grid-template-columns: 1fr 320px; } }
+  .location-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .location-main h2:first-child { margin-top: 0; }
+  .location-main > p { color: var(--color-text-secondary); line-height: 1.8; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '🏭'; position: absolute; left: 0; }
+  .service-links { display: grid; gap: var(--space-2); }
+  .service-link-card { display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); color: var(--color-text-secondary); text-decoration: none; font-size: var(--text-sm); transition: all var(--transition-fast); }
+  .service-link-card:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateX(4px); }
+  .arrow { color: var(--color-primary); }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+</style>

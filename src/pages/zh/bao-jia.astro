@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('zh');
+
+const pricingData = [
+  { tonnage: '3.5吨', perShift: '280万越南盾', perMonth: '4500万', suitable: '吊装水箱、小型景观树、轻型材料', brand: 'UNIC', reach: '8米' },
+  { tonnage: '5吨', perShift: '340万越南盾', perMonth: '5200万', suitable: '屋顶钢架、建筑材料', brand: 'UNIC', reach: '12米' },
+  { tonnage: '8吨', perShift: '400万越南盾', perMonth: '6000万', suitable: '空集装箱、小型设备、轻型救援', brand: 'Kanglim', reach: '15米' },
+  { tonnage: '10吨', perShift: '450万越南盾', perMonth: '7000万', suitable: 'CNC机床、小型工业设备', brand: 'Kanglim', reach: '18米' },
+  { tonnage: '15吨', perShift: '550万越南盾', perMonth: '7500万', suitable: '工业设备、卡车救援', brand: 'Kanglim', reach: '22米' },
+  { tonnage: '25吨', perShift: '750万越南盾', perMonth: '9000万', suitable: '重型集装箱、钢梁结构', brand: 'Kato', reach: '30米' },
+  { tonnage: '50吨', perShift: '940万越南盾', perMonth: '1亿', suitable: '重型设备、大型钢结构', brand: 'Kato', reach: '40米' },
+  { tonnage: '80吨', perShift: '1350万越南盾', perMonth: '1.8亿', suitable: '大型工程、桥梁、工厂', brand: 'Kato', reach: '50米' },
+  { tonnage: '100吨', perShift: '1690万越南盾', perMonth: '2亿', suitable: '超重型、特殊工程', brand: 'Kato', reach: '60米' },
+];
+---
+
+<BaseLayout
+  title="兴安省吊车租赁价格表 2026 — 江开起重 | 6月更新"
+  description="兴安省3.5吨至100吨吊车租赁价格表，2026年6月更新。按班次（8小时）和月租计价。致电0971 491 174获取精确报价。"
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">2026年6月更新</span>
+        <h1>兴安省吊车租赁价格表</h1>
+        <p>价格透明 — 无隐藏费用 — 完工后付款</p>
+      </div>
+
+      <div class="price-table-wrapper">
+        <table class="price-table" id="full-pricing-table-zh">
+          <thead>
+            <tr>
+              <th>载重</th>
+              <th>品牌</th>
+              <th>臂展</th>
+              <th>价格/班 (8h)</th>
+              <th>月租价格</th>
+              <th>适用场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingData.map((row) => (
+              <tr>
+                <td><strong>{row.tonnage}</strong></td>
+                <td>{row.brand}</td>
+                <td>{row.reach}</td>
+                <td class="price-value">{row.perShift}</td>
+                <td class="price-value">{row.perMonth}</td>
+                <td>{row.suitable}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pricing-notes">
+        <h3>价格重要说明</h3>
+        <ul>
+          <li><strong>价格不含：</strong>增值税8%、过路费、前往工地的燃料费</li>
+          <li><strong>班次计价：</strong>1班 = 连续8小时工作</li>
+          <li><strong>加班价格：</strong>比白天价格高20-30%（18:00后、6:00前、节假日）</li>
+          <li><strong>紧急吊装：</strong>30分钟到达，价格上浮15-20%</li>
+          <li><strong>长期租赁：</strong>3天以上可享5-10%折扣</li>
+          <li><strong>远距离：</strong>超过30公里范围另计移动费</li>
+        </ul>
+      </div>
+
+      <div class="cta-box">
+        <h3>需要精确报价？</h3>
+        <p>每项工作不同 — 致电免费咨询，获取最快报价。</p>
+        <div class="cta-buttons">
+          <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 立即拨打 — 0971 491 174</a>
+          <a href="https://zalo.me/0971491174" class="btn btn-outline btn-lg" target="_blank" rel="noopener">💬 Zalo咨询</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pricing-notes { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); margin-top: var(--space-8); }
+  .pricing-notes h3 { font-size: var(--text-xl); margin-bottom: var(--space-4); color: var(--color-primary); }
+  .pricing-notes ul { list-style: none; padding: 0; }
+  .pricing-notes li { padding: var(--space-2) 0; color: var(--color-text-secondary); font-size: var(--text-sm); border-bottom: 1px solid var(--color-border); line-height: 1.8; }
+  .pricing-notes li:last-child { border-bottom: none; }
+  .pricing-notes li strong { color: var(--color-text); }
+  .cta-box { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-8); text-align: center; margin-top: var(--space-8); box-shadow: var(--shadow-glow); }
+  .cta-box h3 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+  .cta-box p { color: var(--color-text-secondary); margin-bottom: var(--space-6); }
+  .cta-buttons { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+</style>

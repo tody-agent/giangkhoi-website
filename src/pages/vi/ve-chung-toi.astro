@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Công Ty TNHH TM DV Vận Tải Giang Khôi Hưng Yên",
+  "url": "https://vantaigiangkhoi.com",
+  "telephone": "+84971491174",
+  "foundingDate": "2016",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "value": 12 },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Phường Bạch Sam",
+    "addressLocality": "Mỹ Hào",
+    "addressRegion": "Hưng Yên",
+    "addressCountry": "VN"
+  },
+  "taxID": "0901150346",
+  "description": "Dịch vụ cho thuê xe cẩu uy tín tại Hưng Yên. 10 năm kinh nghiệm, đội 6 xe cẩu từ 3.5T đến 100T."
+};
+---
+
+<BaseLayout 
+  title="Về Giang Khôi — 10 Năm Xe Cẩu Uy Tín Hưng Yên"
+  description="Tìm hiểu về Vận Tải Giang Khôi — 10 năm kinh nghiệm cho thuê xe cẩu tại Hưng Yên. Đội 6 xe, phục vụ 24/7, uy tín hàng đầu khu vực."
+  jsonLd={jsonLd}
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">Từ 2016</span>
+        <h1>Về Vận Tải Giang Khôi</h1>
+        <p>10 năm gắn bó — Hàng trăm công trình tin tưởng</p>
+      </div>
+
+      <article class="about-content">
+        <div class="about-intro">
+          <h2>Câu chuyện của chúng tôi</h2>
+          <p><strong>Vận Tải Giang Khôi</strong> được thành lập năm 2016 tại Mỹ Hào, Hưng Yên — trung tâm các khu công nghiệp lớn nhất miền Bắc. Xuất phát từ 1 chiếc xe cẩu duy nhất, qua 10 năm phát triển, Giang Khôi đã xây dựng đội <strong>6 xe cẩu đa dạng tải trọng từ 3.5 tấn đến 100 tấn</strong>.</p>
+          <p>Chúng tôi hiểu rằng khi anh/chị cần xe cẩu, đó thường là lúc <strong>GẤP</strong>. Xe tải lật giữa đường, container cần rút gấp, hay máy mới về xưởng phải hạ ngay — đó là lý do cam kết <strong>"Có mặt trong 30 phút"</strong> luôn là ưu tiên số 1 của Giang Khôi.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value">10+</span>
+            <span class="stat-label">Năm kinh nghiệm</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">6</span>
+            <span class="stat-label">Xe cẩu sẵn sàng</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Công trình phục vụ</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">30'</span>
+            <span class="stat-label">Phút có mặt</span>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>Cam kết 3 KHÔNG</h2>
+          <div class="grid grid-3">
+            <div class="commitment-card">
+              <h3>⚡ KHÔNG chờ lâu</h3>
+              <p>Đội xe đóng tại Mỹ Hào — trung tâm Hưng Yên. Bất kể ngày hay đêm, xe cẩu có mặt trong 30 phút cho bán kính 30km.</p>
+            </div>
+            <div class="commitment-card">
+              <h3>💎 KHÔNG phí ẩn</h3>
+              <p>Báo giá rõ ràng qua điện thoại trước khi làm. Giá cố định theo tải trọng. Không phát sinh — không bất ngờ.</p>
+            </div>
+            <div class="commitment-card">
+              <h3>🤝 KHÔNG cọc trước</h3>
+              <p>Xong việc mới thanh toán. 10 năm uy tín là bảo chứng. Anh/chị yên tâm — chúng tôi tin tưởng khách hàng.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>Giấy tờ pháp lý</h2>
+          <dl class="legal-info">
+            <dt>Tên công ty</dt>
+            <dd>Công Ty TNHH Thương Mại Dịch Vụ Vận Tải Giang Khôi Hưng Yên</dd>
+            <dt>Mã số thuế</dt>
+            <dd>0901150346</dd>
+            <dt>Địa chỉ</dt>
+            <dd>Phường Bạch Sam, Thị xã Mỹ Hào, Tỉnh Hưng Yên</dd>
+            <dt>Ngành nghề</dt>
+            <dd>Vận tải hàng hóa đường bộ, cho thuê xe cẩu, lắp đặt máy móc thiết bị công nghiệp</dd>
+            <dt>Kiểm định an toàn</dt>
+            <dd>Toàn bộ 6 xe đều có giấy kiểm định còn hạn, đủ điều kiện vào tất cả KCN</dd>
+          </dl>
+        </div>
+      </article>
+
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>Cần thuê xe cẩu?</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">Gọi ngay để được tư vấn và báo giá miễn phí.</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-intro {
+    margin-bottom: var(--space-12);
+  }
+
+  .about-intro h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .about-intro p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.9;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .stat-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-extrabold);
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--weight-medium);
+  }
+
+  .about-section {
+    margin-bottom: var(--space-12);
+  }
+
+  .about-section h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .commitment-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+  }
+
+  .commitment-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+  }
+
+  .commitment-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+  }
+
+  .legal-info {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+  }
+
+  .legal-info dt {
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    margin-top: var(--space-4);
+  }
+
+  .legal-info dt:first-child {
+    margin-top: 0;
+  }
+
+  .legal-info dd {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    margin-left: 0;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .legal-info dd:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+</style>

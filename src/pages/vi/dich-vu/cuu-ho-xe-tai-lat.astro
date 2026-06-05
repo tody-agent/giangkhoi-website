@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cứu hộ xe tải lật tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ cứu hộ xe tải lật, container rơi tại Hưng Yên. Có mặt trong 30 phút, phục vụ 24/7.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/cuu-ho-xe-tai-lat"
+};
+
+const faqs = [
+  { q: 'Cứu hộ xe tải lật mất bao lâu?', a: 'Tùy tình huống, thông thường xe cẩu có mặt trong 30 phút. Thời gian xử lý từ 1-4 tiếng tùy mức độ nghiêm trọng và tải trọng xe.' },
+  { q: 'Cứu hộ ban đêm có tính thêm phí không?', a: 'Có, giá cứu hộ ngoài giờ (sau 18h, trước 6h, ngày lễ) tăng 20-30% so với ban ngày. Tuy nhiên, đội xe luôn sẵn sàng 24/7.' },
+  { q: 'Xe cẩu có đủ giấy tờ vào KCN không?', a: 'Có. Tất cả 6 xe đều có giấy kiểm định an toàn còn hạn, bằng lái và chứng chỉ tài xế, bảo hiểm đầy đủ. Đủ điều kiện vào mọi KCN.' },
+  { q: 'Cần xe cẩu bao nhiêu tấn để cứu hộ xe tải?', a: 'Xe tải nhẹ (dưới 5 tấn): cần cẩu 8-15T. Xe tải nặng (10-20 tấn): cần cẩu 25-50T. Container 40ft đầy hàng: cần cẩu 50-100T. Gọi để được tư vấn chính xác.' },
+];
+---
+
+<BaseLayout
+  title="Cứu Hộ Xe Tải Lật Hưng Yên — Có Mặt 30 Phút | Giang Khôi"
+  description="Dịch vụ cứu hộ xe tải lật, container rơi tại Hưng Yên. Xe cẩu 8T-100T có mặt trong 30 phút, phục vụ 24/7. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Cứu hộ xe tải lật</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🚨 Khẩn cấp 24/7</span>
+            <h1>Cứu Hộ Xe Tải Lật tại Hưng Yên</h1>
+            <p class="service-lead">Xử lý nhanh xe tải lật, container rơi, xe đầu kéo gặp sự cố trên quốc lộ và trong KCN. Đội xe cẩu <strong>8T đến 100T</strong> có mặt trong <strong>30 phút</strong>.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi cứu hộ — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Zalo báo sự cố</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cuu-ho-xe-tai-lat.png" alt="Xe cẩu Giang Khôi cứu hộ xe tải lật trên đường Hưng Yên [Ảnh minh họa]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Khi nào cần gọi cứu hộ xe cẩu?</h2>
+          <ul class="check-list">
+            <li>Xe tải lật ngang trên đường quốc lộ, tỉnh lộ</li>
+            <li>Container rơi khỏi xe đầu kéo hoặc bị nghiêng</li>
+            <li>Xe tải mắc kẹt tại mương, rãnh, cầu vượt</li>
+            <li>Xe chở hàng quá tải cần giải tỏa gấp</li>
+            <li>Sự cố tại cổng KCN cần xử lý khẩn cấp</li>
+          </ul>
+
+          <h2>Quy trình cứu hộ</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Tiếp nhận cuộc gọi</h3>
+              <p>Gọi 0971 491 174 — mô tả tình huống, vị trí, loại xe. Tổng đài viên tư vấn ngay loại cẩu phù hợp.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Điều xe cẩu</h3>
+              <p>Xe cẩu gần nhất được điều ngay lập tức. Thời gian đến: 15-30 phút tùy khoảng cách.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Đánh giá hiện trường</h3>
+              <p>Tài xế kiểm tra an toàn, lập phương án cẩu tối ưu, thông báo giá chính xác trước khi làm.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Thực hiện cẩu</h3>
+              <p>Cẩu xe, dọn hàng rơi, khôi phục giao thông. Thanh toán sau khi hoàn thành.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá cứu hộ xe tải lật</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Loại xe gặp sự cố</th><th>Xe cẩu cần</th><th>Giá tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Xe tải nhẹ (dưới 5T)</td><td>Cẩu 8T-10T</td><td class="price-value">4.000.000 – 5.000.000đ</td></tr>
+                <tr><td>Xe tải trung (5-15T)</td><td>Cẩu 15T-25T</td><td class="price-value">5.500.000 – 8.000.000đ</td></tr>
+                <tr><td>Xe tải nặng (15-30T)</td><td>Cẩu 25T-50T</td><td class="price-value">8.000.000 – 12.000.000đ</td></tr>
+                <tr><td>Container 40ft đầy hàng</td><td>Cẩu 50T-100T</td><td class="price-value">12.000.000 – 18.000.000đ</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Giá tham khảo, có thể thay đổi tùy mức độ sự cố và thời gian (ban đêm +20-30%)</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cứu hộ GẤP?</h3>
+            <p>Gọi ngay — Xe cẩu có mặt trong 30 phút!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

@@ -1,0 +1,100 @@
+{
+  "site": {
+    "name": "Xe Cẩu Giang Khôi",
+    "tagline": "Có mặt trong 30 phút tại Hưng Yên",
+    "description": "Dịch vụ cho thuê xe cẩu 3.5T – 100T tại Hưng Yên. Có mặt trong 30 phút, báo giá rõ ràng, trả tiền sau khi xong việc. Hotline: 0971 491 174",
+    "phone": "0971491174",
+    "phoneDisplay": "0971 491 174",
+    "zalo": "https://zalo.me/0971491174",
+    "address": "Phường Bạch Sam, Mỹ Hào, Hưng Yên",
+    "company": "Công Ty TNHH TM DV Vận Tải Giang Khôi Hưng Yên"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "areas": "Khu vực",
+    "pricing": "Bảng giá",
+    "about": "Về chúng tôi",
+    "blog": "Blog",
+    "contact": "Liên hệ"
+  },
+  "cta": {
+    "callNow": "Gọi ngay",
+    "getQuote": "Báo giá ngay",
+    "bookCrane": "Đặt cẩu",
+    "zaloChat": "Chat Zalo",
+    "viewPricing": "Xem bảng giá",
+    "learnMore": "Tìm hiểu thêm",
+    "allServices": "Tất cả dịch vụ",
+    "callFree": "Gọi miễn phí tư vấn"
+  },
+  "hero": {
+    "title": "Xe Cẩu Giang Khôi",
+    "subtitle": "Có mặt trong 30 phút tại Hưng Yên",
+    "description": "Đội 6 xe cẩu từ 3.5T đến 100T, phục vụ 24/7 trong bán kính 30km. Báo giá rõ ràng — Trả tiền sau khi xong việc.",
+    "trust1": "10 năm kinh nghiệm",
+    "trust2": "6 xe sẵn sàng",
+    "trust3": "Phục vụ 24/7"
+  },
+  "usp": {
+    "title": "Tại sao chọn Giang Khôi?",
+    "subtitle": "Cam kết 3 KHÔNG để anh/chị yên tâm",
+    "item1_title": "30 phút có mặt",
+    "item1_desc": "Đội xe đóng tại Mỹ Hào, sẵn sàng điều phối ngay khi nhận cuộc gọi. Phục vụ trong bán kính 30km.",
+    "item2_title": "Báo giá rõ ràng",
+    "item2_desc": "Giá cố định theo tải trọng và quãng đường. Không phát sinh — không phí ẩn. Gọi là biết giá ngay.",
+    "item3_title": "Trả tiền sau",
+    "item3_desc": "Xong việc mới thanh toán. Không cọc trước — không lo mất tiền. Uy tín 10 năm bảo chứng."
+  },
+  "services": {
+    "title": "Dịch vụ nổi bật",
+    "subtitle": "Từ cứu hộ khẩn cấp đến lắp đặt công trình"
+  },
+  "pricing": {
+    "title": "Bảng giá thuê xe cẩu",
+    "subtitle": "Giá cập nhật tháng 6/2026 — Gọi để nhận báo giá chính xác",
+    "tonnage": "Tải trọng",
+    "pricePerShift": "Giá/ca (8h)",
+    "pricePerMonth": "Giá/tháng",
+    "note": "Ghi chú",
+    "vat_note": "* Giá chưa bao gồm VAT, phí cầu đường và nhiên liệu. Gọi để nhận báo giá chính xác theo công việc cụ thể.",
+    "urgent_note": "💡 Cẩu gấp: Có mặt trong 30 phút, giá có thể tăng 15-20% tùy thời điểm."
+  },
+  "areas": {
+    "title": "Khu vực phục vụ",
+    "subtitle": "Bán kính 30km từ Mỹ Hào, Hưng Yên",
+    "responseTime": "Thời gian đến:"
+  },
+  "fleet": {
+    "title": "Đoàn xe 6 chiếc",
+    "subtitle": "Đa dạng tải trọng, sẵn sàng phục vụ mọi nhu cầu"
+  },
+  "testimonials": {
+    "title": "Khách hàng nói gì",
+    "subtitle": "Hàng trăm công trình đã tin tưởng Giang Khôi"
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "subtitle": "Giải đáp nhanh những thắc mắc phổ biến"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Gọi ngay hoặc để lại thông tin, chúng tôi sẽ liên hệ trong 5 phút",
+    "name": "Họ tên",
+    "phone": "Số điện thoại",
+    "message": "Mô tả công việc cần cẩu",
+    "submit": "Gửi yêu cầu",
+    "success": "Đã gửi thành công! Chúng tôi sẽ gọi lại trong 5 phút."
+  },
+  "footer": {
+    "copyright": "© 2026 Vận Tải Giang Khôi Hưng Yên. Bảo lưu mọi quyền.",
+    "quickLinks": "Liên kết nhanh",
+    "contactInfo": "Thông tin liên hệ",
+    "serviceHours": "Giờ phục vụ",
+    "hours": "24/7 — Kể cả ngày lễ, Tết"
+  },
+  "meta": {
+    "homeTitle": "Xe Cẩu Giang Khôi — Cho Thuê Xe Cẩu 3.5T–100T tại Hưng Yên | Có Mặt 30 Phút",
+    "homeDesc": "Dịch vụ cho thuê xe cẩu uy tín tại Hưng Yên. Đội 6 xe từ 3.5T đến 100T, có mặt trong 30 phút. Báo giá rõ — Trả sau. Hotline: 0971 491 174"
+  }
+}

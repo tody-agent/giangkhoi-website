@@ -1,0 +1,598 @@
+---
+import { getLangFromUrl, useTranslations, getLocalePath, languages, type Lang } from '../i18n';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalPath?: string;
+  jsonLd?: object | object[];
+  noindex?: boolean;
+}
+
+const { title, description, ogImage, ogType = 'website', canonicalPath, jsonLd, noindex = false } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPath = Astro.url.pathname;
+
+const siteUrl = 'https://vantaigiangkhoi.com';
+const canonical = canonicalPath ? `${siteUrl}${canonicalPath}` : `${siteUrl}${currentPath}`;
+const ogImageUrl = ogImage || `${siteUrl}/images/brand/og-default.png`;
+
+const htmlLang = lang === 'vi' ? 'vi' : 'zh-CN';
+---
+
+<!DOCTYPE html>
+<html lang={htmlLang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  
+  <!-- Hreflang -->
+  {Object.keys(languages).map((l) => (
+    <link rel="alternate" hreflang={l === 'vi' ? 'vi' : 'zh-CN'} href={`${siteUrl}${getLocalePath(currentPath, l as Lang)}`} />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}${getLocalePath(currentPath, 'vi')}`} />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'zh_CN'} />
+  <meta property="og:site_name" content={t('site.name')} />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
+  
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Theme color -->
+  <meta name="theme-color" content="#FFB800" />
+  <meta name="msapplication-TileColor" content="#0A0A0A" />
+  
+  <!-- JSON-LD Structured Data -->
+  {jsonLd && (
+    Array.isArray(jsonLd) ? (
+      jsonLd.map((ld) => (
+        <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+      ))
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )
+  )}
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-to-content">
+    {lang === 'vi' ? 'Bỏ qua đến nội dung chính' : '跳到主要内容'}
+  </a>
+
+  <!-- Header -->
+  <header class="header" id="site-header">
+    <nav class="header-nav container" aria-label={lang === 'vi' ? 'Menu chính' : '主导航'}>
+      <a href={`/${lang}`} class="header-logo" aria-label={t('site.name')}>
+        <span class="logo-icon">🏗️</span>
+        <span class="logo-text">
+          <span class="logo-name">{t('site.name')}</span>
+          <span class="logo-tagline">{t('site.tagline')}</span>
+        </span>
+      </a>
+      
+      <div class="header-links" id="nav-links">
+        <a href={`/${lang}`} class="nav-link">{t('nav.home')}</a>
+        <a href={`/${lang}/${lang === 'vi' ? 'dich-vu' : 'fu-wu'}`} class="nav-link">{t('nav.services')}</a>
+        <a href={`/${lang}/${lang === 'vi' ? 'bang-gia' : 'bao-jia'}`} class="nav-link">{t('nav.pricing')}</a>
+        <a href={`/${lang}/${lang === 'vi' ? 'khu-vuc' : 'qu-yu'}`} class="nav-link">{t('nav.areas')}</a>
+        <a href={`/${lang}/${lang === 'vi' ? 've-chung-toi' : 'guan-yu'}`} class="nav-link">{t('nav.about')}</a>
+        <a href={`/${lang}/blog`} class="nav-link">{t('nav.blog')}</a>
+      </div>
+      
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher">
+          {Object.entries(languages).map(([code, name]) => (
+            <a 
+              href={getLocalePath(currentPath, code as Lang)}
+              class:list={['lang-btn', { active: code === lang }]}
+              aria-label={`Switch to ${name}`}
+            >
+              {code === 'vi' ? '🇻🇳' : '🇨🇳'}
+              <span class="lang-label">{code.toUpperCase()}</span>
+            </a>
+          ))}
+        </div>
+        
+        <!-- Desktop Phone CTA -->
+        <a href={`tel:${t('site.phone')}`} class="btn btn-primary header-cta" id="header-phone-cta">
+          <span>📞</span>
+          {t('site.phoneDisplay')}
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle" aria-label={lang === 'vi' ? 'Mở menu' : '打开菜单'} aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="logo-icon">🏗️</span>
+            <h3>{t('site.name')}</h3>
+          </div>
+          <p class="footer-desc">{t('site.description')}</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>{t('footer.quickLinks')}</h4>
+          <ul class="footer-links">
+            <li><a href={`/${lang}/${lang === 'vi' ? 'dich-vu' : 'fu-wu'}`}>{t('nav.services')}</a></li>
+            <li><a href={`/${lang}/${lang === 'vi' ? 'bang-gia' : 'bao-jia'}`}>{t('nav.pricing')}</a></li>
+            <li><a href={`/${lang}/${lang === 'vi' ? 'khu-vuc' : 'qu-yu'}`}>{t('nav.areas')}</a></li>
+            <li><a href={`/${lang}/blog`}>{t('nav.blog')}</a></li>
+            <li><a href={`/${lang}/${lang === 'vi' ? 've-chung-toi' : 'guan-yu'}`}>{t('nav.about')}</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h4>{t('footer.contactInfo')}</h4>
+          <ul class="footer-contact">
+            <li>
+              <span>📞</span>
+              <a href={`tel:${t('site.phone')}`}>{t('site.phoneDisplay')}</a>
+            </li>
+            <li>
+              <span>💬</span>
+              <a href={t('site.zalo')} target="_blank" rel="noopener">{t('cta.zaloChat')}</a>
+            </li>
+            <li>
+              <span>📍</span>
+              <span>{t('site.address')}</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service Hours -->
+        <div class="footer-col">
+          <h4>{t('footer.serviceHours')}</h4>
+          <p class="service-hours-badge">
+            <span class="pulse-dot"></span>
+            {t('footer.hours')}
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>{t('footer.copyright')}</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Phone CTA (Mobile) -->
+  <div class="sticky-cta" id="sticky-phone-cta">
+    <a href={`tel:${t('site.phone')}`} aria-label={t('cta.callNow')}>
+      <span class="phone-icon">📞</span>
+      {t('cta.callNow')} — {t('site.phoneDisplay')}
+    </a>
+  </div>
+
+  <!-- Floating Zalo Button -->
+  <a 
+    href={t('site.zalo')} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="zalo-float" 
+    id="zalo-button"
+    aria-label={t('cta.zaloChat')}
+  >
+    <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4.2 28.8H16v-2.4h3.8v-8.8H16v-2.4h6.2v11.2h1.6v2.4zm8.8 0h-4.8v-2.4h1.2V21.6h-1.2v-2.4h3.6v11.2h1.2v2.4zm5.6-8c0 4.4-1.6 8-4 8h-.4v-2.4h.4c1.2 0 1.6-2.8 1.6-5.6s-.4-5.6-1.6-5.6h-.4v-2.4h.4c2.4 0 4 3.6 4 8z"/>
+    </svg>
+  </a>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+    const header = document.getElementById('site-header');
+    
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+    
+    // Sticky header on scroll
+    if (header) {
+      let lastScrollY = 0;
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 80) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    }
+    
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (item) {
+          const wasActive = item.classList.contains('active');
+          // Close all
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          // Toggle current
+          if (!wasActive) item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-base);
+  }
+  
+  .header.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom-color: var(--color-border);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: var(--space-4);
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: var(--color-text);
+    flex-shrink: 0;
+  }
+  
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  
+  .logo-name {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+  }
+  
+  .logo-tagline {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+  
+  .header-links {
+    display: none;
+    gap: var(--space-1);
+  }
+  
+  @media (min-width: 1024px) {
+    .header-links {
+      display: flex;
+    }
+  }
+  
+  .nav-link {
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  
+  .nav-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-glow);
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  /* Language Switcher */
+  .lang-switcher {
+    display: flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+  
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+  
+  .lang-btn.active {
+    background: var(--color-primary-glow);
+    color: var(--color-primary);
+  }
+  
+  .lang-btn:hover {
+    color: var(--color-primary);
+  }
+  
+  .lang-label {
+    font-weight: var(--weight-semibold);
+  }
+  
+  .header-cta {
+    display: none;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+  
+  @media (min-width: 768px) {
+    .header-cta {
+      display: inline-flex;
+    }
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 1024px) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+  
+  .menu-bar {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+  }
+  
+  .menu-toggle.open .menu-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.open .menu-bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open .menu-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Mobile Nav */
+  @media (max-width: 1023px) {
+    .header-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--color-bg-elevated);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-4);
+      gap: var(--space-1);
+      animation: fadeIn 0.2s ease;
+    }
+    
+    .header-links.open .nav-link {
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-base);
+    }
+  }
+  
+  /* Footer */
+  .footer {
+    background: var(--color-bg-elevated);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-16) 0 var(--space-8);
+    margin-top: var(--space-16);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+  
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+  
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+  
+  .footer-brand h3 {
+    font-size: var(--text-xl);
+    color: var(--color-primary);
+  }
+  
+  .footer-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+  }
+  
+  .footer-col h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--space-2);
+  }
+  
+  .footer-links a {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-primary);
+  }
+  
+  .footer-contact {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+  
+  .footer-contact a {
+    color: var(--color-text-secondary);
+  }
+  
+  .footer-contact a:hover {
+    color: var(--color-primary);
+  }
+  
+  .service-hours-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-success);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+  
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .footer-bottom {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+  
+  /* Content spacer for fixed header */
+  main {
+    padding-top: 72px;
+  }
+</style>

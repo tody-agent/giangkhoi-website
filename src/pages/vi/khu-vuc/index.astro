@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const areas = [
+  { name: 'Mỹ Hào', time: '15 phút', slug: 'my-hao', highlight: true },
+  { name: 'Phố Nối', time: '15 phút', slug: 'pho-noi', highlight: true },
+  { name: 'Văn Lâm', time: '20 phút', slug: 'van-lam', highlight: false },
+  { name: 'Yên Mỹ', time: '20 phút', slug: 'yen-my', highlight: false },
+  { name: 'Ân Thi', time: '25 phút', slug: 'an-thi', highlight: false },
+  { name: 'Văn Giang', time: '25 phút', slug: 'van-giang', highlight: false },
+  { name: 'Khoái Châu', time: '30 phút', slug: 'khoai-chau', highlight: false },
+  { name: 'TP Hưng Yên', time: '30 phút', slug: 'hung-yen', highlight: false },
+];
+---
+
+<BaseLayout
+  title="Khu Vực Phục Vụ Xe Cẩu Giang Khôi — Bán Kính 30km Hưng Yên"
+  description="Xe cẩu Giang Khôi phục vụ 8 huyện/thị xã tại Hưng Yên: Mỹ Hào, Phố Nối, Văn Lâm, Yên Mỹ, Ân Thi, Văn Giang, Khoái Châu, TP Hưng Yên. Gọi 0971 491 174."
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>Khu Vực Phục Vụ</h1>
+        <p>Bán kính 30km từ Mỹ Hào — Phục vụ 8 huyện/thị xã tại Hưng Yên</p>
+      </div>
+
+      <div class="areas-grid">
+        {areas.map((area) => (
+          <a href={`/vi/khu-vuc/${area.slug}`} class:list={['area-card-lg', { highlight: area.highlight }]}>
+            <div class="area-top">
+              <span class="area-icon">📍</span>
+              <h2>{area.name}</h2>
+            </div>
+            <div class="area-bottom">
+              <span class="area-time-badge">
+                <span class="pulse-dot"></span>
+                {area.time}
+              </span>
+              <span class="area-link">Xem chi tiết →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>Ngoài khu vực trên?</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">Giang Khôi cũng phục vụ Hải Dương, Bắc Ninh, Hà Nam — gọi để hỏi phí di chuyển.</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-6); }
+  .area-card-lg { display: flex; flex-direction: column; justify-content: space-between; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: inherit; transition: all var(--transition-base); min-height: 160px; }
+  .area-card-lg:hover { border-color: var(--color-primary); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+  .area-card-lg.highlight { border-color: var(--color-primary); background: linear-gradient(135deg, var(--color-bg-card), rgba(255,184,0,0.05)); }
+  .area-top { display: flex; align-items: center; gap: var(--space-3); }
+  .area-icon { font-size: 1.5rem; }
+  .area-card-lg h2 { font-size: var(--text-xl); }
+  .area-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-4); }
+  .area-time-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-full); color: var(--color-success); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+  .area-link { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+</style>

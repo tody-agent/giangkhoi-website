@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bảng giá thuê xe cẩu Hưng Yên 2026",
+  "description": "Bảng giá chi tiết dịch vụ cho thuê xe cẩu 3.5T-100T tại Hưng Yên. Cập nhật tháng 6/2026. Giá theo ca, theo tháng.",
+  "url": "https://vantaigiangkhoi.com/vi/bang-gia"
+};
+
+const pricingData = [
+  { tonnage: '3.5 tấn', perShift: '2.800.000đ', perMonth: '45.000.000đ', suitable: 'Cẩu bồn nước, cẩu cây cảnh nhỏ, vật liệu nhẹ', brand: 'UNIC', reach: '8m' },
+  { tonnage: '5 tấn', perShift: '3.400.000đ', perMonth: '52.000.000đ', suitable: 'Cẩu mái tôn, khung kèo, vật liệu xây nhà', brand: 'UNIC', reach: '12m' },
+  { tonnage: '8 tấn', perShift: '4.000.000đ', perMonth: '60.000.000đ', suitable: 'Cẩu container rỗng, máy nhỏ, cứu hộ xe nhẹ', brand: 'Kanglim', reach: '15m' },
+  { tonnage: '10 tấn', perShift: '4.500.000đ', perMonth: '70.000.000đ', suitable: 'Cẩu máy CNC, thiết bị công nghiệp nhỏ', brand: 'Kanglim', reach: '18m' },
+  { tonnage: '15 tấn', perShift: '5.500.000đ', perMonth: '75.000.000đ', suitable: 'Cẩu máy công nghiệp, cứu hộ xe tải', brand: 'Kanglim', reach: '22m' },
+  { tonnage: '25 tấn', perShift: '7.500.000đ', perMonth: '90.000.000đ', suitable: 'Cẩu container nặng, dầm thép, kết cấu', brand: 'Kato', reach: '30m' },
+  { tonnage: '50 tấn', perShift: '9.400.000đ', perMonth: '100.000.000đ', suitable: 'Cẩu thiết bị nặng, kết cấu thép lớn', brand: 'Kato', reach: '40m' },
+  { tonnage: '80 tấn', perShift: '13.500.000đ', perMonth: '180.000.000đ', suitable: 'Công trình lớn, cầu, nhà máy', brand: 'Kato', reach: '50m' },
+  { tonnage: '100 tấn', perShift: '16.900.000đ', perMonth: '200.000.000đ', suitable: 'Siêu trọng, công trình đặc biệt', brand: 'Kato', reach: '60m' },
+];
+---
+
+<BaseLayout 
+  title="Bảng Giá Thuê Xe Cẩu Hưng Yên 2026 — Giang Khôi | Cập Nhật Tháng 6"
+  description="Bảng giá cho thuê xe cẩu 3.5T-100T tại Hưng Yên, cập nhật tháng 6/2026. Giá theo ca (8h) và theo tháng. Gọi 0971 491 174 để báo giá chính xác."
+  jsonLd={jsonLd}
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">Cập nhật tháng 6/2026</span>
+        <h1>Bảng Giá Thuê Xe Cẩu Hưng Yên</h1>
+        <p>Giá minh bạch — Không phát sinh — Trả sau khi xong việc</p>
+      </div>
+
+      <div class="price-table-wrapper">
+        <table class="price-table" id="full-pricing-table">
+          <thead>
+            <tr>
+              <th>Tải trọng</th>
+              <th>Hãng xe</th>
+              <th>Tầm với</th>
+              <th>Giá/ca (8h)</th>
+              <th>Giá/tháng</th>
+              <th>Phù hợp cho</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingData.map((row) => (
+              <tr>
+                <td><strong>{row.tonnage}</strong></td>
+                <td>{row.brand}</td>
+                <td>{row.reach}</td>
+                <td class="price-value">{row.perShift}</td>
+                <td class="price-value">{row.perMonth}</td>
+                <td>{row.suitable}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pricing-notes">
+        <h3>Lưu ý quan trọng về giá</h3>
+        <ul>
+          <li><strong>Giá chưa bao gồm:</strong> VAT 8%, phí cầu đường, nhiên liệu di chuyển đến công trường</li>
+          <li><strong>Giá thuê theo ca:</strong> 1 ca = 8 tiếng làm việc liên tục</li>
+          <li><strong>Giá thuê ngoài giờ:</strong> Tăng 20-30% so với giá ban ngày (sau 18h, trước 6h, ngày lễ)</li>
+          <li><strong>Cẩu gấp (khẩn cấp):</strong> Có mặt trong 30 phút, giá tăng 15-20%</li>
+          <li><strong>Thuê dài ngày:</strong> Từ 3 ngày trở lên được giảm 5-10%</li>
+          <li><strong>Khu vực xa:</strong> Ngoài bán kính 30km tính thêm phí di chuyển</li>
+        </ul>
+      </div>
+
+      <div class="cta-box">
+        <h3>Cần báo giá chính xác?</h3>
+        <p>Mỗi công việc khác nhau — gọi để được tư vấn miễn phí và nhận báo giá nhanh nhất.</p>
+        <div class="cta-buttons">
+          <a href="tel:0971491174" class="btn btn-primary btn-lg">
+            📞 Gọi ngay — 0971 491 174
+          </a>
+          <a href="https://zalo.me/0971491174" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            💬 Chat Zalo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pricing-notes {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    margin-top: var(--space-8);
+  }
+
+  .pricing-notes h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    color: var(--color-primary);
+  }
+
+  .pricing-notes ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .pricing-notes li {
+    padding: var(--space-2) 0;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    border-bottom: 1px solid var(--color-border);
+    line-height: 1.8;
+  }
+
+  .pricing-notes li:last-child {
+    border-bottom: none;
+  }
+
+  .pricing-notes li strong {
+    color: var(--color-text);
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: center;
+    margin-top: var(--space-8);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .cta-box h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .cta-box p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

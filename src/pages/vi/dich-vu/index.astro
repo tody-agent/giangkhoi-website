@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const services = [
+  { icon: '🚨', title: 'Cứu hộ xe tải lật', desc: 'Xử lý nhanh xe tải lật, container rơi. Có mặt trong 30 phút, phục vụ 24/7.', href: '/vi/dich-vu/cuu-ho-xe-tai-lat', img: '/images/services/cuu-ho-xe-tai-lat.png' },
+  { icon: '💧', title: 'Cẩu bồn nước', desc: 'Cẩu bồn nước inox 500L-2000L lên mái nhà phố, biệt thự. An toàn tuyệt đối.', href: '/vi/dich-vu/cau-bon-nuoc', img: '/images/services/cau-bon-nuoc-inox.png' },
+  { icon: '🧱', title: 'Cẩu vật liệu xây nhà', desc: 'Cẩu sắt thép, gạch, bê tông đúc sẵn lên tầng cao. Phục vụ mọi công trình.', href: '/vi/dich-vu/cau-vat-lieu-xay-nha', img: '/images/services/cau-vat-lieu-xay-nha.png' },
+  { icon: '🏗️', title: 'Cẩu mái tôn, khung kèo', desc: 'Cẩu và lắp mái tôn, khung kèo thép, kết cấu nhà xưởng.', href: '/vi/dich-vu/cau-mai-ton-khung-keo', img: '/images/services/cau-mai-ton-khung-keo.png' },
+  { icon: '🏭', title: 'Cẩu máy móc xưởng', desc: 'Di dời máy CNC, máy dập, thiết bị công nghiệp. Cẩn thận từng chi tiết.', href: '/vi/dich-vu/cau-may-mong-xuong', img: '/images/services/cau-may-moc-xuong.png' },
+  { icon: '📦', title: 'Cẩu container', desc: 'Rút container, nâng hạ hàng hóa tại cảng, kho bãi và KCN.', href: '/vi/dich-vu/cau-container', img: '/images/services/cau-container.png' },
+  { icon: '🌳', title: 'Cẩu cây cảnh', desc: 'Cẩu cây cảnh lớn, cây công trình nhẹ nhàng, an toàn, không hư hại.', href: '/vi/dich-vu/cau-cay-canh', img: '/images/services/cau-cay-canh.png' },
+];
+---
+
+<BaseLayout
+  title="Dịch Vụ Cho Thuê Xe Cẩu Hưng Yên — Giang Khôi | 7 Dịch Vụ Chuyên Nghiệp"
+  description="Tổng hợp 7 dịch vụ cho thuê xe cẩu tại Hưng Yên: cứu hộ, cẩu bồn nước, vật liệu xây dựng, mái tôn, máy móc, container, cây cảnh. Gọi 0971 491 174."
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>Dịch Vụ Cho Thuê Xe Cẩu Hưng Yên</h1>
+        <p>7 dịch vụ chuyên nghiệp — Phục vụ mọi nhu cầu nâng hạ</p>
+      </div>
+      <div class="grid grid-2" style="gap: var(--space-8);">
+        {services.map((svc) => (
+          <a href={svc.href} class="card service-card-lg" id={`svc-${svc.href.split('/').pop()}`}>
+            <div class="card-image" style="aspect-ratio: 16/9;">
+              <img src={svc.img} alt={`${svc.title} — Xe cẩu Giang Khôi Hưng Yên [Ảnh minh họa]`} width="600" height="340" loading="lazy" />
+            </div>
+            <div class="svc-body">
+              <span class="svc-icon">{svc.icon}</span>
+              <h2>{svc.title}</h2>
+              <p>{svc.desc}</p>
+              <span class="card-link">Xem chi tiết →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>Không tìm thấy dịch vụ cần?</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">Gọi để được tư vấn — chúng tôi phục vụ mọi nhu cầu nâng hạ.</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-card-lg { text-decoration: none; display: block; }
+  .svc-body { padding: var(--space-4) var(--space-2) var(--space-2); }
+  .svc-icon { font-size: 1.5rem; }
+  .service-card-lg h2 { font-size: var(--text-xl); margin: var(--space-2) 0; }
+  .service-card-lg p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6; }
+  .card-link { display: inline-block; margin-top: var(--space-3); color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+</style>
