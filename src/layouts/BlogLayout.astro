@@ -1,0 +1,558 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  updated?: string;
+  category: string;
+  tags: string[];
+  author: string;
+  faq: Array<{ question: string; answer: string }>;
+  image?: string;
+  imageAlt?: string;
+  noindex?: boolean;
+}
+
+const { title, description, date, updated, category, tags, author, faq, image, imageAlt, noindex = false } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPath = Astro.url.pathname;
+
+const siteUrl = 'https://vantaigiangkhoi.com';
+
+// Category labels
+const categoryLabels: Record<string, string> = {
+  'cuu-ho': '🚨 Cứu hộ khẩn cấp',
+  'dan-dung': '🏠 Dân dụng',
+  'cong-nghiep': '🏭 Công nghiệp',
+  'huong-dan': '📋 Hướng dẫn',
+  'bang-gia': '💰 Bảng giá',
+  'kien-thuc': '📚 Kiến thức',
+  'khu-vuc': '📍 Khu vực',
+};
+
+// Format date
+const formatDate = (d: string) => {
+  const date = new Date(d);
+  return date.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+};
+
+// JSON-LD Article
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image ? `${siteUrl}${image}` : `${siteUrl}/images/brand/og-default.png`,
+  "datePublished": date,
+  "dateModified": updated || date,
+  "author": {
+    "@type": "Organization",
+    "name": "Xe Cẩu Giang Khôi",
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xe Cẩu Giang Khôi",
+    "logo": { "@type": "ImageObject", "url": `${siteUrl}/favicon.svg` }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}${currentPath}` }
+};
+
+// JSON-LD FAQ
+const faqJsonLd = faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+} : null;
+
+// JSON-LD Breadcrumb
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${siteUrl}/vi` },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/vi/blog` },
+    { "@type": "ListItem", "position": 3, "name": title, "item": `${siteUrl}${currentPath}` }
+  ]
+};
+
+const allJsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  jsonLd={allJsonLd}
+  noindex={noindex}
+>
+  <article class="blog-article">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/vi">Trang chủ</a> ›
+        <a href="/vi/blog">Blog</a> ›
+        <span>{title}</span>
+      </nav>
+
+      <div class="blog-layout">
+        <!-- Main Content -->
+        <div class="blog-main">
+          <!-- Article Header -->
+          <header class="blog-header">
+            <span class="blog-category">{categoryLabels[category] || category}</span>
+            <h1>{title}</h1>
+            <div class="blog-meta">
+              <span class="meta-date">📅 {formatDate(date)}</span>
+              {updated && <span class="meta-updated">🔄 Cập nhật: {formatDate(updated)}</span>}
+              <span class="meta-author">✍️ {author}</span>
+            </div>
+            {tags.length > 0 && (
+              <div class="blog-tags">
+                {tags.map(tag => <span class="tag">{tag}</span>)}
+              </div>
+            )}
+          </header>
+
+          <!-- Inline CTA 1: After header -->
+          <div class="inline-cta">
+            <div class="cta-trust">
+              <span>✅ 10 năm kinh nghiệm</span>
+              <span>✅ 6 xe sẵn sàng</span>
+              <span>✅ Trả tiền SAU</span>
+            </div>
+            <a href="tel:0971491174" class="btn btn-primary">📞 Gọi ngay — 0971 491 174</a>
+          </div>
+
+          <!-- Blog Content (slot) -->
+          <div class="blog-content prose">
+            <slot />
+          </div>
+
+          <!-- FAQ Section -->
+          {faq.length > 0 && (
+            <section class="blog-faq">
+              <h2>❓ Câu hỏi thường gặp</h2>
+              <div class="faq-list">
+                {faq.map(f => (
+                  <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                      <span>{f.question}</span>
+                      <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                      <p>{f.answer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <!-- Bottom CTA -->
+          <div class="bottom-cta">
+            <h3>Cần thuê xe cẩu? Gọi ngay!</h3>
+            <p>Có mặt trong <strong>30 phút</strong> — Báo giá rõ ràng — Trả tiền SAU khi xong việc</p>
+            <div class="cta-buttons">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Chat Zalo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+          <div class="sidebar-cta-card">
+            <h3>🏗️ Xe Cẩu Giang Khôi</h3>
+            <p>Có mặt trong <strong>30 phút</strong></p>
+            <ul class="sidebar-features">
+              <li>✅ Đội 6 xe: 3.5T – 100T</li>
+              <li>✅ Phục vụ 24/7</li>
+              <li>✅ Báo giá rõ ràng</li>
+              <li>✅ Trả tiền SAU</li>
+            </ul>
+            <a href="tel:0971491174" class="btn btn-primary" style="width:100%;">📞 Gọi ngay</a>
+            <a href="https://zalo.me/0971491174" class="btn btn-outline" style="width:100%; margin-top: 8px;" target="_blank" rel="noopener">💬 Chat Zalo</a>
+          </div>
+
+          <div class="sidebar-services">
+            <h4>Dịch vụ nổi bật</h4>
+            <a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a>
+            <a href="/vi/dich-vu/cau-bon-nuoc">🏠 Cẩu bồn nước</a>
+            <a href="/vi/dich-vu/cau-container">📦 Cẩu container</a>
+            <a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a>
+            <a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a>
+            <a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a>
+            <a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn</a>
+          </div>
+
+          <div class="sidebar-areas">
+            <h4>Khu vực phục vụ</h4>
+            <div class="area-tags">
+              <a href="/vi/khu-vuc/my-hao">Mỹ Hào</a>
+              <a href="/vi/khu-vuc/van-lam">Văn Lâm</a>
+              <a href="/vi/khu-vuc/yen-my">Yên Mỹ</a>
+              <a href="/vi/khu-vuc/pho-noi">Phố Nối</a>
+              <a href="/vi/khu-vuc/hung-yen">Hưng Yên</a>
+              <a href="/vi/khu-vuc/van-giang">Văn Giang</a>
+              <a href="/vi/khu-vuc/an-thi">Ân Thi</a>
+              <a href="/vi/khu-vuc/khoai-chau">Khoái Châu</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-article {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-16);
+  }
+
+  .breadcrumb {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 1024px) {
+    .blog-layout {
+      grid-template-columns: 1fr 320px;
+    }
+  }
+
+  /* Header */
+  .blog-header { margin-bottom: var(--space-8); }
+
+  .blog-category {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-primary-glow);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+  }
+
+  .blog-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.3;
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-meta {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .blog-tags {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+
+  /* Inline CTA */
+  .inline-cta {
+    background: linear-gradient(135deg, rgba(255,184,0,0.05), rgba(255,184,0,0.12));
+    border: 1px solid rgba(255,184,0,0.3);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4) var(--space-6);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+
+  .cta-trust {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Blog Content / Prose */
+  .blog-content.prose {
+    font-size: var(--text-base);
+    line-height: 1.9;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-content.prose :global(h2) {
+    font-size: var(--text-2xl);
+    color: var(--color-text);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-content.prose :global(h3) {
+    font-size: var(--text-xl);
+    color: var(--color-text);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .blog-content.prose :global(p) {
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-content.prose :global(strong) {
+    color: var(--color-text);
+    font-weight: var(--weight-semibold);
+  }
+
+  .blog-content.prose :global(ul), .blog-content.prose :global(ol) {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-content.prose :global(li) {
+    margin-bottom: var(--space-2);
+  }
+
+  .blog-content.prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    font-size: var(--text-sm);
+  }
+
+  .blog-content.prose :global(th) {
+    background: var(--color-bg-elevated);
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .blog-content.prose :global(td) {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .blog-content.prose :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .blog-content.prose :global(a:hover) {
+    text-decoration-thickness: 2px;
+  }
+
+  .blog-content.prose :global(blockquote) {
+    border-left: 3px solid var(--color-primary);
+    padding-left: var(--space-4);
+    margin: var(--space-6) 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* FAQ */
+  .blog-faq {
+    margin-top: var(--space-12);
+    padding: var(--space-8);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+  }
+
+  .blog-faq h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-4) 0;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-icon {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    transition: transform var(--transition-fast);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer p {
+    padding: 0 0 var(--space-4);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  /* Bottom CTA */
+  .bottom-cta {
+    margin-top: var(--space-12);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, rgba(255,184,0,0.08), rgba(255,184,0,0.15));
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+
+  .bottom-cta h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .bottom-cta p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-lg);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Sidebar */
+  .blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .sidebar-cta-card {
+    background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    box-shadow: var(--shadow-glow);
+    position: sticky;
+    top: 88px;
+  }
+
+  .sidebar-cta-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-cta-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-features li {
+    padding: var(--space-1) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .sidebar-services, .sidebar-areas {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+  }
+
+  .sidebar-services h4, .sidebar-areas h4 {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sidebar-services a {
+    display: block;
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .sidebar-services a:last-child { border-bottom: none; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .area-tags a {
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+  .area-tags a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+</style>
