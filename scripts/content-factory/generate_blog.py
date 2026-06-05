@@ -78,7 +78,7 @@ def generate_cro_block(config: Dict) -> str:
     """Generate CRO inline block."""
     phone = config["brand"]["phoneDisplay"]
     return f"""
-> **📞 Cần xe cẩu gấp?** Gọi ngay **{phone}** — Có mặt trong **30 phút**. Báo giá rõ ràng, trả tiền SAU khi xong việc.
+> **📞 Cần xe cẩu gấp?** Gọi ngay **{phone}** — Có mặt trong **30 phút**. Báo giá rõ ràng, đầy đủ hóa đơn chứng từ VAT.
 """
 
 
@@ -108,7 +108,7 @@ def generate_trust_block(config: Dict) -> str:
 - ✅ **{config['brand']['fleet']}** sẵn sàng phục vụ
 - ✅ Có mặt trong **{config['brand']['response_time']}**
 - ✅ **Báo giá rõ ràng** — không phí ẩn
-- ✅ **Trả tiền SAU** khi xong việc
+- ✅ **Đầy đủ hóa đơn VAT**, hợp đồng rõ ràng
 - ✅ Phục vụ **{config['brand']['service_hours']}** kể cả lễ Tết
 """
 
@@ -143,7 +143,7 @@ def generate_faq_yaml(keyword: Dict) -> str:
         faqs = [
             {"q": f"Gọi {title_short} mất bao lâu để có xe?", "a": f"Giang Khôi có mặt trong 30 phút tại khu vực {area}. Đội 6 xe sẵn sàng 24/7, kể cả ngày lễ Tết."},
             {"q": f"Chi phí {title_short} bao nhiêu?", "a": f"Chi phí phụ thuộc vào tải trọng xe và vị trí. Giá từ 2.800.000đ/ca. Gọi 0971 491 174 để báo giá chính xác."},
-            {"q": f"Có phải đặt cọc trước không?", "a": "Không cần đặt cọc. Giang Khôi cam kết trả tiền SAU khi xong việc. Uy tín 10 năm bảo chứng."},
+            {"q": "Giang Khôi có cung cấp hóa đơn VAT và hợp đồng không?", "a": "Có. Chúng tôi cung cấp đầy đủ hóa đơn GTGT (VAT), hợp đồng vận chuyển và biên bản giao nhận rõ ràng cho khách hàng."},
         ]
     elif category == "dan-dung":
         faqs = [
@@ -161,13 +161,13 @@ def generate_faq_yaml(keyword: Dict) -> str:
         faqs = [
             {"q": "Giang Khôi có cho thuê xe cẩu tại khu vực nào?", "a": "Giang Khôi phục vụ 5 tỉnh: Hưng Yên, Hà Nội, Bắc Ninh, Bắc Giang, Thái Bình. Bán kính 30km từ Mỹ Hào."},
             {"q": "Liên hệ thuê xe cẩu bằng cách nào?", "a": "Gọi Hotline 0971 491 174 (24/7) hoặc Chat Zalo. Chỉ 3 bước: Gọi → Báo giá → Xe đến."},
-            {"q": "Giá thuê xe cẩu Giang Khôi có đắt không?", "a": "Giang Khôi cam kết giá cạnh tranh nhất khu vực. Báo giá rõ ràng, không phí ẩn, trả tiền SAU khi xong việc."},
+            {"q": "Giá thuê xe cẩu Giang Khôi có đắt không?", "a": "Giang Khôi cam kết giá cạnh tranh nhất khu vực. Báo giá rõ ràng, không phí ẩn, đầy đủ hóa đơn VAT và chứng từ hợp lệ."},
         ]
     elif category in ("bang-gia",):
         faqs = [
             {"q": "Bảng giá có bao gồm VAT không?", "a": "Giá niêm yết chưa bao gồm VAT và phí cầu đường. Gọi 0971 491 174 để nhận báo giá chính xác theo công việc cụ thể."},
             {"q": "Giá cẩu đêm và ngày lễ có khác không?", "a": "Có. Cẩu đêm (sau 22h) và ngày lễ Tết tăng 15-20% so với giá ngày thường."},
-            {"q": "Có được trả sau không?", "a": "Có. Giang Khôi cam kết trả tiền SAU khi xong việc. Không cần đặt cọc trước."},
+            {"q": "Giang Khôi có xuất hóa đơn VAT không?", "a": "Có. Giang Khôi hỗ trợ xuất hóa đơn VAT (GTGT) đầy đủ và cung cấp hợp đồng, chứng từ giao nhận hợp lệ cho khách hàng doanh nghiệp."},
         ]
     else:
         faqs = [

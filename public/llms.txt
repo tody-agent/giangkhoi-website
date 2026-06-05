@@ -18,19 +18,19 @@ CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VẬN TẢI GIANG KHÔI HƯNG YÊN (MST
 
 ## Key Pages
 
-- [Homepage (Vietnamese)](https://vantaigiangkhoi.com/vi): Trang chủ với bảng giá, dịch vụ, khu vực phục vụ
-- [Homepage (Chinese)](https://vantaigiangkhoi.com/zh): 首页 — 价格表、服务项目、服务区域
-- [Pricing](https://vantaigiangkhoi.com/vi/bang-gia): Bảng giá chi tiết thuê xe cẩu theo tải trọng
-- [About](https://vantaigiangkhoi.com/vi/ve-chung-toi): Giới thiệu công ty
-- [Contact](https://vantaigiangkhoi.com/vi/lien-he): Liên hệ
+- [Homepage (Vietnamese)](https://xecaugiangkhoi.com/vi): Trang chủ với bảng giá, dịch vụ, khu vực phục vụ
+- [Homepage (Chinese)](https://xecaugiangkhoi.com/zh): 首页 — 价格表、服务项目、服务区域
+- [Pricing](https://xecaugiangkhoi.com/vi/bang-gia): Bảng giá chi tiết thuê xe cẩu theo tải trọng
+- [About](https://xecaugiangkhoi.com/vi/ve-chung-toi): Giới thiệu công ty
+- [Contact](https://xecaugiangkhoi.com/vi/lien-he): Liên hệ
 
 ## Services
-- [Cứu hộ xe tải lật](https://vantaigiangkhoi.com/vi/dich-vu/cuu-ho-xe-tai-lat)
-- [Cẩu bồn nước](https://vantaigiangkhoi.com/vi/dich-vu/cau-bon-nuoc)
-- [Cẩu vật liệu xây nhà](https://vantaigiangkhoi.com/vi/dich-vu/cau-vat-lieu-xay-nha)
-- [Cẩu máy móc xưởng](https://vantaigiangkhoi.com/vi/dich-vu/cau-may-mong-xuong)
-- [Cẩu container](https://vantaigiangkhoi.com/vi/dich-vu/cau-container)
-- [Cẩu cây cảnh](https://vantaigiangkhoi.com/vi/dich-vu/cau-cay-canh)
+- [Cứu hộ xe tải lật](https://xecaugiangkhoi.com/vi/dich-vu/cuu-ho-xe-tai-lat)
+- [Cẩu bồn nước](https://xecaugiangkhoi.com/vi/dich-vu/cau-bon-nuoc)
+- [Cẩu vật liệu xây nhà](https://xecaugiangkhoi.com/vi/dich-vu/cau-vat-lieu-xay-nha)
+- [Cẩu máy móc xưởng](https://xecaugiangkhoi.com/vi/dich-vu/cau-may-mong-xuong)
+- [Cẩu container](https://xecaugiangkhoi.com/vi/dich-vu/cau-container)
+- [Cẩu cây cảnh](https://xecaugiangkhoi.com/vi/dich-vu/cau-cay-canh)
 
 ## Pricing (VND, per 8-hour shift, excludes VAT)
 | Tonnage | Price/Shift | Monthly |

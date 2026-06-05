@@ -5,14 +5,14 @@
 ### 1. Tạo tài khoản Cloudflare (miễn phí)
 1. Truy cập https://dash.cloudflare.com/sign-up
 2. Đăng ký tài khoản miễn phí
-3. Thêm domain `vantaigiangkhoi.com` vào Cloudflare DNS
+3. Thêm domain `xecaugiangkhoi.com` vào Cloudflare DNS
 
 ### 2. Push code lên GitHub
 ```bash
 cd giangkhoi-website
 git init
 git add .
-git commit -m "Initial commit: vantaigiangkhoi.com"
+git commit -m "Initial commit: xecaugiangkhoi.com"
 git remote add origin https://github.com/YOUR_USERNAME/giangkhoi-website.git
 git push -u origin main
 ```
@@ -32,22 +32,22 @@ git push -u origin main
 
 ### 4. Cấu hình Custom Domain
 1. Sau khi deploy thành công, vào Settings → Custom Domains
-2. Add domain: `vantaigiangkhoi.com`
-3. Add domain: `www.vantaigiangkhoi.com` (redirect về apex)
+2. Add domain: `xecaugiangkhoi.com`
+3. Add domain: `www.xecaugiangkhoi.com` (redirect về apex)
 4. Cloudflare sẽ tự cấu hình DNS record
 
 ### 5. Cấu hình Redirects
 Tạo file `public/_redirects`:
 ```
 / /vi 302
-/www.vantaigiangkhoi.com/* https://vantaigiangkhoi.com/:splat 301
+/www.xecaugiangkhoi.com/* https://xecaugiangkhoi.com/:splat 301
 ```
 
 ## Sau khi Deploy
 
 ### Kiểm tra
-- [ ] Truy cập https://vantaigiangkhoi.com/vi — OK
-- [ ] Truy cập https://vantaigiangkhoi.com/zh — OK
+- [ ] Truy cập https://xecaugiangkhoi.com/vi — OK
+- [ ] Truy cập https://xecaugiangkhoi.com/zh — OK
 - [ ] Click-to-call hoạt động trên mobile
 - [ ] Zalo link mở app Zalo
 - [ ] SEO: Kiểm tra https://search.google.com/search-console
@@ -55,6 +55,6 @@ Tạo file `public/_redirects`:
 
 ### Đăng ký Google Search Console
 1. Truy cập https://search.google.com/search-console
-2. Add property: `vantaigiangkhoi.com`
+2. Add property: `xecaugiangkhoi.com`
 3. Verify bằng DNS record (Cloudflare)
-4. Submit sitemap: `https://vantaigiangkhoi.com/sitemap-index.xml`
+4. Submit sitemap: `https://xecaugiangkhoi.com/sitemap-index.xml`

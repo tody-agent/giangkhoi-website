@@ -1,6 +1,6 @@
 # Vận Tải Giang Khôi – Website Dịch Vụ Xe Cẩu Hưng Yên
 
-Website chính thức của **Công Ty TNHH Thương Mại Dịch Vụ Vận Tải Giang Khôi Hưng Yên** (Domain: [vantaigiangkhoi.com](https://vantaigiangkhoi.com)). Website được thiết kế tối ưu hóa tốc độ tải trang cực nhanh (dưới 1.5s trên mạng 4G), chuẩn SEO Google và đặc biệt là tối ưu hóa cho các công cụ tìm kiếm bằng AI (AEO - Answer Engine Optimization).
+Website chính thức của **Công Ty TNHH Thương Mại Dịch Vụ Vận Tải Giang Khôi Hưng Yên** (Domain: [xecaugiangkhoi.com](https://xecaugiangkhoi.com)). Website được thiết kế tối ưu hóa tốc độ tải trang cực nhanh (dưới 1.5s trên mạng 4G), chuẩn SEO Google và đặc biệt là tối ưu hóa cho các công cụ tìm kiếm bằng AI (AEO - Answer Engine Optimization).
 
 ---
 
@@ -135,7 +135,7 @@ Dự án được cấu hình hoàn toàn tương thích để chạy trên Clou
    - **Build command**: `npm run build`
    - **Build output directory**: `dist`
    - **Node.js version**: Sử dụng biến môi trường `NODE_VERSION: 22` hoặc cài đặt mặc định theo `.node-version` (đã cấu hình Node 22).
-4. Thêm tên miền tùy chỉnh (Custom Domain) trong phần cài đặt: `vantaigiangkhoi.com` và tự động kích hoạt chứng chỉ SSL miễn phí của Cloudflare.
+4. Thêm tên miền tùy chỉnh (Custom Domain) trong phần cài đặt: `xecaugiangkhoi.com` và tự động kích hoạt chứng chỉ SSL miễn phí của Cloudflare.
 5. File `public/_redirects` sẽ tự động xử lý chuyển hướng 302 từ trang gốc `/` sang trang ngôn ngữ mặc định `/vi`.
 
 ---

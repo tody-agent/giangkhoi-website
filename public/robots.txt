@@ -1,11 +1,11 @@
-# Robots.txt for vantaigiangkhoi.com
+# Robots.txt for xecaugiangkhoi.com
 # Optimized for SEO + AI Engine Optimization (AEO)
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://vantaigiangkhoi.com/sitemap-index.xml
+Sitemap: https://xecaugiangkhoi.com/sitemap-index.xml
 
 # AI Crawler Permissions — WELCOME AI bots
 User-agent: GPTBot
