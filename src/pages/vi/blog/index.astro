@@ -1,59 +1,154 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
-const posts = [
-  {
-    slug: 'bang-gia-thue-xe-cau-hung-yen-2026',
-    title: 'Bảng Giá Thuê Xe Cẩu Hưng Yên 2026 — Cập Nhật Tháng 6',
-    date: '2026-06-01',
-    excerpt: 'Tổng hợp bảng giá thuê xe cẩu 3.5T đến 100T tại Hưng Yên, cập nhật mới nhất tháng 6/2026. So sánh giá theo ca, theo tháng, theo tải trọng.',
-  },
-  {
-    slug: 'huong-dan-thue-xe-cau-lan-dau',
-    title: 'Thuê Xe Cẩu Lần Đầu — 5 Điều Cần Biết Trước Khi Gọi',
-    date: '2026-05-20',
-    excerpt: 'Hướng dẫn chi tiết cho người lần đầu thuê xe cẩu: cách chọn tải trọng phù hợp, chuẩn bị hiện trường, và những lưu ý quan trọng tránh phát sinh chi phí.',
-  },
-  {
-    slug: 'cau-bon-nuoc-len-mai-nha-pho',
-    title: 'Cẩu Bồn Nước Lên Mái Nhà Phố — Quy Trình & Chi Phí 2026',
-    date: '2026-05-10',
-    excerpt: 'Hướng dẫn chi tiết quy trình cẩu bồn nước inox lên mái nhà phố tại Hưng Yên. Chi phí, thời gian, và cách chọn xe cẩu phù hợp cho ngõ hẹp.',
-  },
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+// Group by category
+const categories = [
+  { key: 'all', label: 'Tất cả', icon: '📰' },
+  { key: 'cuu-ho', label: 'Cứu hộ', icon: '🚨' },
+  { key: 'dan-dung', label: 'Dân dụng', icon: '🏠' },
+  { key: 'cong-nghiep', label: 'Công nghiệp', icon: '🏭' },
+  { key: 'huong-dan', label: 'Hướng dẫn', icon: '📋' },
+  { key: 'bang-gia', label: 'Bảng giá', icon: '💰' },
+  { key: 'kien-thuc', label: 'Kiến thức', icon: '📚' },
+  { key: 'khu-vuc', label: 'Khu vực', icon: '📍' },
 ];
+
+const formatDate = (d: string) => {
+  const date = new Date(d);
+  return date.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+};
+
+const siteUrl = 'https://vantaigiangkhoi.com';
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${siteUrl}/vi` },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/vi/blog` },
+  ]
+};
 ---
 
 <BaseLayout
-  title="Blog Xe Cẩu Hưng Yên — Tin Tức & Hướng Dẫn | Giang Khôi"
-  description="Blog chia sẻ kiến thức về thuê xe cẩu, bảng giá cập nhật, hướng dẫn chọn xe cẩu phù hợp tại Hưng Yên. Từ Giang Khôi — 10 năm kinh nghiệm."
+  title="Blog Xe Cẩu Giang Khôi — Kiến Thức, Bảng Giá & Hướng Dẫn Thuê Xe Cẩu"
+  description="Blog chia sẻ kiến thức thuê xe cẩu, bảng giá cập nhật, hướng dẫn chọn xe cẩu phù hợp. Cập nhật thường xuyên bởi đội ngũ 10 năm kinh nghiệm."
+  jsonLd={breadcrumbJsonLd}
 >
-  <section class="section" style="padding-top: var(--space-12);">
+  <section class="blog-listing" style="padding-top: var(--space-12);">
     <div class="container">
-      <div class="section-header">
-        <h1>Blog & Hướng Dẫn</h1>
-        <p>Chia sẻ kiến thức từ 10 năm kinh nghiệm xe cẩu</p>
+      <nav class="breadcrumb">
+        <a href="/vi">Trang chủ</a> › <span>Blog</span>
+      </nav>
+
+      <div class="blog-list-header">
+        <h1>Blog Xe Cẩu Giang Khôi</h1>
+        <p>Kiến thức chuyên sâu, bảng giá cập nhật, và hướng dẫn thuê xe cẩu an toàn — từ đội ngũ <strong>10 năm kinh nghiệm</strong>.</p>
       </div>
 
-      <div class="blog-grid">
-        {posts.map((post) => (
-          <a href={`/vi/blog/${post.slug}`} class="blog-card" id={`blog-${post.slug}`}>
-            <time datetime={post.date}>{new Date(post.date).toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-            <h2>{post.title}</h2>
-            <p>{post.excerpt}</p>
-            <span class="read-more">Đọc tiếp →</span>
-          </a>
+      <div class="category-filter" id="category-filter">
+        {categories.map(cat => (
+          <button
+            class:list={['filter-btn', { active: cat.key === 'all' }]}
+            data-category={cat.key}
+          >
+            <span>{cat.icon}</span>
+            <span>{cat.label}</span>
+          </button>
         ))}
+      </div>
+
+      <p class="posts-count" id="posts-count">{posts.length} bài viết</p>
+
+      <div class="posts-grid" id="posts-grid">
+        {posts.map(post => (
+          <article class="post-card" data-category={post.data.category}>
+            <a href={`/vi/blog/${post.slug}`} class="post-card-link">
+              <div class="post-card-content">
+                <span class="post-category">{categories.find(c => c.key === post.data.category)?.icon} {categories.find(c => c.key === post.data.category)?.label}</span>
+                <h2 class="post-title">{post.data.title}</h2>
+                <p class="post-excerpt">{post.data.description}</p>
+                <div class="post-meta">
+                  <span>📅 {formatDate(post.data.date)}</span>
+                  {post.data.area.length > 0 && (
+                    <span>📍 {post.data.area.slice(0, 2).join(', ')}</span>
+                  )}
+                </div>
+              </div>
+              <span class="post-arrow">→</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="blog-bottom-cta">
+        <h3>Cần thuê xe cẩu? Gọi ngay!</h3>
+        <p>Có mặt trong <strong>30 phút</strong> — Báo giá rõ ràng — Trả tiền SAU</p>
+        <div class="cta-buttons">
+          <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+          <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Chat Zalo</a>
+        </div>
       </div>
     </div>
   </section>
 </BaseLayout>
 
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const postCards = document.querySelectorAll('.post-card');
+  const postsCount = document.getElementById('posts-count');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = (btn as HTMLButtonElement).dataset.category;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      let visible = 0;
+      postCards.forEach(card => {
+        const el = card as HTMLElement;
+        if (cat === 'all' || el.dataset.category === cat) {
+          el.style.display = '';
+          visible++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (postsCount) postsCount.textContent = `${visible} bài viết`;
+    });
+  });
+</script>
+
 <style>
-  .blog-grid { display: grid; gap: var(--space-6); max-width: 800px; margin: 0 auto; }
-  .blog-card { display: block; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); text-decoration: none; color: inherit; transition: all var(--transition-base); }
-  .blog-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-glow); }
-  .blog-card time { font-size: var(--text-sm); color: var(--color-text-muted); }
-  .blog-card h2 { font-size: var(--text-xl); margin: var(--space-2) 0 var(--space-3); line-height: 1.4; }
-  .blog-card p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.8; margin-bottom: var(--space-4); }
-  .read-more { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .blog-list-header { text-align: center; margin-bottom: var(--space-10); }
+  .blog-list-header h1 { margin-bottom: var(--space-3); }
+  .blog-list-header p { font-size: var(--text-lg); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+  .category-filter { display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2); margin-bottom: var(--space-6); -webkit-overflow-scrolling: touch; }
+  .filter-btn { display: flex; align-items: center; gap: var(--space-1); padding: var(--space-2) var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-full); color: var(--color-text-secondary); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--transition-fast); }
+  .filter-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  .filter-btn.active { background: var(--color-primary-glow); border-color: var(--color-primary); color: var(--color-primary); font-weight: var(--weight-semibold); }
+  .posts-count { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+  .posts-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+  @media (min-width: 768px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .posts-grid { grid-template-columns: repeat(3, 1fr); } }
+  .post-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); transition: all var(--transition-base); overflow: hidden; }
+  .post-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .post-card-link { display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-5); height: 100%; color: inherit; text-decoration: none; }
+  .post-category { font-size: var(--text-xs); color: var(--color-primary); font-weight: var(--weight-semibold); margin-bottom: var(--space-2); }
+  .post-title { font-size: var(--text-lg); font-weight: var(--weight-semibold); line-height: 1.4; margin-bottom: var(--space-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .post-excerpt { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-3); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .post-meta { display: flex; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); }
+  .post-arrow { color: var(--color-primary); font-size: var(--text-xl); text-align: right; margin-top: var(--space-2); }
+  .blog-bottom-cta { margin-top: var(--space-12); padding: var(--space-8); background: linear-gradient(135deg, rgba(255,184,0,0.08), rgba(255,184,0,0.15)); border: 2px solid var(--color-primary); border-radius: var(--radius-xl); text-align: center; }
+  .blog-bottom-cta h3 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+  .blog-bottom-cta p { color: var(--color-text-secondary); margin-bottom: var(--space-6); font-size: var(--text-lg); }
+  .cta-buttons { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
 </style>

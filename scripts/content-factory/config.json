@@ -1,0 +1,94 @@
+{
+  "brand": {
+    "name": "Xe Cẩu Giang Khôi",
+    "company": "CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VẬN TẢI GIANG KHÔI HƯNG YÊN",
+    "phone": "0971491174",
+    "phoneDisplay": "0971 491 174",
+    "zalo": "https://zalo.me/0971491174",
+    "address": "Số 2013 Nguyễn Văn Linh, Phường Bạch Sam, Thị xã Mỹ Hào, Tỉnh Hưng Yên, Việt Nam",
+    "website": "https://vantaigiangkhoi.com",
+    "experience": "10 năm",
+    "fleet": "6 xe cẩu từ 3.5T đến 100T",
+    "response_time": "30 phút",
+    "service_hours": "24/7"
+  },
+  "usp": [
+    "Có mặt trong 30 phút",
+    "Báo giá rõ ràng — không phí ẩn",
+    "Trả tiền SAU khi xong việc",
+    "10 năm kinh nghiệm",
+    "Đội 6 xe sẵn sàng",
+    "Phục vụ 24/7 kể cả lễ Tết"
+  ],
+  "target_areas": [
+    {"name": "Hưng Yên", "districts": ["Mỹ Hào", "Văn Lâm", "Yên Mỹ", "Ân Thi", "Văn Giang", "Khoái Châu", "Phố Nối", "TP Hưng Yên"]},
+    {"name": "Hà Nội", "districts": ["Gia Lâm", "Long Biên", "Hoàng Mai", "Thanh Trì", "Đông Anh", "Sóc Sơn"]},
+    {"name": "Bắc Ninh", "districts": ["TP Bắc Ninh", "Quế Võ", "Tiên Du", "Từ Sơn", "Yên Phong", "Thuận Thành"]},
+    {"name": "Bắc Giang", "districts": ["TP Bắc Giang", "Việt Yên", "Yên Dũng", "Lạng Giang", "Lục Nam"]},
+    {"name": "Thái Bình", "districts": ["TP Thái Bình", "Tiền Hải", "Thái Thụy", "Kiến Xương", "Đông Hưng", "Vũ Thư"]}
+  ],
+  "tonnage_ranges": [
+    {"range": "3.5T – 5T", "price_shift": "2.800.000 – 3.400.000đ", "use": "Cẩu bồn nước, cây cảnh, vật liệu nhẹ"},
+    {"range": "8T – 10T", "price_shift": "4.000.000 – 4.500.000đ", "use": "Cẩu container, máy nhỏ"},
+    {"range": "15T – 25T", "price_shift": "5.500.000 – 7.500.000đ", "use": "Cẩu máy CNC, kết cấu thép"},
+    {"range": "50T – 100T", "price_shift": "9.400.000 – 16.900.000đ", "use": "Cẩu nặng, công trình lớn"}
+  ],
+  "services": [
+    {"slug": "cuu-ho-xe-tai-lat", "name": "Cứu hộ xe tải lật", "category": "cuu-ho"},
+    {"slug": "cau-bon-nuoc", "name": "Cẩu bồn nước", "category": "dan-dung"},
+    {"slug": "cau-vat-lieu-xay-nha", "name": "Cẩu vật liệu xây nhà", "category": "dan-dung"},
+    {"slug": "cau-mai-ton-khung-keo", "name": "Cẩu mái tôn khung kèo", "category": "dan-dung"},
+    {"slug": "cau-cay-canh", "name": "Cẩu cây cảnh", "category": "dan-dung"},
+    {"slug": "cau-may-mong-xuong", "name": "Cẩu máy móc xưởng", "category": "cong-nghiep"},
+    {"slug": "cau-container", "name": "Cẩu container", "category": "cong-nghiep"}
+  ],
+  "internal_links": {
+    "service_pages": [
+      "/vi/dich-vu/cuu-ho-xe-tai-lat",
+      "/vi/dich-vu/cau-bon-nuoc",
+      "/vi/dich-vu/cau-vat-lieu-xay-nha",
+      "/vi/dich-vu/cau-mai-ton-khung-keo",
+      "/vi/dich-vu/cau-cay-canh",
+      "/vi/dich-vu/cau-may-mong-xuong",
+      "/vi/dich-vu/cau-container"
+    ],
+    "area_pages": [
+      "/vi/khu-vuc/my-hao",
+      "/vi/khu-vuc/van-lam",
+      "/vi/khu-vuc/yen-my",
+      "/vi/khu-vuc/an-thi",
+      "/vi/khu-vuc/van-giang",
+      "/vi/khu-vuc/khoai-chau",
+      "/vi/khu-vuc/pho-noi",
+      "/vi/khu-vuc/hung-yen"
+    ],
+    "static_pages": [
+      "/vi/bang-gia",
+      "/vi/ve-chung-toi",
+      "/vi/lien-he",
+      "/vi/blog"
+    ]
+  },
+  "cro": {
+    "objections": {
+      "trust": {"objection": "Sao biết đội này uy tín?", "counter": "10 năm kinh nghiệm, phục vụ 500+ công trình/năm, trả tiền SAU khi xong việc."},
+      "price": {"objection": "Giá bao nhiêu? Có phí ẩn không?", "counter": "Báo giá rõ ràng trước khi làm. Không phát sinh — không phí ẩn. Gọi 0971 491 174."},
+      "fit": {"objection": "Có phục vụ khu vực tôi không?", "counter": "Phục vụ trong bán kính 30km: Hưng Yên, Hà Nội, Bắc Ninh, Bắc Giang, Thái Bình."},
+      "timing": {"objection": "Có kịp không? Tôi cần gấp!", "counter": "Có mặt trong 30 phút. Phục vụ 24/7, kể cả ngày lễ Tết."},
+      "effort": {"objection": "Quy trình phức tạp quá!", "counter": "Chỉ 3 bước: Gọi → Báo giá → Xe đến. Đơn giản, không giấy tờ rườm rà."}
+    },
+    "persuasion_assets": [
+      "✅ 10 năm kinh nghiệm",
+      "✅ 6 xe sẵn sàng 24/7",
+      "✅ Trả tiền SAU khi xong việc",
+      "✅ 500+ công trình/năm",
+      "✅ Phục vụ 5 tỉnh"
+    ]
+  },
+  "content": {
+    "tone": "Thân thiện, trực tiếp, không thuật ngữ phức tạp. Xưng hô anh/chị.",
+    "language": "vi",
+    "author": "Giang Khôi",
+    "date_format": "2026-06-06"
+  }
+}

@@ -7,14 +7,18 @@ const t = useTranslations('vi');
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Công Ty TNHH TM DV Vận Tải Giang Khôi Hưng Yên",
+  "name": "CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VẬN TẢI GIANG KHÔI HƯNG YÊN",
   "url": "https://vantaigiangkhoi.com",
   "telephone": "+84971491174",
   "foundingDate": "2016",
+  "founder": {
+    "@type": "Person",
+    "name": "Vũ Văn Hùng"
+  },
   "numberOfEmployees": { "@type": "QuantitativeValue", "value": 12 },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Phường Bạch Sam",
+    "streetAddress": "Số 2013 Nguyễn Văn Linh, Phường Bạch Sam",
     "addressLocality": "Mỹ Hào",
     "addressRegion": "Hưng Yên",
     "addressCountry": "VN"
@@ -85,12 +89,18 @@ const jsonLd = {
           <h2>Giấy tờ pháp lý</h2>
           <dl class="legal-info">
             <dt>Tên công ty</dt>
-            <dd>Công Ty TNHH Thương Mại Dịch Vụ Vận Tải Giang Khôi Hưng Yên</dd>
+            <dd>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VẬN TẢI GIANG KHÔI HƯNG YÊN</dd>
             <dt>Mã số thuế</dt>
             <dd>0901150346</dd>
-            <dt>Địa chỉ</dt>
-            <dd>Phường Bạch Sam, Thị xã Mỹ Hào, Tỉnh Hưng Yên</dd>
-            <dt>Ngành nghề</dt>
+            <dt>Người đại diện pháp luật</dt>
+            <dd>VŨ VĂN HÙNG</dd>
+            <dt>Tình trạng hoạt động</dt>
+            <dd>Đang hoạt động</dd>
+            <dt>Địa chỉ đăng ký thuế</dt>
+            <dd>Số 2013 Nguyễn Văn Linh, Phường Thượng Hồng, Tỉnh Hưng Yên, Việt Nam</dd>
+            <dt>Địa chỉ văn phòng & bãi xe</dt>
+            <dd>Số 2013 Nguyễn Văn Linh, Phường Bạch Sam, Thị xã Mỹ Hào, Tỉnh Hưng Yên, Việt Nam</dd>
+            <dt>Ngành nghề chính</dt>
             <dd>Vận tải hàng hóa đường bộ, cho thuê xe cẩu, lắp đặt máy móc thiết bị công nghiệp</dd>
             <dt>Kiểm định an toàn</dt>
             <dd>Toàn bộ 6 xe đều có giấy kiểm định còn hạn, đủ điều kiện vào tất cả KCN</dd>
