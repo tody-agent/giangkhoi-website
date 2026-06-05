@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const locations = [
+    { slug: 'mi-hao', name: '美豪', time: '15分钟', desc: '江开起重车队中心。响应最快 — 仅需15分钟即可赶到现场。', kcn: ['浦内A工业区扩大区', '明德工业区', '异史工业群'], pop: '美豪市社人口约13万人，是兴安省最大的工业中心。聚集了大量来自韩国、日本、中国的FDI（外商直接投资）工厂。' },
+    { slug: 'wen-lin', name: '文林', time: '20分钟', desc: '毗邻河内，拥有众多新型城市规划和建设工程。', kcn: ['如琼工业区', '新光工业群'], pop: '文林县紧邻河内，是兴安省城市化发展最快的地区，拥有众多城市新区及住宅项目。' },
+    { slug: 'an-mei', name: '安美', time: '20分钟', desc: '工业发展强劲的区域，新建厂房林立，工程起重需求旺盛。', kcn: ['安美工业区', '安美II工业区', '玉龙工业群'], pop: '安美县的工业发展正在蓬勃兴起，拥有两个大型工业区和多个工业群，吸引了大量外商直接投资（FDI）。' },
+    { slug: 'an-shi', name: '安市', time: '25分钟', desc: '正在从农业向工业转型的县区，基础设施施工量大。', kcn: ['安市工业区', '罢晒工业群'], pop: '安市县目前正处于从农业向工业过渡的阶段，有许多基础设施和新厂房建设项目正在施工中。' },
+    { slug: 'wen-jiang', name: '文江', time: '25分钟', desc: '绿地城（Ecopark）区域，别墅区对吊装景观树和水箱有大量民用需求。', kcn: ['Ecopark生态绿地城', 'Dream City梦想城'], pop: '文江县以Ecopark绿地城和众多高档别墅区闻名。对吊装景观树、水箱及大型家具的需求量很大。' },
+    { slug: 'kuai-zhou', name: '快州', time: '30分钟', desc: '交通基础设施发展迅速，新建桥梁、道路工程起重施工较多。', kcn: ['大集工业群', '新民工业群'], pop: '快州县正在建设许多交通及桥梁工程。对服务于基础设施建设的吊车需求很大。' },
+    { slug: 'phu-noi', name: '富内', time: '15分钟', desc: '大型工业重镇，工业区高度集中，是江开起重长期服务的核心工业基地。', kcn: ['浦内A工业区', '浦内B工业区', '升龙II工业区'], pop: '富内是兴安省最大的工业枢纽，拥有3个国家级工业区，数百家外资工厂正常运营，吊车服务需求极高。' },
+    { slug: 'xing-an', name: '兴安市', time: '30分钟', desc: '兴安省省会，行政与政治中心，城市住宅项目起重作业多。', kcn: ['兴安工业区', '兴安市工业群'], pop: '兴安市是兴安省的行政中心，城市化进程加快，兴建了大量高楼、公寓和商业中心。' },
+  ];
+  return locations.map(loc => ({ params: { slug: loc.slug }, props: loc }));
+}
+
+const { slug, name, time, desc, kcn, pop } = Astro.props;
+
+const services = [
+  { title: `在 ${name} 的卡车翻车救援及事故起重服务 (行业代码 3315)`, href: '/zh/fu-wu/jiu-yuan-fan-che' },
+  { title: `在 ${name} 的高空不锈钢/塑料水箱吊装服务 (行业代码 4322)`, href: '/zh/fu-wu/diao-shui-xiang' },
+  { title: `在 ${name} 的建筑材料起重及工地场地整理 (行业代码 4311)`, href: '/zh/fu-wu/diao-jian-cai' },
+  { title: `在 ${name} 的精密工业设备、CNC机床起重安装 (行业代码 3320)`, href: '/zh/fu-wu/diao-ji-qi' },
+  { title: `在 ${name} 的重型货物装卸及集装箱掏箱吊装 (行业代码 5224)`, href: '/zh/fu-wu/diao-ji-zhuang-xiang' },
+  { title: `在 ${name} 的大型景观盆景、厂区绿化树木吊装 (行业代码 8130)`, href: '/zh/fu-wu/diao-jing-guan-shu' },
+  { title: `在 ${name} 的预制钢结构框架及屋顶彩钢瓦安装 (行业代码 4329)`, href: '/zh/fu-wu/diao-gang-jia' },
+];
+---
+
+<BaseLayout
+  title={`在 ${name} 租赁起重机 — ${time} 内到达 | 江开起重`}
+  description={`兴安省 ${name} 3.5吨-100吨起重机/吊车租赁服务。 ${time} 内到达。24/7全天候服务。联系电话：0971 491 174。`}
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/zh">首页</a> › <a href="/zh/qu-yu">服务区域</a> › <span>{name}</span>
+      </nav>
+
+      <div class="location-hero">
+        <div class="location-badge">
+          <span class="pulse-dot"></span>
+          {time}内可到达
+        </div>
+        <h1>在 {name} 的起重机/吊车租赁服务</h1>
+        <p class="location-desc">{desc}</p>
+        <div class="hero-ctas">
+          <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 立即电话咨询 — 0971 491 174</a>
+          <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Zalo 在线咨询</a>
+        </div>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-main">
+          <h2>关于 {name} 区域</h2>
+          <p>{pop}</p>
+
+          <h2>区内主要工业园区及工业群</h2>
+          <ul class="check-list">
+            {kcn.map((k: string) => <li>{k}</li>)}
+          </ul>
+
+          <h2>在 {name} 提供的专业起重服务</h2>
+          <div class="service-links">
+            {services.map(svc => (
+              <a href={svc.href} class="service-link-card">
+                <span>{svc.title}</span>
+                <span class="arrow">→</span>
+              </a>
+            ))}
+          </div>
+
+          <h2>在 {name} 的起重机租赁参考价格表</h2>
+          <div class="price-table-wrapper"><table class="price-table">
+            <thead><tr><th>吊车吨位/载重</th><th>价格/班 (8小时)</th><th>业务适合场景</th></tr></thead>
+            <tbody>
+              <tr><td><strong>3.5吨 – 5吨</strong></td><td class="price-value">2.800.000 – 3.400.000đ</td><td>高空水箱吊装、景观绿化树木搬运</td></tr>
+              <tr><td><strong>8吨 – 10吨</strong></td><td class="price-value">4.000.000 – 4.500.000đ</td><td>空集装箱吊装、中小型出厂设备装车</td></tr>
+              <tr><td><strong>15吨 – 25吨</strong></td><td class="price-value">5.500.000 – 7.500.000đ</td><td>精密数控机床/CNC吊装、钢结构定位</td></tr>
+              <tr><td><strong>50吨 – 100吨</strong></td><td class="price-value">9.400.000 – 16.900.000đ</td><td>超重大型工业设备搬迁、国家重点工程</td></tr>
+            </tbody>
+          </table></div>
+          <p class="price-note">* 以上价格仅供参考，未包含增值税（VAT）。请致电 0971 491 174 获取量身定制的免费方案与准确报价。</p>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>需要在 {name} 租吊车？</h3>
+            <p>我们承诺 {time} 内到达现场！</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width:100%;">📞 0971 491 174</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .location-hero { margin-bottom: var(--space-12); }
+  .location-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-full); color: var(--color-success); font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-4); }
+  .location-hero h1 { margin-bottom: var(--space-4); }
+  .location-desc { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); max-width: 700px; }
+  .hero-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .location-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .location-grid { grid-template-columns: 1fr 320px; } }
+  .location-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .location-main h2:first-child { margin-top: 0; }
+  .location-main > p { color: var(--color-text-secondary); line-height: 1.8; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '🏭'; position: absolute; left: 0; }
+  .service-links { display: grid; gap: var(--space-2); }
+  .service-link-card { display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); color: var(--color-text-secondary); text-decoration: none; font-size: var(--text-sm); transition: all var(--transition-fast); }
+  .service-link-card:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateX(4px); }
+  .arrow { color: var(--color-primary); }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+</style>

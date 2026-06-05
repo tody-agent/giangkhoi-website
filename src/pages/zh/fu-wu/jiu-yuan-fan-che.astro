@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('zh');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "兴安省翻车救援与起重救援服务",
+  "provider": { "@type": "LocalBusiness", "name": "江开起重", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "兴安省翻车救援、集装箱掉落起重救援服务。30分钟到达，24/7全天候服务。",
+  "url": "https://vantaigiangkhoi.com/zh/fu-wu/jiu-yuan-fan-che"
+};
+
+const faqs = [
+  { q: '翻车救援需要多长时间？', a: '视现场情况而定，吊车通常在30分钟内到达。处理时间从1到4小时不等，具体取决于事故严重程度和车辆吨位。' },
+  { q: '夜间救援有额外费用吗？', a: '有的，非工作时间（夜间18:00至次日6:00，以及法定节假日）的救援价格较白天会上浮20-30%。但我们的车队24/7全天候应急待命。' },
+  { q: '吊车有进入工业区的完整手续吗？', a: '有的。我们所有6台吊车均具备有效的安全检验合格证、驾驶员专业执照和操作证，以及完整的第三方责任险，完全符合进入所有工业区作业的合规条件。' },
+  { q: '货车救援需要多少吨的吊车？', a: '轻型货车（5吨以下）：需要8-15吨吊车。重型货车（10-20吨）：需要25-50吨吊车。满载的40尺集装箱：需要50-100吨吊车。请致电我们获取准确建议。' },
+];
+---
+
+<BaseLayout
+  title="兴安省翻车救援与起重救援服务 — 代码 3315 | 江开起重"
+  description="兴安省专业货车翻车救援、集装箱掉落、运输起重救援服务（代码 3315）。8吨至100吨吊车30分钟内到达，24/7全天候值守。联系电话：0971 491 174。"
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/zh">首页</a> › <a href="/zh/fu-wu">服务项目</a> › <span>翻车救援</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🚨 行业代码 3315</span>
+            <h1>翻车救援与运输事故起重处理</h1>
+            <p class="service-lead">按照兴安省登记注册的**代码 3315（运输工具修理和维护）**提供专业起重服务。我们专为货车、半挂牵引车、重型卡车侧翻，集装箱掉落，以及在国道和工业区内陷入泥潭等事故提供现场起重救援。8吨至100吨专用加藤（Kato）起重吊车车队24/7紧急值守，**30分钟内**即可赶到现场。</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 拨打救援电话 — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Zalo 发送现场照片</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cuu-ho-xe-tai-lat.png" alt="江开起重吊车在兴安省道路上进行卡车侧翻起重救援作业 [示意图]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>什么时候需要拨打起重救援电话？</h2>
+          <ul class="check-list">
+            <li>国道、省道或工业区道路上的卡车侧翻事故</li>
+            <li>集装箱从半挂车上掉落或发生严重倾斜</li>
+            <li>卡车陷于深沟、泥滩或高架桥受困无法移动</li>
+            <li>超载货物需要紧急卸货、起重分流</li>
+            <li>工业区门口发生事故，需要紧急解封交通</li>
+          </ul>
+
+          <h2>救援服务流程</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>接听电话</h3>
+              <p>拨打 0971 491 174 — 说明现场情况、具体位置和事故车型。客服将立即为您推荐合适的吊车吨位。</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>调派车辆</h3>
+              <p>立即派遣距离事故地点最近的吊车出发。到达时间：根据距离约 15-30 分钟。</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>现场评估</h3>
+              <p>司机到达现场后进行安全检查，制定最佳吊装救援方案，并在作业前提供准确报价。</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>实施吊装</h3>
+              <p>安全吊起事故车辆，清理和重载散落货物，快速恢复交通。完工验收后再付款。</p>
+            </div>
+          </div>
+
+          <h2>翻车救援参考价格表</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>事故车型</th><th>所需吊车</th><th>参考价格</th></tr></thead>
+              <tbody>
+                <tr><td>轻型卡车 (5吨以下)</td><td>8吨-10吨吊车</td><td class="price-value">4.000.000 – 5.000.000đ</td></tr>
+                <tr><td>中型卡车 (5-15吨)</td><td>15吨-25吨吊车</td><td class="price-value">5.500.000 – 8.000.000đ</td></tr>
+                <tr><td>重型卡车 (15-30吨)</td><td>25吨-50吨吊车</td><td class="price-value">8.000.000 – 12.000.000đ</td></tr>
+                <tr><td>40尺满载集装箱</td><td>50吨-100吨吊车</td><td class="price-value">12.000.000 – 18.000.000đ</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* 以上为参考价格，具体会根据现场事故复杂程度和作业时间有所调整（夜间增收 20-30%）</p>
+
+          <h2>常见问题解答</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>需要紧急救援？</h3>
+            <p>立即致电 — 吊车将在30分钟内赶到现场！</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>其他服务项目</h4>
+            <ul>
+              <li><a href="/zh/fu-wu/diao-shui-xiang">💧 吊装水箱</a></li>
+              <li><a href="/zh/fu-wu/diao-jian-cai">🧱 吊装建材</a></li>
+              <li><a href="/zh/fu-wu/diao-ji-qi">🏭 机械设备安装</a></li>
+              <li><a href="/zh/fu-wu/diao-ji-zhuang-xiang">📦 集装箱吊装</a></li>
+              <li><a href="/zh/fu-wu/diao-jing-guan-shu">🌳 绿化树木吊装</a></li>
+              <li><a href="/zh/fu-wu/diao-gang-jia">🏗️ 钢结构彩钢瓦吊装</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

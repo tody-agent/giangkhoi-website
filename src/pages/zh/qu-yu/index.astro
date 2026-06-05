@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const areas = [
+  { name: '美豪', time: '15分钟', slug: 'mi-hao', highlight: true },
+  { name: '富内', time: '15分钟', slug: 'phu-noi', highlight: true },
+  { name: '文林', time: '20分钟', slug: 'wen-lin', highlight: false },
+  { name: '安美', time: '20分钟', slug: 'an-mei', highlight: false },
+  { name: '安市', time: '25分钟', slug: 'an-shi', highlight: false },
+  { name: '文江', time: '25分钟', slug: 'wen-jiang', highlight: false },
+  { name: '快州', time: '30分钟', slug: 'kuai-zhou', highlight: false },
+  { name: '兴安市', time: '30分钟', slug: 'xing-an', highlight: false },
+];
+---
+
+<BaseLayout
+  title="江开起重车队服务区域 — 兴安省30公里辐射圈"
+  description="江开起重在兴安省服务美豪、富内、文林、安美、安市、文江、快州、兴安市等8个市县。30分钟内快速到达。联系电话：0971 491 174。"
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>服务区域</h1>
+        <p>以兴安美豪为中心，辐射半径30公里 — 覆盖兴安省8个主要县市及工业重镇</p>
+      </div>
+
+      <div class="areas-grid">
+        {areas.map((area) => (
+          <a href={`/zh/qu-yu/${area.slug}`} class:list={['area-card-lg', { highlight: area.highlight }]}>
+            <div class="area-top">
+              <span class="area-icon">📍</span>
+              <h2>{area.name}</h2>
+            </div>
+            <div class="area-bottom">
+              <span class="area-time-badge">
+                <span class="pulse-dot"></span>
+                {area.time}到达
+              </span>
+              <span class="area-link">查看详情 →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>区域范围之外？</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">江开起重也承接海阳省、北宁省、河南省等周边省份的吊装业务 — 请拨打电话咨询跨省调车服务费。</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-6); }
+  .area-card-lg { display: flex; flex-direction: column; justify-content: space-between; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: inherit; transition: all var(--transition-base); min-height: 160px; }
+  .area-card-lg:hover { border-color: var(--color-primary); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+  .area-card-lg.highlight { border-color: var(--color-primary); background: linear-gradient(135deg, var(--color-bg-card), rgba(255,184,0,0.05)); }
+  .area-top { display: flex; align-items: center; gap: var(--space-3); }
+  .area-icon { font-size: 1.5rem; }
+  .area-card-lg h2 { font-size: var(--text-xl); }
+  .area-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-4); }
+  .area-time-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-full); color: var(--color-success); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+  .area-link { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+</style>

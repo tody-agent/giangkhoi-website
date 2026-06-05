@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const services = [
+  { icon: '🚨', title: '翻车救援', desc: '起重救援运输工具（代码 3315），快速处理货车翻车、集装箱掉落等事故。30分钟内到达，24/7全天候服务。', href: '/zh/fu-wu/jiu-yuan-fan-che', img: '/images/services/cuu-ho-xe-tai-lat.png' },
+  { icon: '💧', title: '吊装水箱及供排水安装', desc: '安装供排水系统、冷水机组（代码 4322），将500L-5000L不锈钢水箱安全吊装至高层屋顶。', href: '/zh/fu-wu/diao-shui-xiang', img: '/images/services/cau-bon-nuoc-inox.png' },
+  { icon: '🧱', title: '吊装建材及场地平整', desc: '建筑材料批发（代码 4663），吊装钢材、预制混凝土板，场地拆除与平整（代码 4311, 4312）。', href: '/zh/fu-wu/diao-jian-cai', img: '/images/services/cau-vat-lieu-xay-nha.png' },
+  { icon: '🏗️', title: '钢结构安装及吊装屋顶彩钢瓦', desc: '建筑结构系统安装（代码 4329），厂房完善（代码 4330），安装预制钢架结构以及吊装铺设彩钢瓦。', href: '/zh/fu-wu/diao-gang-jia', img: '/images/services/cau-mai-ton-khung-keo.png' },
+  { icon: '🏭', title: '设备安装及厂房机械吊装', desc: '工业机械与设备安装（代码 3320），搬运CNC机床、冲压机、工业园区生产线等设备。', href: '/zh/fu-wu/diao-ji-qi', img: '/images/services/cau-may-moc-xuong.png' },
+  { icon: '📦', title: '装卸搬运及集装箱吊装', desc: '货物装卸搬运服务（代码 5224），集装箱拆箱卸货，堆场超重超大货物装卸（代码 5210）。', href: '/zh/fu-wu/diao-ji-zhuang-xiang', img: '/images/services/cau-container.png' },
+  { icon: '🌳', title: '景观与绿化树木吊装', desc: '景观维护与保养服务（代码 8130），吊装和种植大型盆景、城市及厂区绿化树木。', href: '/zh/fu-wu/diao-jing-guan-shu', img: '/images/services/cau-cay-canh.png' },
+];
+---
+
+<BaseLayout
+  title="兴安省吊车租赁服务 — 江开起重 | 7大专业吊装服务"
+  description="总结兴安省7大专业吊车租赁及起重服务：事故救援、吊装水箱、建材搬运、屋顶彩钢瓦、机械设备安装、集装箱装卸、绿化树木吊装。联系电话：0971 491 174。"
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>兴安省吊车租赁与起重服务</h1>
+        <p>7大专业起重服务 — 满足您所有的起重与吊装需求</p>
+      </div>
+      <div class="grid grid-2" style="gap: var(--space-8);">
+        {services.map((svc) => (
+          <a href={svc.href} class="card service-card-lg" id={`svc-${svc.href.split('/').pop()}`}>
+            <div class="card-image" style="aspect-ratio: 16/9;">
+              <img src={svc.img} alt={`${svc.title} — 兴安江开起重吊车租赁 [示意图]`} width="600" height="340" loading="lazy" />
+            </div>
+            <div class="svc-body">
+              <span class="svc-icon">{svc.icon}</span>
+              <h2>{svc.title}</h2>
+              <p>{svc.desc}</p>
+              <span class="card-link">查看详情 →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: var(--space-12);">
+        <h3>没有找到您需要的服务？</h3>
+        <p class="text-secondary" style="margin-bottom: var(--space-6);">请致电我们进行免费咨询 — 我们提供各种起重和货物搬运解决方案。</p>
+        <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 0971 491 174</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-card-lg { text-decoration: none; display: block; }
+  .svc-body { padding: var(--space-4) var(--space-2) var(--space-2); }
+  .svc-icon { font-size: 1.5rem; }
+  .service-card-lg h2 { font-size: var(--text-xl); margin: var(--space-2) 0; }
+  .service-card-lg p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6; }
+  .card-link { display: inline-block; margin-top: var(--space-3); color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+</style>
