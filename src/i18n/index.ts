@@ -76,6 +76,11 @@ export const serviceSlugMap: Record<string, Record<Lang, string>> = {
   'cau-cay-canh': { vi: 'cau-cay-canh', zh: 'diao-jing-guan-shu' },
   'cau-may-mong-xuong': { vi: 'cau-may-mong-xuong', zh: 'diao-ji-qi' },
   'cau-container': { vi: 'cau-container', zh: 'diao-ji-zhuang-xiang' },
+  'cau-lap-dung-ket-cau-thep': { vi: 'cau-lap-dung-ket-cau-thep', zh: 'zu-lin-diao-che-an-zhuang-gang-jie-gou' },
+  'cau-nang-ha-di-doi-may-moc': { vi: 'cau-nang-ha-di-doi-may-moc', zh: 'zu-lin-diao-che-ban-qian-ji-qi' },
+  'cau-thi-cong-dien-luc': { vi: 'cau-thi-cong-dien-luc', zh: 'zu-lin-diao-che-shi-gong-dian-li' },
+  'di-doi-nha-xuong-ha-noi-ve-tinh': { vi: 'di-doi-nha-xuong-ha-noi-ve-tinh', zh: 'chang-fang-ban-qian' },
+  'cau-pha-do-giai-phong-mat-bang': { vi: 'cau-pha-do-giai-phong-mat-bang', zh: 'chai-chu-qing-li' },
 };
 
 /**

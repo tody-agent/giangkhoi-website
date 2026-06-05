@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "出租吊车施工电力工程",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "江开起重 (Xe Cẩu Giang Khôi)",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Số 2013 Nguyễn Văn Linh, Phường Bạch Sam, Thị xã Mỹ Hào",
+      "addressLocality": "Hưng Yên",
+      "addressCountry": "VN"
+    },
+    "telephone": "0971491174"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Mỹ Hào" },
+    { "@type": "AdministrativeArea", "name": "Văn Lâm" },
+    { "@type": "AdministrativeArea", "name": "Yên Mỹ" },
+    { "@type": "AdministrativeArea", "name": "Ân Thi" },
+    { "@type": "AdministrativeArea", "name": "Văn Giang" },
+    { "@type": "AdministrativeArea", "name": "Khoái Châu" },
+    { "@type": "AdministrativeArea", "name": "Phố Nối" },
+    { "@type": "AdministrativeArea", "name": "Hưng Yên" }
+  ],
+  "description": "提供 7T - 100T 轮胎式起重机及随车吊租赁，专业用于兴安省架设水泥电线杆、吊装安装变电站变压器、以及中高压输电线路（35kV-220kV）放线挂线施工作业。安全可靠，电力资质文件齐全。"
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "架设20米环形预应力混凝土电杆需要多少吨的吊车？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20米环形混凝土电杆的自身重量通常在 4-5.5 吨之间。为了保障立杆安全，必须调派 25吨或以上 的加藤/多田野轮胎吊。在 10-12 米的工作半径下，吊车臂长需达到 22 米以上，才能确保将电杆精准吊入预挖好的地基基坑内。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "起重吊车能通过较窄的农田机耕路或河堤路到达电杆基位吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "江开起重的轮胎吊（全路况型）可行驶在净宽 3.5 米以上且路基夯实的河堤或农田机耕路上。对于特别松软的稻田路段，必须由施工方提前铺设承重钢板或混凝土块，防止起重机支腿受力时陷车或倾覆。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "江开起重是否能配合电力公司（EVN）停电时间段进行夜间施工？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。我们深知电力行业停电施工时间的紧迫性。我们的起重机和司机随时可以配合兴安省电力公司的调度指令（包括夜间、节假日和周末），确保在指定的断电时间内快速安全地完成架线和安装工作。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "现场架设钢板、清理障碍以利于吊车进场，这部分费用由谁承担？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "根据电力系统施工的行业惯例，现场地基平整、树木砍伐、铺设路基防护钢板等通道清理工作，均由电力安装总包方或施工队负责。我们免费提供吊装点选择及支腿受力面积计算的技术咨询。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我们是否可以为整个线路工程长期租赁吊车（1-3个月）？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。江开起重在兴安省境内提供长期的包月和工程包工期租赁包，价格享有最大幅度的折扣。包月期间提供常驻现场的专属司机及保养维护支持，随工程进度灵活转移吊装地点。"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="兴安省电力工程吊车租赁电架立杆 — 行业代码 4321 | 江开起重"
+  description="提供 7T–100T 轮胎吊、随车起重机租赁，服务于电线杆架设、变电站变压器定位就位、输电线路放线等电网建设。高安全标准。电话：0971 491 174。"
+  jsonLd={[jsonLd, faqJsonLd]}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/zh">首页</a> › <a href="/zh/fu-wu">服务项目</a> › <span>电力工程起重施工</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">⚡ 行业代码 4321</span>
+            <h1>输变电工程吊车租赁、电线杆架设立杆、变压器吊装及放线施工</h1>
+            <p class="service-lead">按照登记注册的**代码 4321（电气系统安装）**以及**代码 4229（其他土木工程建设）**提供专业高安全起重服务。我们提供 **7吨至100吨** 越野轮胎起重机和重型随车吊，专业服务于水泥电线杆架设（12m-20m）、电力铁塔拼装、110kV/220kV 变电站内大型变压器（5-30吨）卸车及就位、以及架空高压电缆张力放线挂线。操作人员均经过严格的防触电安全规程培训，可迅速对接电力系统工单。</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 立即致电咨询 — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 提交线路方案在线评估</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-thi-cong-dien-luc.png" alt="江开起重轮胎吊在兴安省野外路段架设和竖立高压水泥电线杆 [示意图]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>电力电网起重作业的严苛安全与地形要求</h2>
+          <div class="answer-box">
+            <p><strong>输变电工程吊装多属于邻近带电体高空危险作业，必须绝对服从行业安全规程。同时，立杆多分布于荒野农田、狭窄河堤或高差较大的坡地上，起重机械需要具备极强的野外通过能力以及卓越的支腿抗倾覆垫板。</strong></p>
+          </div>
+          
+          <p>电力起重作业高度依赖精确的控制以及规范的安全监护。我们的司机在作业时会与现场监护人保持绝对步调一致，确保起重臂及吊物在任何时候都不进入感应电及带电间隙安全距离。江开起重长期配合越南电力（EVN）的分包工程，所有起重工、司机均持有高压带电作业邻近安全特种卡，设备提供定期的绝缘测试及检验合格证。</p>
+
+          <h2>输变电项目起重装备及参数配比</h2>
+          <div class="answer-box">
+            <p><strong>根据各电网项目工况定制化配车：7吨-15吨随车吊适合城镇路口常规12米水泥杆定位与运输；加藤25吨轮胎吊是架设15米-20米主线电杆的绝对主力；加藤50-100吨则负责将重型变压器从平板车吊装至配电所水泥底座上。</strong></p>
+          </div>
+          
+          <ul class="check-list">
+            <li><strong>邻近高压电最小安全间距 (QCVN 01:2020/BCT):</strong> 我们的现场团队严格执行防触电距离控制，在 110kV 输电线路旁施工时保持最小 4.0 米间距；在 220kV 旁保持最小 6.0 米间距，防止感应电电弧放电。</li>
+            <li><strong>地基防沉降超厚承重垫铁:</strong> 针对农田或河道堤坝上的软弱土层，江开起重每台出厂起重机均配备 20mm 厚超大面积钢支腿垫板，分散压强，防止软土局部塌陷造成侧翻。</li>
+          </ul>
+
+          <h2>输变电电力工程吊车租赁参考价格表</h2>
+          <div class="answer-box">
+            <p><strong>兴安省电力施工吊车单班价格一般在 3,800,000 VND 至 22,000,000 VND 之间。我们充分理解电网项目审批及回款链条长的特殊国情，为合规资质的电力总包提供最长 60-120 天的财务结算账期。</strong></p>
+          </div>
+          
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>施工项目</th>
+                  <th>推荐起重机机型</th>
+                  <th>单台班价格 (8小时)</th>
+                  <th>平均作业台班产出</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>架设 12m – 14m 中压水泥杆</td>
+                  <td>7吨 – 15吨随车吊</td>
+                  <td>3.800.000đ – 5.500.000đ</td>
+                  <td>每日可架设电杆 6 – 10 根</td>
+                </tr>
+                <tr>
+                  <td>架设 18m – 22m 高压水泥杆</td>
+                  <td>加藤 25吨轮胎吊</td>
+                  <td>8.000.000đ</td>
+                  <td>每日可架设立杆 4 – 6 根</td>
+                </tr>
+                <tr>
+                  <td>卸载及安装变压器 &le; 5 吨</td>
+                  <td>15吨随车吊或25吨吊车</td>
+                  <td>5.500.000đ – 8.000.000đ</td>
+                  <td>自平板车平吊至配电室水泥台</td>
+                </tr>
+                <tr>
+                  <td>吊装及就位变压器 5 – 30 吨</td>
+                  <td>加藤 50吨轮胎吊</td>
+                  <td>14.000.000đ</td>
+                  <td>需要使用枕木及超厚钢板铺路防护</td>
+                </tr>
+                <tr>
+                  <td>安装大型配电站变压器 &gt; 30 吨</td>
+                  <td>加藤 100吨汽车吊</td>
+                  <td>22.000.000đ</td>
+                  <td>需要进行严格的吊装载荷受力计算与模拟</td>
+                </tr>
+                <tr>
+                  <td>高空高压挂线、悬挂滑轮张力拉线</td>
+                  <td>加藤 15吨或25吨轮胎吊</td>
+                  <td>5.500.000đ – 8.000.000đ</td>
+                  <td>整日架臂待命，配合张力放线车作业</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* 特殊声明：若电杆基坑分布距离较远（间距超5km），吊车由于需要频繁收回支腿并长距离移动，将按实际行驶里程增收少量的转场油资，价格由现场工程师双方确认。</p>
+
+          <h2>长期项目资质文件及 B2B 财务合规支持</h2>
+          <div class="answer-box">
+            <p><strong>江开起重隶属于有正规法人和 MST 注册的本地运输公司，可向中资电力承包商、总包商提供全套合规文件（起重检验合格证、吊车年检、司机特种卡、越语完税证明），并严格支持 60 至 120 天账期结算以及足额增值税电子发票。</strong></p>
+          </div>
+
+          <h2>常见问题解答</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>架设20米环形预应力混凝土电杆需要多少吨的吊车？</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>20米环形混凝土电杆的自身重量通常在 4-5.5 吨之间。为了保障立杆安全，必须调派 25吨或以上 的加藤/多田野轮胎吊。在 10-12 米的工作半径下，吊车臂长需达到 22 米以上，才能确保将电杆精准吊入预挖好的地基基坑内。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>起重吊车能通过较窄的农田机耕路或河堤路到达电杆基位吗？</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>江开起重的轮胎吊（全路况型）可行驶在净宽 3.5 米以上且路基夯实的河堤或农田机耕路上。对于特别松软的稻田路段，必须由施工方提前铺设承重钢板或混凝土块，防止起重机支腿受力时陷车或倾覆。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>江开起重是否能配合电力公司（EVN）停电时间段进行夜间施工？</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>可以。我们深知电力行业停电施工时间的紧迫性。我们的起重机和司机随时可以配合兴安省电力公司的调度指令（包括夜间、节假日和周末），确保在指定的断电时间内快速安全地完成架线和安装工作。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>现场架设钢板、清理障碍以利于吊车进场，这部分费用由谁承担？</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>根据电力系统施工 of 行业惯例，现场地基平整、树木砍伐、铺设路基防护钢板等通道清理工作，均由电力安装总包方或施工队负责。我们免费提供吊装点选择及支腿受力面积计算的技术咨询。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>我们是否可以为整个线路工程长期租赁吊车（1-3个月）？</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>可以。江开起重在兴安省境内提供长期的包月和工程包工期租赁包，价格享有最大幅度的折扣。包月期间提供常驻现场的专属司机及保养维护支持，随工程进度灵活转移吊装地点。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>需要电力施工吊车？</h3>
+            <p>符合电力公司安全操作规范 — 支持最长 120 天账期结算及正规发票！</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>其他电力及工业起重服务</h4>
+            <ul>
+              <li><a href="/zh/fu-wu/diao-gang-jia">🏗️ 钢结构彩钢瓦架设</a></li>
+              <li><a href="/zh/fu-wu/diao-ji-qi">🏭 机械设备吊装就位</a></li>
+              <li><a href="/zh/fu-wu/diao-ji-zhuang-xiang">📦 集装箱装卸与掏箱</a></li>
+              <li><a href="/zh/fu-wu/diao-jian-cai">🧱 预制水泥管道吊装</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .answer-box { background: var(--color-bg-card); border-left: 4px solid var(--color-primary); padding: var(--space-4); margin-bottom: var(--space-6); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  .answer-box p { color: var(--color-text); margin: 0; font-size: var(--text-base); line-height: 1.7; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); line-height: 1.7; }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

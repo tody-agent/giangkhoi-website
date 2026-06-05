@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cẩu thi công lắp đặt công trình điện lực",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Xe Cẩu Giang Khôi",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Số 2013 Nguyễn Văn Linh, Phường Bạch Sam, Thị xã Mỹ Hào",
+      "addressLocality": "Hưng Yên",
+      "addressCountry": "VN"
+    },
+    "telephone": "0971491174"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Mỹ Hào" },
+    { "@type": "AdministrativeArea", "name": "Văn Lâm" },
+    { "@type": "AdministrativeArea", "name": "Yên Mỹ" },
+    { "@type": "AdministrativeArea", "name": "Ân Thi" },
+    { "@type": "AdministrativeArea", "name": "Văn Giang" },
+    { "@type": "AdministrativeArea", "name": "Khoái Châu" },
+    { "@type": "AdministrativeArea", "name": "Phố Nối" },
+    { "@type": "AdministrativeArea", "name": "Hưng Yên" }
+  ],
+  "description": "Dịch vụ cho thuê xe cẩu 7T - 100T thi công dựng cột điện ly tâm, cẩu đặt máy biến áp và kéo đường dây lưới điện trung, cao thế tại Hưng Yên. An toàn điện chuẩn EVN."
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cẩu bao nhiêu tấn để dựng cột điện bê tông ly tâm 20m?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cột điện bê tông ly tâm dài 20m thường nặng từ 4–5.5 tấn. Để thi công dựng cột an toàn, cần huy động xe cẩu chuyên dụng Kato/Tadano từ 25 tấn trở lên. Tầm vươn của cẩu ở bán kính hoạt động từ 10–12m và chiều cao nâng tối thiểu phải đạt 22m để đưa cột vào hố móng chính xác."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Xe cẩu có thể đi trên đường đê, bờ ruộng đến vị trí cột không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Xe cẩu bánh lốp của Giang Khôi có thể di chuyển trên các tuyến đường đê, đường nội đồng rộng tối thiểu từ 3.5m và nền đất cứng cáp. Đối với các vị trí đất ruộng yếu, chúng tôi yêu cầu sử dụng các tấm tôn/bê tông lót đường chịu lực để chống lún xệ chân chống cẩu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Giang Khôi có phục vụ thi công cắt điện theo lịch Điện lực không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Chúng tôi hiểu tính khẩn cấp của tiến độ khi cắt điện thi công. Đội ngũ lái cẩu Giang Khôi sẵn sàng túc trực 24/7, có mặt đúng giờ theo lịch cắt điện của Điện lực Hưng Yên (kể cả ban đêm hay ngày lễ) để hoàn thành nhanh nhất công việc trong thời gian cho phép."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chi phí lót nền, mở đường cho cẩu vào vị trí ai chịu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo thông lệ ngành điện lực, chi phí chuẩn bị mặt bằng công trường (san lấp tạm, lót tấm thép chống lún, giải tỏa hành lang an toàn) do nhà thầu thi công chịu trách nhiệm. Giang Khôi hỗ trợ khảo sát mặt bằng và tư vấn kỹ thuật cẩu an toàn miễn phí trước khi xe xuất bãi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể thuê cẩu dài hạn cho toàn bộ tuyến đường dây (1–3 tháng) không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Giang Khôi cung cấp gói thuê cẩu theo tháng/dự án dài hạn với đơn giá ưu đãi tốt nhất tại Hưng Yên. Gói thuê bao gồm lái cẩu cố định ăn ở tại công trình, hỗ trợ di chuyển linh hoạt theo tiến độ rải dây và lắp dựng cột của tuyến."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Thuê Xe Cẩu Thi Công Công Trình Điện Lực Hưng Yên — Mã 4321 | Giang Khôi"
+  description="Dịch vụ cho thuê xe cẩu dựng cột điện bê tông ly tâm, cẩu đặt trạm biến áp, kéo cáp trung cao thế tại Hưng Yên. An toàn tuyệt đối. Gọi 0971 491 174."
+  jsonLd={[jsonLd, faqJsonLd]}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Thi công điện lực</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">⚡ Mã ngành 4321</span>
+            <h1>Cho Thuê Xe Cẩu Thi Công Công Trình Điện Lực</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>4321 (Lắp đặt hệ thống điện)</strong> và <strong>4229 (Xây dựng công trình kỹ thuật dân dụng khác)</strong> tại Hưng Yên. Chúng tôi cho thuê các loại xe cẩu bánh lốp, cẩu tự hành từ <strong>7T đến 100T</strong> chuyên phục vụ cẩu dựng cột điện bê tông ly tâm 12m - 20m, lắp dựng cột thép hình, cẩu hạ định vị trạm biến áp 110kV - 220kV, hỗ trợ rải kéo dây truyền tải trên cao. Đội ngũ tài xế có đầy đủ thẻ an toàn điện, am hiểu khoảng cách an toàn điện lưới.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi ngay — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Gửi thông tin tuyến & MBA</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-thi-cong-dien-luc.png" alt="Xe cẩu Giang Khôi đang dựng cột điện ly tâm cho lưới điện Hưng Yên [Ảnh minh họa]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Đặc thù kỹ thuật cực khó của công tác cẩu lắp đặt điện lực</h2>
+          <div class="answer-box">
+            <p><strong>Thi công điện lực yêu cầu xe cẩu vận hành gần lưới điện cao thế đang hoạt động, đòi hỏi tuân thủ nghiêm ngặt khoảng cách an toàn điện theo QCVN. Cẩu lắp đặt cột bê tông ly tâm nặng từ 2–6 tấn trên các địa hình đồi núi, đê sông, ruộng sâu lún trượt, đòi hỏi xử lý chân chống chịu lực cực tốt.</strong></p>
+          </div>
+          
+          <p>Lái xe cẩu phục vụ xây lắp điện không chỉ đòi hỏi tay nghề điều khiển cần cẩu chính xác, mà còn phải phối hợp chặt chẽ với chỉ huy công trường để cắt điện cục bộ và có phiếu công tác hợp lệ. Chỉ một sai lầm nhỏ khi vi phạm khoảng cách an toàn phóng điện có thể gây ra tai nạn thảm khốc và sự cố mất điện diện rộng cho KCN Hưng Yên. Giang Khôi cam kết toàn bộ nhân sự vận hành đều có chứng chỉ nhóm an toàn điện bậc 3/5 trở lên.</p>
+
+          <h2>Năng lực đội xe phục vụ các công trình xây lắp điện</h2>
+          <div class="answer-box">
+            <p><strong>Chúng tôi cung cấp phương án cẩu tương thích với từng loại cấu kiện: Cẩu tự hành 7T - 15T thích hợp thi công cột điện trung thế 12m-14m dọc đường giao thông; cẩu Kato 25T phục vụ dựng cột cao thế 18m-22m; cẩu chuyên dụng Kato 50T - 100T phục vụ hạ lắp đặt máy biến áp công suất lớn từ 5 - 30 tấn.</strong></p>
+          </div>
+          
+          <ul class="check-list">
+            <li><strong>Khoảng cách an toàn hành lang điện (QCVN 01:2020/BCT):</strong> Toàn bộ xe cẩu Giang Khôi khi làm việc cạnh lưới điện đều tuân thủ khoảng cách tối thiểu: &ge; 4.0m đối với lưới 110kV và &ge; 6.0m đối với lưới 220kV.</li>
+            <li><strong>Chân chống chịu tải bánh lốp địa hình dốc:</strong> Xe cẩu chuyên dụng Kato có hệ thống cân bằng điện tử và khóa an toàn thủy lực tự động, kết hợp với các tấm lót gỗ dày/tấm sắt 20mm chống lún xệ khi đặt cẩu trên đất ruộng yếu.</li>
+          </ul>
+
+          <h2>Bảng giá cho thuê cẩu thi công điện lực tại Hưng Yên</h2>
+          <div class="answer-box">
+            <p><strong>Giá thuê cẩu dựng cột điện, lắp trạm biến áp tại Hưng Yên dao động từ 3.800.000đ đến 22.000.000đ/ca 8h. Chúng tôi chấp nhận công nợ dài hạn từ 60-90 ngày theo tiến độ giải ngân của EVN và các tổng thầu điện lực Việt Nam.</strong></p>
+          </div>
+          
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Hạng mục thi công</th>
+                  <th>Loại xe cẩu đề xuất</th>
+                  <th>Giá tham khảo/ca (8h)</th>
+                  <th>Năng suất trung bình</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dựng cột trung thế ly tâm 12m – 14m</td>
+                  <td>Cẩu tự hành 7T – 15T</td>
+                  <td>3.800.000đ – 5.500.000đ</td>
+                  <td>6 – 10 cột/ca tùy địa hình</td>
+                </tr>
+                <tr>
+                  <td>Dựng cột cao thế ly tâm 18m – 22m</td>
+                  <td>Xe cẩu Kato 25T</td>
+                  <td>8.000.000đ</td>
+                  <td>4 – 6 cột/ca tuyến nội đồng</td>
+                </tr>
+                <tr>
+                  <td>Cẩu hạ & đặt bệ máy biến áp &le; 5 tấn</td>
+                  <td>Cẩu tự hành 15T hoặc cẩu Kato 25T</td>
+                  <td>5.500.000đ – 8.000.000đ</td>
+                  <td>Hạ từ xe flatbed xuống bệ móng trạm</td>
+                </tr>
+                <tr>
+                  <td>Lắp đặt máy biến áp lớn 5 – 30 tấn</td>
+                  <td>Xe cẩu Kato 50T</td>
+                  <td>14.000.000đ</td>
+                  <td>Phải lót nền thép dầm chịu lực</td>
+                </tr>
+                <tr>
+                  <td>Lắp đặt thiết bị trạm biến áp &gt; 30 tấn</td>
+                  <td>Xe cẩu Kato 100T</td>
+                  <td>22.000.000đ</td>
+                  <td>Cần lên phương án CAD Lifting Plan riêng</td>
+                </tr>
+                <tr>
+                  <td>Hỗ trợ kéo dây, giữ puly cáp cao thế</td>
+                  <td>Xe cẩu Kato 15T – 25T</td>
+                  <td>5.500.000đ – 8.000.000đ</td>
+                  <td>Standby treo cần cả ca theo lịch EVN</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Phụ phí di chuyển cẩu giữa các vị trí cột trên tuyến: 500.000đ – 1.500.000đ/lần nếu khoảng cách các hố móng cột xa nhau trên 5km và xe cẩu chuyên dụng phải thu chân chống di chuyển nhiều lần.</p>
+
+          <h2>Hỗ trợ hồ sơ thầu và công nợ B2B linh hoạt</h2>
+          <div class="answer-box">
+            <p><strong>Xe Cẩu Giang Khôi hiểu rõ đặc thù thời gian giải ngân vốn đầu tư công của ngành điện thường kéo dài. Chúng tôi hỗ trợ đầy đủ bộ hồ sơ năng lực thiết bị, bảo hiểm thiết bị nâng, chứng chỉ vận hành lái cẩu, xuất hóa đơn VAT điện tử kịp thời và áp dụng công nợ thanh toán từ 60–120 ngày.</strong></p>
+          </div>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question"><span>Cẩu bao nhiêu tấn để dựng cột điện bê tông ly tâm 20m?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Cột điện bê tông ly tâm dài 20m thường nặng từ 4–5.5 tấn. Để thi công dựng cột an toàn, cần huy động xe cẩu chuyên dụng Kato/Tadano từ 25 tấn trở lên. Tầm vươn của cẩu ở bán kính hoạt động từ 10–12m và chiều cao nâng tối thiểu phải đạt 22m để đưa cột vào hố móng chính xác.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Xe cẩu có thể đi trên đường đê, bờ ruộng đến vị trí cột không?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Xe cẩu bánh lốp của Giang Khôi có thể di chuyển trên các tuyến đường đê, đường nội đồng rộng tối thiểu từ 3.5m và nền đất cứng cáp. Đối với các vị trí đất ruộng yếu, chúng tôi yêu cầu sử dụng các tấm tôn/bê tông lót đường chịu lực để chống lún xệ chân chống cẩu.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Giang Khôi có phục vụ thi công cắt điện theo lịch Điện lực không?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Có. Chúng tôi hiểu tính khẩn cấp của tiến độ khi cắt điện thi công. Đội ngũ lái cẩu Giang Khôi sẵn sàng túc trực 24/7, có mặt đúng giờ theo lịch cắt điện của Điện lực Hưng Yên (kể cả ban đêm hay ngày lễ) để hoàn thành nhanh nhất công việc trong thời gian cho phép.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Chi phí lót nền, mở đường cho cẩu vào vị trí ai chịu?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Theo thông lệ ngành điện lực, chi phí chuẩn bị mặt bằng công trường (san lấp tạm, lót tấm thép chống lún, giải tỏa hành lang an toàn) do nhà thầu thi công chịu trách nhiệm. Giang Khôi hỗ trợ khảo sát mặt bằng và tư vấn kỹ thuật cẩu an toàn miễn phí trước khi xe xuất bãi.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Có thể thuê cẩu dài hạn cho toàn bộ tuyến đường dây (1–3 tháng) không?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Có. Giang Khôi cung cấp gói thuê cẩu theo tháng/dự án dài hạn với đơn giá ưu đãi tốt nhất tại Hưng Yên. Gói thuê bao gồm lái cẩu cố định ăn ở tại công trình, hỗ trợ di chuyển linh hoạt theo tiến độ rải dây và lắp dựng cột của tuyến.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cẩu thi công điện lực?</h3>
+            <p>Đáp ứng an toàn điện chuẩn EVN — Hồ sơ pháp lý đầy đủ cho nhà thầu!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ công nghiệp khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/di-doi-may-moc-nha-xuong">🏭 Lắp đặt máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-lap-dung-ket-cau-thep">🏗️ Lắp kết cấu thép nhà xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu dỡ container hàng hóa</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu bê tông đúc sẵn</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .answer-box { background: var(--color-bg-card); border-left: 4px solid var(--color-primary); padding: var(--space-4); margin-bottom: var(--space-6); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  .answer-box p { color: var(--color-text); margin: 0; font-size: var(--text-base); line-height: 1.7; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); line-height: 1.7; }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

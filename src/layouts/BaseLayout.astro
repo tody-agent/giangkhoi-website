@@ -106,7 +106,7 @@ const htmlLang = lang === 'vi' ? 'vi' : 'zh-CN';
         <a href={`/${lang}/${lang === 'vi' ? 'bang-gia' : 'bao-jia'}`} class="nav-link">{t('nav.pricing')}</a>
         <a href={`/${lang}/${lang === 'vi' ? 'khu-vuc' : 'qu-yu'}`} class="nav-link">{t('nav.areas')}</a>
         <a href={`/${lang}/${lang === 'vi' ? 've-chung-toi' : 'guan-yu'}`} class="nav-link">{t('nav.about')}</a>
-        <a href={`/${lang}/blog`} class="nav-link">{t('nav.blog')}</a>
+        {lang !== 'zh' && <a href={`/${lang}/blog`} class="nav-link">{t('nav.blog')}</a>}
       </div>
       
       <div class="header-actions">
@@ -165,7 +165,7 @@ const htmlLang = lang === 'vi' ? 'vi' : 'zh-CN';
             <li><a href={`/${lang}/${lang === 'vi' ? 'dich-vu' : 'fu-wu'}`}>{t('nav.services')}</a></li>
             <li><a href={`/${lang}/${lang === 'vi' ? 'bang-gia' : 'bao-jia'}`}>{t('nav.pricing')}</a></li>
             <li><a href={`/${lang}/${lang === 'vi' ? 'khu-vuc' : 'qu-yu'}`}>{t('nav.areas')}</a></li>
-            <li><a href={`/${lang}/blog`}>{t('nav.blog')}</a></li>
+            {lang !== 'zh' && <li><a href={`/${lang}/blog`}>{t('nav.blog')}</a></li>}
             <li><a href={`/${lang}/${lang === 'vi' ? 've-chung-toi' : 'guan-yu'}`}>{t('nav.about')}</a></li>
           </ul>
         </div>

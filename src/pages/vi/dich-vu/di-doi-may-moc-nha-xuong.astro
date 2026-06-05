@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ di dời máy móc nhà xưởng tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ nâng hạ di dời máy móc nhà xưởng, rút container máy CNC, máy dập, máy ép nhựa và lắp đặt dây chuyền sản xuất tại các KCN Hưng Yên. Gọi 0971 491 174.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/di-doi-may-moc-nha-xuong"
+};
+
+const faqs = [
+  { q: 'Xưởng trần thấp xe cẩu không vào được thì di dời máy nặng thế nào?', a: 'Đối với khu vực trần thấp hoặc lối vào hẹp xe cẩu không thể tiếp cận, Giang Khôi sử dụng các công cụ chuyên dụng như: kích chân thủy lực (kích Masada), rùa sắt đẩy hàng tải trọng cao, xích kéo pa lăng và xe nâng tay để kích đưa máy móc vào vị trí an toàn.' },
+  { q: 'Có bảo hiểm đền bù nếu xảy ra sự cố va đập, hỏng hóc máy móc không?', a: 'Có. Giang Khôi cam kết uy tín tuyệt đối và có bảo hiểm hàng hóa, thiết bị nâng hạ đầy đủ. Nếu xảy ra bất kỳ sự cố trầy xước hay hỏng hóc máy móc do lỗi vận hành của chúng tôi, chúng tôi cam kết chịu trách nhiệm bồi thường 100%.' },
+  { q: 'Giang Khôi phục vụ di dời máy móc tại những KCN nào ở Hưng Yên?', a: 'Chúng tôi phục vụ di dời lắp đặt máy móc xưởng tại tất cả các KCN trên địa bàn tỉnh Hưng Yên: KCN Thăng Long II, KCN Phố Nối A, KCN Phố Nối B, KCN Yên Mỹ, KCN Minh Quang, KCN Minh Đức, KCN Kim Động... và khu vực lân cận Hải Dương, Bắc Ninh.' },
+  { q: 'Có thi công di dời máy móc vào ngày nghỉ hoặc ban đêm không?', a: 'Có. Chúng tôi hiểu rằng việc dừng máy ban ngày ảnh hưởng lớn đến dây chuyền sản xuất của doanh nghiệp. Giang Khôi hỗ trợ rút container và di dời chuyển xưởng vào ban đêm, ngày thứ Bảy, Chủ Nhật hoặc ngày lễ 24/7.' }
+];
+---
+
+<BaseLayout
+  title="Di Dời Máy Móc Nhà Xưởng & Rút Container Hưng Yên — Mã 3320 & 5210 | Giang Khôi"
+  description="Dịch vụ di dời máy móc nhà xưởng, rút container máy CNC, máy phát điện, máy dập, lắp đặt định vị dây chuyền sản xuất KCN tại Hưng Yên. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Di dời máy móc nhà xưởng</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🏭 Mã ngành 3320 & 5210</span>
+            <h1>Di Dời Máy Móc Nhà Xưởng & Rút Container</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>3320 (Lắp đặt máy móc và thiết bị công nghiệp)</strong> và <strong>5210 (Kho bãi và lưu giữ hàng hóa)</strong> tại Hưng Yên. Chúng tôi chuyên thực hiện các dự án di dời xưởng sản xuất, chuyển máy móc nặng sang cơ sở mới, nâng hạ rút container máy CNC, máy ép nhựa siêu trường siêu trọng và định vị máy vào đúng vị trí thiết kế.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi di dời máy — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Nhận báo giá & khảo sát</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/di-doi-may-moc-nha-xuong.png" alt="Đội ngũ Giang Khôi nâng hạ và di dời máy móc CNC công nghiệp trong nhà xưởng Hưng Yên [Ảnh minh họa]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Các hạng mục di dời máy móc xưởng chuyên nghiệp</h2>
+          <ul class="check-list">
+            <li>Rút thùng container đưa máy CNC, máy cơ khí chính xác ra ngoài</li>
+            <li>Nâng hạ, di dời máy ép nhựa cỡ lớn, máy dập thủy lực nặng từ 5T đến trên 50T</li>
+            <li>Di chuyển máy phát điện dự phòng, máy nén khí, lò hơi công nghiệp</li>
+            <li>Chuyển xưởng trọn gói: Đóng gói, cẩu lên xe tải sàn thấp, vận chuyển và hạ đặt lắp vị trí mới</li>
+            <li>Định vị máy móc cân bằng bọt thủy lực chính xác theo layout nhà xưởng</li>
+            <li>Cho thuê kích thủy lực chân, rùa sắt đẩy máy và xe nâng phục vụ trong nhà</li>
+          </ul>
+
+          <h2>Quy trình di dời máy móc công nghiệp an toàn</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Khảo sát & Lập phương án</h3>
+              <p>Khảo sát kích thước lối đi, độ chịu lực của nền sàn nhà xưởng, trọng lượng máy và lập biện pháp an toàn (JSA) trước khi thi công.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Rút máy & Cẩu nâng</h3>
+              <p>Sử dụng xe nâng xe cẩu kéo máy ra cửa xưởng hoặc cẩu máy ra khỏi container. Neo buộc bằng dây cáp vải bản to chịu lực tốt, không cấn móp vỏ máy.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Kích lót & Di chuyển</h3>
+              <p>Dùng kích chân nâng máy lên để đặt rùa sắt chịu lực dưới chân máy. Đẩy máy di chuyển nhẹ nhàng, đúng tiến trình và an toàn trên bề mặt sàn xưởng.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Định vị & Nghiệm thu</h3>
+              <p>Căn chỉnh máy đúng vị trí tim trục theo bản vẽ kỹ thuật. Cân chỉnh thăng bằng mặt phẳng đặt máy bằng thước thủy lực chính xác và nghiệm thu bàn giao.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá di dời máy móc nhà xưởng tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Trọng lượng thiết bị</th><th>Phương án thi công</th><th>Giá thuê tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Máy móc nhỏ dưới 5 tấn</td><td>Xe cẩu tự hành 8T + Đội kích di chuyển</td><td class="price-value">4.000.000 – 5.500.000đ / ca</td></tr>
+                <tr><td>Thiết bị trung bình từ 5 – 15 tấn</td><td>Xe cẩu Kato 25T + Đội kích rùa đẩy xưởng</td><td class="price-value">7.500.000 – 10.000.000đ / ca</td></tr>
+                <tr><td>Thiết bị nặng từ 15 – 30 tấn</td><td>Xe cẩu Kato 50T + Dụng cụ di chuyển nặng</td><td class="price-value">12.000.000 – 16.500.000đ / ca</td></tr>
+                <tr><td>Dây chuyền sản xuất siêu trọng</td><td>Khảo sát thực địa và báo giá chi tiết</td><td class="price-value">Liên hệ hotline</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Báo giá đã bao gồm các trang thiết bị kích rùa di chuyển chuyên dụng trong nhà, bảo hiểm thiết bị đầy đủ. Chưa bao gồm VAT.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần di dời máy móc?</h3>
+            <p>Liên hệ hotline để kỹ thuật viên Giang Khôi khảo sát hiện trường và báo giá chi tiết miễn phí!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

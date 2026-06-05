@@ -40,7 +40,11 @@
     {"slug": "cau-mai-ton-khung-keo", "name": "Cẩu mái tôn khung kèo", "category": "dan-dung"},
     {"slug": "cau-cay-canh", "name": "Cẩu cây cảnh", "category": "dan-dung"},
     {"slug": "cau-may-mong-xuong", "name": "Cẩu máy móc xưởng", "category": "cong-nghiep"},
-    {"slug": "cau-container", "name": "Cẩu container", "category": "cong-nghiep"}
+    {"slug": "cau-container", "name": "Cẩu container", "category": "cong-nghiep"},
+    {"slug": "cau-lap-dung-ket-cau-thep", "name": "Cẩu lắp dựng kết cấu thép", "category": "cong-nghiep"},
+    {"slug": "cau-nang-ha-di-doi-may-moc", "name": "Cẩu nâng hạ di dời máy móc", "category": "cong-nghiep"},
+    {"slug": "di-doi-nha-xuong-ha-noi-ve-tinh", "name": "Di dời nhà xưởng Hà Nội về tỉnh", "category": "cong-nghiep"},
+    {"slug": "cau-pha-do-giai-phong-mat-bang", "name": "Cẩu phá dỡ giải phóng mặt bằng", "category": "cong-nghiep"}
   ],
   "internal_links": {
     "service_pages": [
@@ -50,7 +54,11 @@
       "/vi/dich-vu/cau-mai-ton-khung-keo",
       "/vi/dich-vu/cau-cay-canh",
       "/vi/dich-vu/cau-may-mong-xuong",
-      "/vi/dich-vu/cau-container"
+      "/vi/dich-vu/cau-container",
+      "/vi/dich-vu/cau-lap-dung-ket-cau-thep",
+      "/vi/dich-vu/cau-nang-ha-di-doi-may-moc",
+      "/vi/dich-vu/di-doi-nha-xuong-ha-noi-ve-tinh",
+      "/vi/dich-vu/cau-pha-do-giai-phong-mat-bang"
     ],
     "area_pages": [
       "/vi/khu-vuc/my-hao",

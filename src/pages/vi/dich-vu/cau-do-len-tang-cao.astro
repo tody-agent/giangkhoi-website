@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cẩu đồ lên tầng cao tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ cẩu đồ lên tầng cao, chuyển nội thất, sofa, thiết bị cồng kềnh qua ban công tại Hưng Yên. Xe cẩu 3.5T-5T nhỏ gọn, luồn lách ngõ hẹp.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/cau-do-len-tang-cao"
+};
+
+const faqs = [
+  { q: 'Có cẩu được sofa dài lên ban công chung cư, nhà phố không?', a: 'Được. Chỉ cần ban công hoặc cửa sổ của anh/chị đủ rộng để đưa đồ vào và không bị vướng dây điện quá sát. Giang Khôi sẽ khảo sát góc cẩu an toàn trước khi thực hiện.' },
+  { q: 'Đồ đạc có bị trầy xước trong quá trình cẩu không?', a: 'Không. Toàn bộ nội thất, sofa hay kính đều được bọc lót kỹ bằng màng PE, chăn chuyên dụng và cố định chắc chắn trước khi cẩu nâng hạ. Chúng tôi cam kết đền bù nếu xảy ra trầy xước do lỗi vận hành.' },
+  { q: 'Cẩu đồ lên tầng cao mất bao lâu?', a: 'Thời gian bọc lót, neo buộc cáp và định vị xe cẩu mất khoảng 30-40 phút để đảm bảo an toàn tuyệt đối. Quá trình cẩu nâng hạ món đồ lên tầng chỉ mất từ 5-10 phút.' },
+  { q: 'Chi phí cẩu một chuyến là bao nhiêu?', a: 'Giá cẩu đồ dân dụng lên tầng cao dao động từ 1.800.000đ đến 3.500.000đ tùy thuộc vào độ cao (tầng 2, 3, 4 hay 5), kích thước món đồ và địa hình đỗ xe cẩu.' }
+];
+---
+
+<BaseLayout
+  title="Cẩu Đồ Lên Tầng Cao & Chuyển Đồ Lên Lầu Hưng Yên — Mã 5224 | Giang Khôi"
+  description="Dịch vụ cẩu đồ lên tầng cao, chuyển sofa, bàn ghế, tủ lạnh side-by-side, kính cường lực qua ban công nhà phố, chung cư tại Hưng Yên. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Cẩu đồ lên tầng cao</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">📦 Mã ngành 5224</span>
+            <h1>Cẩu Đồ Lên Tầng Cao & Chuyển Đồ Lên Lầu</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>5224 (Bốc xếp hàng hóa)</strong> tại Hưng Yên. Chúng tôi chuyên giải quyết khó khăn khi chuyển nhà, văn phòng có những món đồ quá khổ, không thể đi vừa cầu thang bộ hoặc thang máy. Xe cẩu <strong>3.5T đến 5T</strong> nhỏ gọn, cần vươn dài, luồn lách ngõ hẹp, cẩu đồ qua ban công an toàn.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi cẩu đồ — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Báo giá qua Zalo</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-do-len-tang-cao.png" alt="Xe cẩu Giang Khôi nâng cẩu sofa lên tầng cao nhà phố qua ban công tại Hưng Yên [Ảnh minh họa]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Các mặt hàng chuyên cẩu lên tầng cao</h2>
+          <ul class="check-list">
+            <li>Cẩu sofa, bàn ăn nguyên tấm, tủ quần áo lớn qua ban công</li>
+            <li>Cẩu kính cường lực, tranh đá nghệ thuật khổ lớn</li>
+            <li>Cẩu bồn tắm, thiết bị vệ sinh cao cấp cồng kềnh</li>
+            <li>Cẩu chậu cây cảnh, đá cự thạch trang trí sân thượng</li>
+            <li>Cẩu cục nóng điều hòa VRV, dàn nóng công nghiệp lên mái</li>
+            <li>Cẩu vật liệu xây dựng hoàn thiện nhà phố ngõ sâu</li>
+          </ul>
+
+          <h2>Quy trình thực hiện an toàn</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Khảo sát & Đánh giá</h3>
+              <p>Khách hàng gửi ảnh đồ đạc, ban công và ngõ đỗ xe. Giang Khôi đánh giá khoảng cách vươn cần và chướng ngại vật (dây điện, cây xanh).</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Bọc lót & Neo buộc</h3>
+              <p>Sử dụng màng bọc PE và chăn giảm chấn bọc kỹ các góc cạnh nội thất. Neo buộc bằng dây cáp vải bản lớn chịu lực cao, không làm hỏng bề mặt đồ.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Vận hành cẩu nâng hạ</h3>
+              <p>Tài xế điều khiển cần cẩu nhịp nhàng, có người dẫn hướng ở tầng đích để đón đồ qua ban công hoặc cửa sổ lớn an toàn.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Bàn giao & Nghiệm thu</h3>
+              <p>Đặt đồ vào đúng vị trí khách hàng yêu cầu, tháo dỡ bọc lót. Khách hàng kiểm tra tình trạng đồ đạc và thanh toán.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá cẩu đồ lên tầng cao tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Vị trí tầng cần cẩu</th><th>Loại xe cẩu</th><th>Đơn giá tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Tầng 2 – Tầng 3</td><td>Cẩu tự hành 3.5T</td><td class="price-value">1.800.000 – 2.200.000đ / chuyến</td></tr>
+                <tr><td>Tầng 4 – Tầng 5</td><td>Cẩu tự hành 5T (Cần dài)</td><td class="price-value">2.300.000 – 3.000.000đ / chuyến</td></tr>
+                <tr><td>Tầng 6 trở lên hoặc ngõ hẹp</td><td>Cẩu chuyên dùng Kato</td><td class="price-value">Khảo sát & báo giá riêng</td></tr>
+                <tr><td>Cẩu trọn gói nội thất biệt thự</td><td>Xe cẩu + Đội bốc xếp</td><td class="price-value">Báo giá theo khối lượng công việc</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Giá trên đã bao gồm tài xế và trang thiết bị neo buộc chuyên dụng, chưa bao gồm VAT và nhân công bốc xếp trong nhà.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cẩu đồ lên cao?</h3>
+            <p>Gọi ngay — Có mặt khảo sát nhanh tại Văn Giang, Mỹ Hào, Yên Mỹ!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

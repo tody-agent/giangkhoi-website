@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ di dời nhà xưởng trọn gói từ Hà Nội về tỉnh Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": [
+    { "@type": "State", "name": "Hà Nội" },
+    { "@type": "State", "name": "Hưng Yên" }
+  ],
+  "description": "Dịch vụ tháo dỡ, nâng hạ, vận chuyển và lắp đặt xưởng trọn gói từ khu vực giải tỏa Hà Nội về các tỉnh Hưng Yên, Bắc Ninh. Gọi 0971 491 174.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/di-doi-nha-xuong-ha-noi-ve-tinh"
+};
+
+const faqs = [
+  { q: 'Xe cẩu và xe tải Giang Khôi có giấy phép vào phố cấm Hà Nội không?', a: 'Có. Chúng tôi có đầy đủ giấy phép lưu hành phố cấm Hà Nội cho đội xe vận tải. Giang Khôi sẽ lên lịch trình di chuyển vào khung giờ tối hoặc đêm muộn để đảm bảo đúng quy định giao thông của thành phố và đẩy nhanh tiến độ bàn giao mặt bằng sạch của khách hàng.' },
+  { q: 'Dịch vụ di dời trọn gói gồm những công việc gì?', a: 'Dịch vụ trọn gói của chúng tôi bao gồm: tháo dỡ kết cấu thép nhà xưởng, tháo hạ máy móc, bốc xếp đóng gói thiết bị, cẩu nâng lên xe tải/xe fooc lùn, vận chuyển từ Hà Nội về tỉnh mới, hạ đặt và định vị máy móc vào vị trí móng xưởng mới theo đúng bản vẽ layout.' },
+  { q: 'Thời gian di dời toàn bộ một xưởng trung bình mất bao lâu?', a: 'Tùy thuộc quy mô và lượng máy móc của xưởng. Với những xưởng cơ khí dưới 500m2, chúng tôi có thể tháo dỡ, vận chuyển và hạ đặt hoàn tất chỉ trong 1 - 2 ngày làm việc nhờ đội 6 xe cẩu tự hành và Kato luôn túc trực.' },
+  { q: 'Giang Khôi nhận chuyển xưởng từ những quận huyện nào ở Hà Nội?', a: 'Chúng tôi nhận di dời từ tất cả các khu vực giải tỏa, khu công nghiệp cũ tại các quận nội, ngoại thành Hà Nội: Gia Lâm, Long Biên, Đông Anh, Thanh Trì, Hoàng Mai, Thanh Xuân, Từ Liêm... về Hưng Yên, Bắc Ninh, Hải Dương.' }
+];
+---
+
+<BaseLayout
+  title="Di Dời Nhà Xưởng Trọn Gói Hà Nội Về Tỉnh — Mã 4933 & 5210 | Giang Khôi"
+  description="Dịch vụ tháo dỡ, bốc xếp, cẩu vận chuyển nhà xưởng trọn gói từ Hà Nội về KCN Hưng Yên, Bắc Ninh. Thi công nhanh giải phóng mặt bằng giải tỏa. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Di dời nhà xưởng Hà Nội về tỉnh</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🏭 Mã ngành 4933 & 5210</span>
+            <h1>Di Dời Nhà Xưởng Trọn Gói Hà Nội Về Tỉnh</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>4933 (Vận tải hàng hóa bằng đường bộ)</strong> và <strong>5210 (Kho bãi và lưu giữ hàng hóa)</strong>. Nhằm hỗ trợ các doanh nghiệp chịu ảnh hưởng bởi chủ trương giải tỏa mặt bằng, di dời cơ sở sản xuất ô nhiễm ra khỏi nội đô Hà Nội, Giang Khôi cung cấp giải pháp trọn gói tháo hạ kết cấu xưởng, cẩu bốc xếp máy móc nặng, vận chuyển liên tỉnh an toàn về địa điểm mới tại Hưng Yên, Bắc Ninh, Hải Dương.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi chuyển xưởng — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Khảo sát & Nhận báo giá</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/di-doi-may-moc-nha-xuong.png" alt="Xe cẩu tự hành Giang Khôi bốc xếp thiết bị máy móc nhà xưởng di dời liên tỉnh" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Các hạng mục di dời nhà xưởng liên tỉnh trọn gói</h2>
+          <ul class="check-list">
+            <li>Tháo hạ tôn mái, xà gồ, vách ngăn vây bao xưởng cũ</li>
+            <li>Cẩu hạ tháo dỡ vì kèo thép, cột dầm khung xưởng tiền chế</li>
+            <li>Đóng gói, quấn màng PE chống xước cho máy CNC, tủ điện, thiết bị điện tử</li>
+            <li>Dùng kích rùa kéo đẩy máy móc nặng ra khu vực cẩu nâng</li>
+            <li>Bốc xếp nâng máy móc lên xe tải sàn thấp (xe fooc lùn), xe container chuyên dụng</li>
+            <li>Vận chuyển liên tỉnh Hà Nội - Hưng Yên/Bắc Ninh/Hải Dương</li>
+            <li>Cẩu lắp dựng cột kèo và định vị máy móc vào vị trí xưởng mới</li>
+          </ul>
+
+          <h2>Quy trình di dời chuyển xưởng liên tỉnh nhanh chóng</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Khảo sát & Lập tiến độ thi công</h3>
+              <p>Khảo sát khối lượng máy móc, lập danh mục thiết bị cần cẩu chuyên dụng và xe tải vận chuyển. Xác định khung giờ chạy xe cấm đường Hà Nội.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Tháo dỡ cơ khí & Đóng gói</h3>
+              <p>Tiến hành ngắt điện kết nối, tháo bu-lông móng máy. Đóng gói các thiết bị nhạy cảm và tháo hạ phần khung xưởng thép tiền chế.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Cẩu nâng & Vận chuyển đường dài</h3>
+              <p>Sử dụng xe cẩu tự hành hoặc cẩu Kato nâng xếp máy móc lên xe vận tải. Vận chuyển liên tỉnh an toàn bằng tài xế giàu kinh nghiệm.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Hạ hạ đặt & Lắp đặt định vị xưởng mới</h3>
+              <p>Cẩu lắp dựng lại khung kèo xưởng tại địa điểm mới. Đưa máy móc vào vị trí móng, cân chỉnh mặt bằng móng máy để nhà máy sẵn sàng hoạt động lại.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá di dời nhà xưởng Hà Nội về Hưng Yên tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Hạng mục công việc</th><th>Phương tiện huy động</th><th>Giá thuê tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Khảo sát & Thiết lập phương án di dời</td><td>Kỹ thuật viên hiện trường</td><td class="price-value">Miễn phí khảo sát</td></tr>
+                <tr><td>Cẩu nâng & Vận chuyển máy lẻ liên tỉnh</td><td>Xe cẩu tự hành 8T – 15T</td><td class="price-value">Từ 5.500.000đ / chuyến</td></tr>
+                <tr><td>Di dời xưởng nhỏ dưới 200m2</td><td>Cẩu tự hành + Xe tải + Thợ cơ khí</td><td class="price-value">Liên hệ hotline báo giá</td></tr>
+                <tr><td>Chuyển trọn gói nhà máy lớn công nghiệp</td><td>Đội xe cẩu + Xe nâng + Xe đầu kéo</td><td class="price-value">Khảo sát báo giá trọn gói</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Báo giá vận chuyển liên tỉnh phụ thuộc vào quãng đường thực tế và tải trọng máy móc. Gọi hotline để nhận báo giá cạnh tranh nhất.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần di dời xưởng?</h3>
+            <p>Liên hệ ngay hotline để chúng tôi cử kỹ thuật viên đến khảo sát xưởng tại Hà Nội trong 2 giờ!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

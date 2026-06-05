@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cẩu lắp dựng kết cấu thép tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ xe cẩu lắp dựng khung thép tiền chế, cột dầm thép, vì kèo và lợp tôn nhà xưởng công nghiệp tại các KCN Hưng Yên. Gọi 0971 491 174.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/cau-lap-dung-ket-cau-thep"
+};
+
+const faqs = [
+  { q: 'Xe cẩu Giang Khôi có đủ kiểm định để vào các KCN lớn thi công không?', a: 'Có. Toàn bộ xe cẩu từ 3.5T đến 100T của Giang Khôi đều có đầy đủ giấy tờ kiểm định an toàn còn hiệu lực. Tài xế có bằng lái, chứng chỉ vận hành cẩu chuyên nghiệp và được huấn luyện an toàn lao động nghiêm ngặt, đáp ứng mọi tiêu chuẩn HSE tại các KCN như Thăng Long II, Phố Nối, Vsip.' },
+  { q: 'Giang Khôi có cho thuê cẩu theo ca hoặc theo tháng để dựng xưởng không?', a: 'Có. Chúng tôi cung cấp hình thức cho thuê linh hoạt: theo ca (8 tiếng), theo công việc trọn gói, hoặc thuê khoán theo tháng kèm tài xế với mức chiết khấu hấp dẫn cho các nhà thầu kết cấu thép thi công dài hạn.' },
+  { q: 'Cần cẩu 100 tấn của Giang Khôi có tầm với bao nhiêu mét?', a: 'Xe cẩu Kato 100 tấn của chúng tôi có chiều dài cần chính đạt 50m, kết hợp cần phụ có thể vươn cao và xa hơn, đáp ứng tốt việc lắp dựng các vì kèo khẩu độ rộng hoặc các cấu kiện thép siêu nặng ở vị trí trung tâm nhà xưởng.' },
+  { q: 'Lắp dựng kết cấu thép có làm ban đêm để kịp tiến độ không?', a: 'Có. Giang Khôi hỗ trợ thi công lắp dựng 24/7 kể cả ban đêm và ngày lễ Tết. Chúng tôi phối hợp nhịp nhàng với đội thợ lắp dựng của đối tác để đảm bảo tiến độ dự án diễn ra nhanh chóng, an toàn nhất.' }
+];
+---
+
+<BaseLayout
+  title="Cẩu Lắp Dựng Kết Cấu Thép & Nhà Tiền Chế Hưng Yên — Mã 4329 | Giang Khôi"
+  description="Dịch vụ cho thuê xe cẩu dựng khung thép tiền chế, cột dầm, vì kèo nhà xưởng tại Hưng Yên. Cẩu Kato từ 25T - 100T, thi công an toàn HSE. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Lắp dựng kết cấu thép</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🏗️ Mã ngành 4329 & 4330</span>
+            <h1>Cẩu Lắp Dựng Kết Cấu Thép & Nhà Tiền Chế</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>4329 (Lắp đặt thiết bị xây dựng khác)</strong> và <strong>4330 (Hoàn thiện công trình xây dựng)</strong> tại Hưng Yên. Chúng tôi chuyên cung cấp giải pháp xe cẩu bánh lốp Kato/Tadano tải trọng lớn từ 25 tấn đến 100 tấn phục vụ lắp ráp cột thép, dầm thép chịu lực, vì kèo mái nhà xưởng tiền chế và cẩu lợp tôn panel an toàn, đúng kỹ thuật.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi cẩu dựng xưởng — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Khảo sát & Nhận báo giá</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-lap-dung-ket-cau-thep.png" alt="Xe cẩu chuyên dụng Kato của Giang Khôi đang lắp dựng cột thép và vì kèo nhà xưởng công nghiệp tại Hưng Yên" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Hạng mục thi công kết cấu thép chuyên nghiệp</h2>
+          <ul class="check-list">
+            <li>Cẩu lắp dựng hệ cột thép chịu lực chính của nhà xưởng</li>
+            <li>Nâng và lắp ráp hệ dầm thép, giằng mái, giằng cột liên kết bản mã</li>
+            <li>Cẩu đặt vì kèo thép khẩu độ rộng từ 15m đến hơn 50m lên đúng cao độ thiết kế</li>
+            <li>Nâng tấm tôn mái, panel vách ngăn bao che nhà xưởng công nghiệp</li>
+            <li>Cẩu hạ lắp đặt sàn deck, dầm phụ cho các công trình nhà thép nhiều tầng</li>
+            <li>Cẩu nâng sàn treo người tự hành phục vụ thợ siết bu-lông, hàn liên kết trên cao</li>
+          </ul>
+
+          <h2>Quy trình cẩu lắp dựng khung thép an toàn</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Khảo sát mặt bằng & Lập JSA</h3>
+              <p>Khảo sát nền đất đầm nén ổn định để đặt chân chống xe cẩu, đo đạc khoảng cách lắp dựng và lập Bảng phân tích an toàn công việc (JSA) trước thi công.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Định vị xe cẩu & Kiểm tra phụ kiện</h3>
+              <p>Di chuyển cẩu vào vị trí, kê kích lót chân chống cẩu chắc chắn. Kiểm tra cáp thép, ma ni, dây vải nâng hạ cột thép đảm bảo chịu lực tốt.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Cẩu nâng đặt cấu kiện vào bu-lông móng</h3>
+              <p>Tài xế phối hợp với thợ xi nhan cẩu nâng cột thép vào bu-lông chờ của móng xưởng. Giữ nguyên tải cẩu để đội thợ lắp dựng siết tạm bu-lông định vị trước khi nhả cáp.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Cẩu kèo dầm & Lợp tôn hoàn thiện</h3>
+              <p>Tiến hành cẩu kết nối dầm ngang, vì kèo tạo khung cứng ổn định. Cuối cùng cẩu nâng các kiện tôn mái để hoàn thiện bao che xưởng.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá thuê xe cẩu lắp dựng kết cấu thép tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Loại xe cẩu đề xuất</th><th>Trọng lượng cấu kiện phù hợp</th><th>Giá thuê tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Xe cẩu tự hành 8T – 15T</td><td>Dầm cột nhỏ dưới 3 tấn, cẩu lợp tôn mái</td><td class="price-value">4.500.000 – 6.000.000đ / ca</td></tr>
+                <tr><td>Xe cẩu Kato 25T – 50T</td><td>Cột thép nặng, vì kèo khẩu độ dưới 30m</td><td class="price-value">7.500.000 – 11.000.000đ / ca</td></tr>
+                <tr><td>Xe cẩu Kato 80T – 100T</td><td>Khung xưởng siêu nặng, khẩu độ trên 40m</td><td class="price-value">14.000.000 – 18.000.000đ / ca</td></tr>
+                <tr><td>Thuê trọn gói dự án xưởng</td><td>Theo bản vẽ biện pháp thi công lắp dựng</td><td class="price-value">Liên hệ hotline chiết khấu</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Báo giá đã bao gồm nhiên liệu và tài xế/phụ cẩu xi nhan chuyên nghiệp. Chưa bao gồm thuế VAT và phí vận chuyển cẩu xa nếu có.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cẩu dựng xưởng?</h3>
+            <p>Liên hệ hotline để kỹ thuật viên Giang Khôi khảo sát thực địa mặt bằng và báo giá tối ưu chi phí nhất!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

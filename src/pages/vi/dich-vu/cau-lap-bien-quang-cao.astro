@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cẩu lắp biển quảng cáo tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ xe cẩu lắp dựng biển quảng cáo, bảng hiệu LED, lắp pano quảng cáo ngoài trời tại các KCN và mặt đường Hưng Yên. Xe cẩu 3.5T-25T có giỏ nâng người.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/cau-lap-bien-quang-cao"
+};
+
+const faqs = [
+  { q: 'Xe cẩu Giang Khôi có giỏ nâng người lắp biển quảng cáo không?', a: 'Có. Chúng tôi có xe cẩu tự hành từ 3.5T đến 10T được trang bị thêm giỏ nâng người (được kiểm định an toàn đầy đủ), giúp thợ quảng cáo đứng thao tác bắt ốc, hàn biển ở trên cao cực kỳ an toàn và nhanh chóng.' },
+  { q: 'Giang Khôi có nhận thi công làm biển quảng cáo trọn gói không?', a: 'Không. Chúng tôi chỉ cung cấp dịch vụ cẩu nâng hạ, giữ biển hiệu cố định và giỏ nâng người để thợ đứng thi công. Việc thiết kế, gia công biển hiệu sẽ do đơn vị quảng cáo của anh/chị đảm nhận.' },
+  { q: 'Có dịch vụ cẩu lắp biển quảng cáo vào ban đêm không?', a: 'Có. Để tránh ảnh hưởng đến giao thông mặt phố ban ngày hoặc theo yêu cầu tiến độ khai trương, Giang Khôi sẵn sàng phục vụ cẩu lắp biển hiệu vào ban đêm 24/7.' },
+  { q: 'Xe cẩu có đủ giấy tờ để vào cẩu biển tại các KCN không?', a: 'Có. Toàn bộ xe cẩu của Giang Khôi đều có kiểm định an toàn thiết bị, bảo hiểm, tài xế có đầy đủ bằng cẩu và chứng chỉ vận hành, hoàn toàn đủ điều kiện vào làm việc tại các KCN Hưng Yên.' }
+];
+---
+
+<BaseLayout
+  title="Cẩu Lắp Biển Quảng Cáo & Bảng Hiệu Hưng Yên — Mã 4329 | Giang Khôi"
+  description="Dịch vụ cho thuê xe cẩu lắp biển quảng cáo, bảng hiệu LED nhà xưởng, dựng cột pano quảng cáo tấm lớn ngoài trời tại Hưng Yên. Xe cẩu 3.5T-25T. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Cẩu lắp biển quảng cáo</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🏗️ Mã ngành 4329 & 4322</span>
+            <h1>Cẩu Lắp Biển Quảng Cáo & Bảng Hiệu</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>4329 (Lắp đặt hệ thống xây dựng khác)</strong> tại Hưng Yên. Chúng tôi cung cấp giải pháp cẩu nâng hạ định vị bảng hiệu mặt tiền nhà máy KCN, dựng khung thép pano tấm lớn ngoài trời, lắp đặt màn hình LED quảng cáo siêu lớn. Đội xe cẩu hiện đại trang bị <strong>giỏ nâng thi công trên cao</strong> an toàn.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi cẩu lắp biển — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Nhận báo giá ngay</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-lap-bien-quang-cao.png" alt="Xe cẩu tự hành Giang Khôi lắp biển hiệu quảng cáo cho nhà xưởng tại KCN Hưng Yên [Ảnh minh họa]" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Các dịch vụ cẩu biển quảng cáo thi công</h2>
+          <ul class="check-list">
+            <li>Cẩu lắp bảng hiệu Alu, chữ nổi mặt tiền công ty, showroom</li>
+            <li>Dựng cột thép tròn chịu lực và cẩu đặt Pano quảng cáo ngoài trời (Billboard)</li>
+            <li>Nâng hạ lắp đặt màn hình LED cỡ lớn trong nhà và ngoài trời</li>
+            <li>Cẩu lắp biển hiệu hộp đèn, biển LED vẫy trên cao phố thị</li>
+            <li>Cẩu tháo dỡ bảng hiệu cũ, hỏng hóc cần thay mới an toàn</li>
+            <li>Cho thuê cẩu tự hành có giỏ nâng người thi công quảng cáo</li>
+          </ul>
+
+          <h2>Quy trình phối hợp lắp đặt biển quảng cáo</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Chuẩn bị mặt bằng & Kiểm tra</h3>
+              <p>Xác định vị trí đỗ xe cẩu an toàn dưới lòng đường hoặc trong sân. Kiểm tra kích thước và trọng lượng biển hiệu để bố trí dòng xe cẩu phù hợp.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Neo buộc & Treo biển</h3>
+              <p>Sử dụng cáp vải chuyên dụng buộc giữ biển hiệu thăng bằng. Đảm bảo biển không bị móp méo hoặc trầy xước nước sơn khi nâng.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Cẩu nâng & Giữ cố định</h3>
+              <p>Nâng biển hiệu lên cao đến đúng vị trí lắp đặt. Tài xế xe cẩu giữ chắc cần để đội ngũ kỹ thuật hàn gắn biển hiệu vào khung đỡ chắc chắn.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Hoàn thiện & Nghiệm thu</h3>
+              <p>Thợ hàn hoàn thành liên kết chịu lực. Tháo dây cáp cẩu, kiểm tra độ cân bằng thẩm mỹ và bàn giao công trình.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá thuê xe cẩu lắp biển hiệu tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Loại biển thi công</th><th>Xe cẩu đề xuất</th><th>Đơn giá tham khảo (ca 8h)</th></tr></thead>
+              <tbody>
+                <tr><td>Bảng hiệu cửa hàng dưới 10m</td><td>Cẩu 3.5T có giỏ</td><td class="price-value">2.800.000 – 3.200.000đ</td></tr>
+                <tr><td>Bảng hiệu mặt tiền nhà xưởng KCN</td><td>Cẩu 5T – 8T có giỏ</td><td class="price-value">3.400.000 – 4.500.000đ</td></tr>
+                <tr><td>Pano quảng cáo ngoài trời tấm lớn</td><td>Cẩu Kato 15T – 25T</td><td class="price-value">5.500.000 – 7.500.000đ</td></tr>
+                <tr><td>Lắp đặt biển LED cao ốc tầng cao</td><td>Cẩu Kato 50T – 100T</td><td class="price-value">Báo giá theo khảo sát</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Báo giá bao gồm xe cẩu, dầu máy, tài xế và giỏ nâng người (nếu có). Chưa bao gồm thuế VAT và thợ hàn/thợ quảng cáo.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần lắp biển quảng cáo?</h3>
+            <p>Liên hệ ngay để thuê xe cẩu có giỏ nâng người giá tốt nhất Hưng Yên!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>

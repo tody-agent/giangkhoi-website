@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n';
+
+const t = useTranslations('vi');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dịch vụ cẩu phá dỡ công trình giải phóng mặt bằng tại Hưng Yên",
+  "provider": { "@type": "LocalBusiness", "name": "Vận Tải Giang Khôi", "telephone": "+84971491174" },
+  "areaServed": { "@type": "State", "name": "Hưng Yên" },
+  "description": "Dịch vụ xe cẩu phục vụ tháo dỡ nhà xưởng cũ, hạ dầm bê tông, kèo thép, dọn dẹp phế liệu mặt bằng tại Hưng Yên, Hà Nội. Gọi 0971 491 174.",
+  "url": "https://vantaigiangkhoi.com/vi/dich-vu/cau-pha-do-giai-phong-mat-bang"
+};
+
+const faqs = [
+  { q: 'Giang Khôi có nhận cẩu nâng máy xúc mini lên sàn tầng cao để phá dỡ tòa nhà không?', a: 'Có. Chúng tôi sở hữu các dòng xe cẩu Kato chuyên dụng từ 25T đến 100T với cần vươn dài và hệ thống cáp tải trọng lớn, đủ khả năng nâng hạ an toàn các dòng máy xúc, máy đục bê tông mini lên các tầng cao của tòa nhà để phục vụ thi công phá dỡ.' },
+  { q: 'Dịch vụ cẩu phá dỡ có bao gồm dọn dẹp phế liệu đi đổ không?', a: 'Giang Khôi cung cấp dịch vụ cẩu nâng hạ phế liệu cũ (dầm thép, cấu kiện bê tông) xếp lên xe tải của khách hàng hoặc xe thùng của chúng tôi để trung chuyển. Việc xử lý phế thải xây dựng đi bãi đổ sẽ được thỏa thuận chi tiết trong phương án thi công trọn gói.' },
+  { q: 'Giang Khôi có cung cấp dịch vụ cẩu di dời cây xanh công trình bị giải tỏa không?', a: 'Có. Trong quá trình giải phóng mặt bằng đường giao thông hoặc dự án mới, Giang Khôi nhận cẩu bứng di dời các cây cổ thụ lớn, cây xanh đô thị về vườn ươm hoặc khu trồng mới an toàn, không làm đứt gãy cành hay bầu đất.' },
+  { q: 'Mã ngành đăng ký hóa đơn cho dịch vụ này là gì?', a: 'Chúng tôi có đầy đủ tư cách pháp nhân với mã ngành đăng ký kinh doanh chính thức: 4311 (Phá dỡ) và 4312 (Chuẩn bị mặt bằng), đảm bảo xuất hóa đơn VAT hợp pháp, đầy đủ hồ sơ nghiệm thu cho quý nhà thầu.' }
+];
+---
+
+<BaseLayout
+  title="Xe Cẩu Phá Dỡ Công Trình & Giải Phóng Mặt Bằng — Mã 4311 & 4312 | Giang Khôi"
+  description="Dịch vụ xe cẩu phá dỡ nhà xưởng cũ, cẩu hạ dầm bê tông, vì kèo thép, dọn dẹp phế liệu san lấp chuẩn bị mặt bằng Hưng Yên, Hà Nội. Thi công an toàn. Gọi 0971 491 174."
+  jsonLd={jsonLd}
+>
+  <article class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/vi">Trang chủ</a> › <a href="/vi/dich-vu">Dịch vụ</a> › <span>Cẩu phá dỡ giải phóng mặt bằng</span>
+        </nav>
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <span class="badge badge-primary">🧱 Mã ngành 4311 & 4312</span>
+            <h1>Xe Cẩu Phá Dỡ Công Trình & Giải Phóng Mặt Bằng</h1>
+            <p class="service-lead">Dịch vụ chuyên nghiệp theo mã ngành đăng ký <strong>4311 (Phá dỡ)</strong> và <strong>4312 (Chuẩn bị mặt bằng)</strong> tại Hưng Yên và khu vực Hà Nội lân cận. Chúng tôi chuyên cung cấp đội xe cẩu tự hành, xe cẩu bánh lốp chuyên dụng hỗ trợ các nhà thầu thi công tháo hạ cấu kiện thép cũ, hạ dầm bê tông cốt thép siêu nặng, bốc xếp xà bần phế liệu lên xe thùng và cẩu bứng cây xanh công trình phục vụ bàn giao mặt bằng sạch nhanh chóng.</p>
+            <div class="service-ctas">
+              <a href="tel:0971491174" class="btn btn-primary btn-lg">📞 Gọi xe cẩu phá dỡ — 0971 491 174</a>
+              <a href="https://zalo.me/0971491174" class="btn btn-outline" target="_blank" rel="noopener">💬 Nhận khảo sát & Lập phương án</a>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img src="/images/services/cau-vat-lieu-xay-nha.png" alt="Xe cẩu tự hành Giang Khôi cẩu hạ kết cấu bê tông cốt thép cũ trong công trường phá dỡ giải tỏa mặt bằng" width="600" height="400" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-body">
+        <div class="service-main">
+          <h2>Các dịch vụ xe cẩu phục vụ phá dỡ & san lấp mặt bằng</h2>
+          <ul class="check-list">
+            <li>Cẩu giữ cố định kết cấu dầm thép, cột thép cũ trong lúc thợ cơ khí cắt liên kết</li>
+            <li>Nâng hạ, vận chuyển các khối bê tông đúc sẵn, cấu kiện đúc cũ khỏi công trường</li>
+            <li>Cẩu nâng máy xúc mini, thiết bị cầm tay nặng lên sàn các tòa nhà cao tầng</li>
+            <li>Bốc xếp xà bần, sắt thép phế liệu xây dựng lên xe thùng vận chuyển đổ bãi</li>
+            <li>Cẩu bứng gốc, di dời trồng lại cây xanh cổ thụ trong khu vực giải tỏa lòng đường</li>
+            <li>Cho thuê xe cẩu tự hành trực chờ dọn dẹp hiện trường dự án thi công hạ tầng</li>
+          </ul>
+
+          <h2>Quy trình cẩu hạ phá dỡ kết cấu xây dựng an toàn</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">1</span>
+              <h3>Khảo sát & Đánh giá nguy cơ</h3>
+              <p>Kỹ thuật viên khảo sát độ vững chắc của kết cấu bê tông/khung thép cần tháo dỡ. Xác định góc quay cẩu an toàn và tính toán tải trọng giật đứt cấu kiện.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">2</span>
+              <h3>Móc cáp giữ ổn định cấu kiện</h3>
+              <p>Móc cáp cẩu và kéo căng nhẹ để giữ thăng bằng kết cấu dầm cột cũ trước khi thợ tiến hành đục cắt bê tông hoặc cắt oxy-acetylen bu-lông cột thép.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">3</span>
+              <h3>Cẩu hạ nhẹ nhàng xuống bãi tập kết</h3>
+              <p>Sau khi cấu kiện được cắt rời hoàn toàn, tài xế từ từ quay cần và hạ đặt thiết bị xuống mặt đất an toàn, tránh va đập sập đổ các khu vực lân cận.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">4</span>
+              <h3>Thu gom vận chuyển phế liệu & San lấp</h3>
+              <p>Cẩu gom các cấu kiện phế liệu thép vỡ lên xe thùng trung chuyển bãi phế thải, dọn dẹp bàn giao mặt bằng sạch cho đơn vị san lấp.</p>
+            </div>
+          </div>
+
+          <h2>Bảng giá thuê xe cẩu phá dỡ giải phóng mặt bằng tham khảo</h2>
+          <div class="price-table-wrapper">
+            <table class="price-table">
+              <thead><tr><th>Loại xe cẩu đề xuất</th><th>Nhiệm vụ công trường phù hợp</th><th>Giá thuê tham khảo</th></tr></thead>
+              <tbody>
+                <tr><td>Xe cẩu tự hành 3.5T – 5T</td><td>Cẩu bứng cây xanh nhỏ, di dời phế liệu gọn nhẹ</td><td class="price-value">2.800.000 – 3.400.000đ / ca</td></tr>
+                <tr><td>Xe cẩu tự hành 8T – 15T</td><td>Hạ vì kèo sắt xưởng nhỏ, cẩu nâng máy xúc mini</td><td class="price-value">4.000.000 – 6.000.000đ / ca</td></tr>
+                <tr><td>Xe cẩu Kato 25T – 50T</td><td>Hạ dầm bê tông lớn, khung thép xưởng công nghiệp</td><td class="price-value">7.500.000 – 11.000.000đ / ca</td></tr>
+                <tr><td>Hợp đồng cẩu tháng dự án</td><td>Xe cẩu trực chiến san nền dự án hạ tầng lớn</td><td class="price-value">Báo giá chiết khấu đặc biệt</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="price-note">* Báo giá bao gồm xe cẩu và tài xế giàu kinh nghiệm công trường. Hỗ trợ giá tốt khi ký hợp đồng thi công dài hạn.</p>
+
+          <h2>Câu hỏi thường gặp</h2>
+          <div class="faq-list">
+            {faqs.map((faq) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>{faq.q}</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner"><p>{faq.a}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="service-sidebar">
+          <div class="sidebar-cta">
+            <h3>Cần cẩu phá dỡ?</h3>
+            <p>Liên hệ hotline tư vấn biện pháp cẩu hạ kết cấu cũ an toàn và báo giá tối ưu chi phí công trình!</p>
+            <a href="tel:0971491174" class="btn btn-primary" style="width: 100%;">📞 0971 491 174</a>
+          </div>
+          <div class="sidebar-services">
+            <h4>Dịch vụ khác</h4>
+            <ul>
+              <li><a href="/vi/dich-vu/cuu-ho-xe-tai-lat">🚨 Cứu hộ xe tải lật</a></li>
+              <li><a href="/vi/dich-vu/cau-bon-nuoc">💧 Cẩu bồn nước</a></li>
+              <li><a href="/vi/dich-vu/cau-vat-lieu-xay-nha">🧱 Cẩu vật liệu xây nhà</a></li>
+              <li><a href="/vi/dich-vu/cau-may-mong-xuong">🏭 Cẩu máy móc xưởng</a></li>
+              <li><a href="/vi/dich-vu/cau-container">📦 Cẩu container</a></li>
+              <li><a href="/vi/dich-vu/cau-cay-canh">🌳 Cẩu cây cảnh</a></li>
+              <li><a href="/vi/dich-vu/cau-mai-ton-khung-keo">🏗️ Cẩu mái tôn khung kèo</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .service-hero { padding: var(--space-12) 0 var(--space-8); }
+  .breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .breadcrumb a { color: var(--color-text-secondary); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .service-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center; }
+  @media (min-width: 768px) { .service-hero-grid { grid-template-columns: 1.2fr 1fr; } }
+  .service-hero-content h1 { margin-bottom: var(--space-4); }
+  .service-lead { font-size: var(--text-lg); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+  .service-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .service-hero-image img { border-radius: var(--radius-xl); width: 100%; }
+  .service-body { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+  @media (min-width: 1024px) { .service-body { grid-template-columns: 1fr 320px; } }
+  .service-main h2 { margin-top: var(--space-10); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+  .service-main h2:first-child { margin-top: 0; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: var(--space-2) 0; padding-left: var(--space-6); position: relative; color: var(--color-text-secondary); }
+  .check-list li::before { content: '✅'; position: absolute; left: 0; }
+  .process-steps { display: grid; gap: var(--space-4); }
+  .process-step { display: flex; gap: var(--space-4); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+  .step-number { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--weight-bold); font-family: var(--font-heading); }
+  .process-step h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .process-step p { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .sidebar-cta { background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated)); border: 1px solid var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6); box-shadow: var(--shadow-glow); position: sticky; top: 88px; }
+  .sidebar-cta h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .sidebar-cta p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .sidebar-services { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); }
+  .sidebar-services h4 { font-size: var(--text-base); margin-bottom: var(--space-4); }
+  .sidebar-services ul { list-style: none; padding: 0; }
+  .sidebar-services li { margin-bottom: var(--space-2); }
+  .sidebar-services a { color: var(--color-text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+  .sidebar-services a:hover { color: var(--color-primary); }
+</style>
