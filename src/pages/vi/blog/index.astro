@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'bang-gia-thue-xe-cau-hung-yen-2026',
+    title: 'Bảng Giá Thuê Xe Cẩu Hưng Yên 2026 — Cập Nhật Tháng 6',
+    date: '2026-06-01',
+    excerpt: 'Tổng hợp bảng giá thuê xe cẩu 3.5T đến 100T tại Hưng Yên, cập nhật mới nhất tháng 6/2026. So sánh giá theo ca, theo tháng, theo tải trọng.',
+  },
+  {
+    slug: 'huong-dan-thue-xe-cau-lan-dau',
+    title: 'Thuê Xe Cẩu Lần Đầu — 5 Điều Cần Biết Trước Khi Gọi',
+    date: '2026-05-20',
+    excerpt: 'Hướng dẫn chi tiết cho người lần đầu thuê xe cẩu: cách chọn tải trọng phù hợp, chuẩn bị hiện trường, và những lưu ý quan trọng tránh phát sinh chi phí.',
+  },
+  {
+    slug: 'cau-bon-nuoc-len-mai-nha-pho',
+    title: 'Cẩu Bồn Nước Lên Mái Nhà Phố — Quy Trình & Chi Phí 2026',
+    date: '2026-05-10',
+    excerpt: 'Hướng dẫn chi tiết quy trình cẩu bồn nước inox lên mái nhà phố tại Hưng Yên. Chi phí, thời gian, và cách chọn xe cẩu phù hợp cho ngõ hẹp.',
+  },
+];
+---
+
+<BaseLayout
+  title="Blog Xe Cẩu Hưng Yên — Tin Tức & Hướng Dẫn | Giang Khôi"
+  description="Blog chia sẻ kiến thức về thuê xe cẩu, bảng giá cập nhật, hướng dẫn chọn xe cẩu phù hợp tại Hưng Yên. Từ Giang Khôi — 10 năm kinh nghiệm."
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>Blog & Hướng Dẫn</h1>
+        <p>Chia sẻ kiến thức từ 10 năm kinh nghiệm xe cẩu</p>
+      </div>
+
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/vi/blog/${post.slug}`} class="blog-card" id={`blog-${post.slug}`}>
+            <time datetime={post.date}>{new Date(post.date).toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+            <span class="read-more">Đọc tiếp →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-grid { display: grid; gap: var(--space-6); max-width: 800px; margin: 0 auto; }
+  .blog-card { display: block; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); text-decoration: none; color: inherit; transition: all var(--transition-base); }
+  .blog-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+  .blog-card time { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .blog-card h2 { font-size: var(--text-xl); margin: var(--space-2) 0 var(--space-3); line-height: 1.4; }
+  .blog-card p { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.8; margin-bottom: var(--space-4); }
+  .read-more { color: var(--color-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+</style>

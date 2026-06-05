@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('zh');
+---
+
+<BaseLayout
+  title="联系江开起重 — 立即拨打 0971 491 174"
+  description="联系兴安江开起重吊车服务。致电0971 491 174或Zalo咨询，5分钟内获取报价。全天候24/7服务。"
+>
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div class="section-header">
+        <h1>联系江开起重</h1>
+        <p>{t('contact.subtitle')}</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-methods">
+          <a href="tel:0971491174" class="contact-card contact-phone" id="contact-phone-zh">
+            <span class="contact-icon">📞</span>
+            <h3>立即拨打</h3>
+            <p class="contact-value">0971 491 174</p>
+            <p class="contact-note">全天候24/7服务 — 30分钟到达</p>
+          </a>
+
+          <a href="https://zalo.me/0971491174" target="_blank" rel="noopener" class="contact-card contact-zalo" id="contact-zalo-zh">
+            <span class="contact-icon">💬</span>
+            <h3>Zalo咨询</h3>
+            <p class="contact-value">Zalo: 0971 491 174</p>
+            <p class="contact-note">发送工作现场照片获取快速报价</p>
+          </a>
+
+          <div class="contact-card contact-address">
+            <span class="contact-icon">📍</span>
+            <h3>公司地址</h3>
+            <p class="contact-value">{t('site.address')}</p>
+            <p class="contact-note">{t('site.company')}</p>
+            <p class="contact-note">税号: 0901150346</p>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-icon">🕐</span>
+            <h3>服务时间</h3>
+            <p class="contact-value">24/7</p>
+            <p class="contact-note">包括节假日 — 紧急救援随时可用</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <h3>发送报价请求</h3>
+          <p>留下您的信息，我们将在5分钟内回电。</p>
+          <form class="contact-form" id="contact-form-zh" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="吊车报价请求 — vantaigiangkhoi.com (中文)" />
+            <div style="position: absolute; left: -9999px;"><input type="text" name="botcheck" tabindex="-1" autocomplete="off" /></div>
+
+            <div class="form-group">
+              <label for="name-zh">{t('contact.name')} *</label>
+              <input type="text" id="name-zh" name="name" required placeholder="您的姓名" />
+            </div>
+            <div class="form-group">
+              <label for="phone-zh">{t('contact.phone')} *</label>
+              <input type="tel" id="phone-zh" name="phone" required placeholder="0971 xxx xxx" />
+            </div>
+            <div class="form-group">
+              <label for="message-zh">{t('contact.message')}</label>
+              <textarea id="message-zh" name="message" rows="4" placeholder="例如：需要吊装1000升水箱上3楼，地址在美豪..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="form-submit-zh">{t('contact.submit')}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); margin-bottom: var(--space-12); }
+  @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+  .contact-methods { display: grid; gap: var(--space-4); }
+  .contact-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); text-decoration: none; color: inherit; transition: all var(--transition-base); display: block; }
+  .contact-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+  .contact-phone:hover { border-color: var(--color-success); }
+  .contact-zalo:hover { border-color: #0068FF; }
+  .contact-icon { font-size: 2rem; display: block; margin-bottom: var(--space-2); }
+  .contact-card h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .contact-value { font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-primary); margin-bottom: var(--space-2); }
+  .contact-note { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .contact-form-wrapper { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); }
+  .contact-form-wrapper h3 { font-size: var(--text-xl); margin-bottom: var(--space-2); }
+  .contact-form-wrapper > p { color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); }
+  .form-group { margin-bottom: var(--space-4); }
+  .form-group label { display: block; font-size: var(--text-sm); font-weight: var(--weight-medium); margin-bottom: var(--space-2); color: var(--color-text-secondary); }
+  .form-group input, .form-group textarea { width: 100%; padding: var(--space-3) var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); color: var(--color-text); font-family: var(--font-body); font-size: var(--text-base); transition: border-color var(--transition-fast); }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-glow); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--color-text-muted); }
+</style>

@@ -1,0 +1,18 @@
+{
+  "name": "giangkhoi-website",
+  "description": "Website cho Van Tai Giang Khoi",
+  "github": {
+    "account": "tody-agent",
+    "org": "tody-agent",
+    "repo": "giangkhoi-website",
+    "remoteUrl": "https://github.com/tody-agent/giangkhoi-website.git",
+    "userEmail": "tracuuphat@gmail.com"
+  },
+  "cloudflare": {
+    "accountId": "fa5ac755c5a60634abdecf0daacd23b5",
+    "projectName": "giangkhoi-website",
+    "stagingUrl": "https://giangkhoi-website.pages.dev",
+    "productionUrl": "https://vantaigiangkhoi.com",
+    "productionBranch": "main"
+  }
+}
